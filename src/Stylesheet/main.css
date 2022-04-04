@@ -23,3 +23,14 @@ a {
   background-color: transparent;
   text-decoration: none;
 }
+
+.homepage-grid{
+  display: inline-flex;
+  align-content: center;
+  flex-wrap: wrap;
+
+  justify-content: center;
+  width: 90%;
+  margin: 1rem;
+
+}

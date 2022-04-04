@@ -5,6 +5,7 @@
   position: fixed;
   width: 100%;
   transform-style: preserve-3d;
+  z-index: 2;
 }
 
 .navbar {
@@ -41,7 +42,7 @@
 
 .nav-item::before {
   transition: all 0.2s ease-out;
-  height: 0.25rem;
+  height: 0.2rem;
   content: "";
   position: absolute;
   background-color: #000000;

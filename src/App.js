@@ -37,7 +37,6 @@ function App() {
           <Route path="/Blog" element={<Blog />} />
         </Routes>
       </main>
-      <FontAwesomeIcon icon="coffee" />
       <Footer />
     </>
   );
