@@ -1,14 +1,18 @@
 import React, { Component } from "react";
+import "../Stylesheet/footer.css";
 
 export default class Footer extends Component {
   render() {
     return (
-      <React.Fragment>
+      <>
         <footer className="main-footer">
-          <p>Michael Parkin</p>
-          <time dateTime="2022">| 2021</time>
+          <section className="main-footer-contents">
+            <p>Michael Parkin</p>
+            <p>|</p>
+            <time dateTime="2022">2021</time>
+          </section>
         </footer>
-      </React.Fragment>
+      </>
     );
   }
 }

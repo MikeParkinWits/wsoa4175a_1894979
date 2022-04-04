@@ -1,5 +1,4 @@
 import logo from "./logo.svg";
-import "./App.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Card from "./components/BlogCard";
@@ -15,6 +14,16 @@ import DesignSection from "./routes/DesignSection";
 import ArtworkSection from "./routes/ArtworkSection";
 import Blog from "./routes/Blog";
 
+//Font Awesome Imports
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faBars, faX, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+//Style Imports
+import "./Stylesheet/main.css";
+
+library.add(faBars, faX, faXmark);
+
 function App() {
   return (
     <>
@@ -28,6 +37,7 @@ function App() {
           <Route path="/Blog" element={<Blog />} />
         </Routes>
       </main>
+      <FontAwesomeIcon icon="coffee" />
       <Footer />
     </>
   );

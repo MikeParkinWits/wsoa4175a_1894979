@@ -1,0 +1,17 @@
+.main-footer {
+  background-color: black;
+}
+
+.main-footer-contents {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  padding-left: 1rem;
+  color: white;
+}
+
+.main-footer-contents p,
+time {
+  padding: 0.5rem;
+}
