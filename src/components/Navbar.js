@@ -6,7 +6,7 @@ import { Route, Routes, Link, NavLink } from "react-router-dom";
 import logo from "../assets/Logo.png";
 
 //Style Imports
-import "../Stylesheet/navbar.css";
+import "../styles/navbar.css";
 
 //Font Awesome Imports
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

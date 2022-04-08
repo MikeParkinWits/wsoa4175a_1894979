@@ -17,8 +17,6 @@ export default class BlogSection extends Component {
         <BlogCard />
         <BlogCard />
         <BlogCard />
-
-        <Button />
       </>
     );
   }

@@ -1,9 +1,3 @@
-import logo from "./logo.svg";
-import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
-import Card from "./components/BlogCard";
-import BigCard from "./components/BigCard";
-import HeroPage from "./components/HeroPage";
 import React, { Component } from "react";
 
 //Routing Imports
@@ -20,7 +14,20 @@ import { faBars, faX, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 //Style Imports
-import "./Stylesheet/main.css";
+import "./styles/main.css";
+
+//Additional
+import FadeIn from "react-fade-in";
+
+//Component Imports
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
+
+//Unused
+// import Card from "./components/BlogCard";
+// import BigCard from "./components/BigCard";
+// import HeroPage from "./components/HeroPage";
+// import logo from "./logo.svg";
 
 library.add(faBars, faX, faXmark);
 

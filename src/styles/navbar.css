@@ -14,7 +14,7 @@
   border-bottom: solid 0.15rem black;
   align-items: center;
   padding: 0px 1.5rem;
-  height: 5rem;
+  height: 5.5rem;
 }
 
 .logo {
@@ -29,6 +29,7 @@
   padding: 0rem 0.625rem;
   list-style-type: none;
   margin-left: auto;
+
 }
 
 .nav-item {
@@ -98,6 +99,10 @@
     padding: 0rem;
     opacity: 1;
   }
+  
+  .navigation{
+    z-index: -1;
+  }
 
   .nav-list.active {
     background-color: white;
@@ -125,6 +130,11 @@
     color: black;
     background-color: white;
     margin: 0rem;
+  }
+
+  .nav-item:hover::before {
+    bottom: 0rem;
+    opacity: 0;
   }
 
   .hamburger-menu {
