@@ -36,7 +36,7 @@ export default class Home extends Component {
           <header className="hero">
             <section>
               <h1 className="hero-typography">
-                The internet <br /> that we
+                The internet <br /> we
                 <Typing
                   startDelay={1000}
                   speed={80}

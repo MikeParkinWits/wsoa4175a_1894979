@@ -40,7 +40,7 @@
   height:fit-content;
 }
 
-@media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 64rem) {
     .hero-typography{
         font-size: 4.5rem;
         line-height: 6rem;
@@ -59,9 +59,9 @@
       }
 }
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 47.9rem) {
     .hero-typography{
-        font-size: 3rem;
+        font-size: 3.3rem;
         line-height: 4rem;
       
         margin: 0rem 1.2rem;

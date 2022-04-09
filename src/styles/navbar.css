@@ -65,9 +65,10 @@
 
 /* Response View */
 
-@media (max-width: 48rem) {
+@media (max-width: 47.9rem) {
   .navbar {
     padding: 0rem;
+    height: 4.8rem;
   }
 
   .logo {
@@ -124,7 +125,7 @@
     align-items: center;
     justify-content: center;
     height: 10vw;
-    padding: 1.5rem 0rem;
+    padding: 1.3rem 0rem;
 
     border-bottom: 0.12rem solid black;
     color: black;
