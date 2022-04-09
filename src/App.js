@@ -37,11 +37,20 @@ function App() {
       <Navbar />
       <main>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/BlogSection" element={<BlogSection />} />
-          <Route path="/DesignSection" element={<DesignSection />} />
-          <Route path="/ArtworkSection" element={<ArtworkSection />} />
-          <Route path="/Blog" element={<Blog />} />
+          <Route path="/wsoa4175a_1894979/" element={<Home />} />
+          <Route
+            path="/wsoa4175a_1894979/BlogSection"
+            element={<BlogSection />}
+          />
+          <Route
+            path="/wsoa4175a_1894979/DesignSection"
+            element={<DesignSection />}
+          />
+          <Route
+            path="/wsoa4175a_1894979/ArtworkSection"
+            element={<ArtworkSection />}
+          />
+          <Route path="/wsoa4175a_1894979/Blog" element={<Blog />} />
         </Routes>
       </main>
       <Footer />
