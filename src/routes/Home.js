@@ -13,7 +13,7 @@ import DesignCardImage from "../assets/HomepageDesignImage.png";
 
 //External Packages
 import Typing from "react-typing-animation"; //Documentation can be found here => https://www.npmjs.com/package/react-typing-animation
-import FadeIn from "react-fade-in";
+import FadeIn from "react-fade-in"; //Documentation can be found here => https://www.npmjs.com/package/react-fade-in
 
 //Unused
 // import BigCard from "../components/BigCard";
@@ -60,30 +60,45 @@ export default class Home extends Component {
           <HomepageCard
             leftOrientation={true}
             img={BlogCardImage}
-            title={"Blog Posts"}
+            imgInfo={{
+              title: "Blog Post Image",
+              altText: "A flat, wireframe-esque, sketch of a blog page",
+            }}
+            cardInfo={{
+              title: "Blog Posts",
+              contentP:
+                "The Internet We Know holds a collection of blog posts, posted biweekly, relating to a wide range of topics. These include:",
+              contentList: [
+                "Web Design Aesthetics",
+                "Net Art",
+                "Social Justice",
+              ],
+            }}
             buttonText={"View Blog Posts"}
-            contentP={
-              "The Internet We Know holds a collection of blog posts, posted biweekly, relating to a wide range of topics. These include:"
-            }
-            contentList={["Web Design Aesthetics", "Net Art", "Social Justice"]}
-            buttonLink={""}
+            buttonLink={"/wsoa4175a_1894979/BlogSection"}
           />
+
           <HomepageCard
             leftOrientation={false}
             img={DesignCardImage}
-            title={"Design Decisions"}
+            imgInfo={{
+              title: "Design Decision Image",
+              altText:
+                "A flat, wireframe-esque, sketch of a design between two pages",
+            }}
+            cardInfo={{
+              title: "Design Decisions",
+              contentP:
+                "Design Decisions While the design of The Internet We Know may seem simple, it was carefully thought out. Visit the design section to see:",
+              contentList: [
+                "User Interface/Experience Decisions",
+                "Styleguides",
+                "Wireframes",
+              ],
+            }}
             buttonText={"View Design Decisions"}
-            contentP={
-              "Design Decisions While the design of The Internet We Know may seem simple, it was carefully thought out. Visit the design section to see:"
-            }
-            contentList={[
-              "User Interface/Experience Decisions",
-              "Styleguides",
-              "Wireframes",
-            ]}
-            buttonLink={""}
+            buttonLink={"/wsoa4175a_1894979/DesignSection"}
           />
-
           {/* 
 
           <article

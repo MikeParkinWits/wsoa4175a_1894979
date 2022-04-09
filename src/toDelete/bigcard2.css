@@ -48,7 +48,7 @@
 
 .big-card-info h2{
 
-    border-bottom: 5px solid black;
+    border-bottom: 0.3125rem solid black;
     background-color: white;
     margin-top: 0rem;
     padding: 0.5rem;
@@ -67,7 +67,7 @@
     transform: translate(-53%, 23%);
     transition: all 0.2s ease-out;
     
-    box-shadow: 1px solid black;
+    box-shadow: 0.0625rem solid black;
 
 }
 

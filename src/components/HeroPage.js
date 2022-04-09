@@ -32,7 +32,7 @@ export default class HeroPage extends Component {
               </Typing>
             </ScrollText>
 
-            <img src={ImageSix} width="60px"></img>
+            <img src={ImageSix} width="60rem"></img>
 
             The Internet <br /> We Know Today
 

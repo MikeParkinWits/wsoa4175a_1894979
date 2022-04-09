@@ -2,7 +2,7 @@
   display: inline-flex;
   flex-direction: row;
 
-  border-bottom: 3px solid black;
+  border-bottom: 0.1875rem solid black;
 
   margin: 0rem 5rem;
   text-align: left;

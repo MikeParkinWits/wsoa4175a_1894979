@@ -16,15 +16,19 @@ export default class HomepageCard extends Component {
         >
           {!this.props.leftOrientation && (
             <section className="homepage-card-image">
-              <img src={this.props.img}></img>
+              <img
+                src={this.props.img}
+                title={this.props.imgInfo.title}
+                alt={this.props.imgInfo.altText}
+              ></img>
             </section>
           )}
           <section className="homepage-card-info">
-            <h2>{this.props.title}</h2>
+            <h2>{this.props.cardInfo.title}</h2>
             <section className="homepage-card-content">
-              <p>{this.props.contentP}</p>
+              <p>{this.props.cardInfo.contentP}</p>
               <ul>
-                {this.props.contentList.map((element, key) => {
+                {this.props.cardInfo.contentList.map((element, key) => {
                   return (
                     <li key={key} className="homepage-list-item">
                       {element}
@@ -41,7 +45,11 @@ export default class HomepageCard extends Component {
           </section>
           {this.props.leftOrientation && (
             <section className="homepage-card-image">
-              <img src={this.props.img} height="80%" width="80%"></img>
+              <img
+                src={this.props.img}
+                title={this.props.imgInfo.title}
+                alt={this.props.imgInfo.altText}
+              ></img>
             </section>
           )}
         </article>

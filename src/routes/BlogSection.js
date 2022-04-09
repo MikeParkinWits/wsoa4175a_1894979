@@ -1,7 +1,15 @@
 import React, { Component } from "react";
-import BlogCard from "../components/BlogCard";
+
+//Component Imports
+import BlogCard from "../components/Card";
 import Button from "../components/Button";
 import Titles from "../components/Titles";
+
+//Importing Helper
+import { BlogList } from "../helpers/BlogList.js";
+
+//Import External Packages
+import FadeIn from "react-fade-in"; //Documentation can be found here => https://www.npmjs.com/package/react-fade-in
 
 export default class BlogSection extends Component {
   //Scrolls the page to the top on load
@@ -12,11 +20,25 @@ export default class BlogSection extends Component {
   render() {
     return (
       <>
-        <Titles title="Blog" />
-
-        <BlogCard />
-        <BlogCard />
-        <BlogCard />
+        <FadeIn transitionDuration={1000}>
+          <Titles title="Blog" />
+          <article className="card-grid">
+            {BlogList.map((blogItem, value) => {
+              return (
+                <BlogCard
+                  key={value}
+                  cardTitle={blogItem.cardTitle}
+                  cardDate={blogItem.cardDate}
+                  cardSummary={blogItem.cardSummary}
+                  image={blogItem.image}
+                  imageTitle={blogItem.imageTitle}
+                  imageAltText={blogItem.imageAltText}
+                  cardRoute={blogItem.cardRoute}
+                />
+              );
+            })}
+          </article>
+        </FadeIn>
       </>
     );
   }

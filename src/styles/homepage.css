@@ -3,7 +3,7 @@
   
   margin: 0rem;
 
-  border-bottom: 1.5px solid black;
+  border-bottom: 0.01rem solid black;
 
   background-image: url("../assets/HeroImage.jpg");
   height: "100%";
@@ -35,7 +35,7 @@
   padding-top: 0.3rem;
   margin: 2rem 7rem;
 
-  border-top: 3px solid black;
+  border-top: 0.1875rem solid black;
   width:fit-content;
   height:fit-content;
 }
