@@ -20,22 +20,24 @@ export default class DesignSection extends Component {
     return (
       <>
         <FadeIn transitionDuration={1000}>
-          <Titles title="Design" />
-          <article className="card-grid">
-            {DesignList.map((designItem, value) => {
-              return (
-                <BlogCard
-                  key={value}
-                  cardTitle={designItem.cardTitle}
-                  cardDate={designItem.cardDate}
-                  cardSummary={designItem.cardSummary}
-                  image={designItem.image}
-                  imageTitle={designItem.imageTitle}
-                  imageAltText={designItem.imageAltText}
-                  cardRoute={designItem.cardRoute}
-                />
-              );
-            })}
+          <article className="page-container">
+            <Titles title="Design" />
+            <section className="card-grid">
+              {DesignList.map((designItem, value) => {
+                return (
+                  <BlogCard
+                    key={value}
+                    cardTitle={designItem.cardTitle}
+                    cardDate={designItem.cardDate}
+                    cardSummary={designItem.cardSummary}
+                    image={designItem.image}
+                    imageTitle={designItem.imageTitle}
+                    imageAltText={designItem.imageAltText}
+                    cardRoute={designItem.cardRoute}
+                  />
+                );
+              })}
+            </section>
           </article>
         </FadeIn>
       </>

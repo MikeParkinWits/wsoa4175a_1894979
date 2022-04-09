@@ -21,22 +21,24 @@ export default class BlogSection extends Component {
     return (
       <>
         <FadeIn transitionDuration={1000}>
-          <Titles title="Blog" />
-          <article className="card-grid">
-            {BlogList.map((blogItem, value) => {
-              return (
-                <BlogCard
-                  key={value}
-                  cardTitle={blogItem.cardTitle}
-                  cardDate={blogItem.cardDate}
-                  cardSummary={blogItem.cardSummary}
-                  image={blogItem.image}
-                  imageTitle={blogItem.imageTitle}
-                  imageAltText={blogItem.imageAltText}
-                  cardRoute={blogItem.cardRoute}
-                />
-              );
-            })}
+          <article className="page-container">
+            <Titles title="Blog" />
+            <section className="card-grid">
+              {BlogList.map((blogItem, value) => {
+                return (
+                  <BlogCard
+                    key={value}
+                    cardTitle={blogItem.cardTitle}
+                    cardDate={blogItem.cardDate}
+                    cardSummary={blogItem.cardSummary}
+                    image={blogItem.image}
+                    imageTitle={blogItem.imageTitle}
+                    imageAltText={blogItem.imageAltText}
+                    cardRoute={blogItem.cardRoute}
+                  />
+                );
+              })}
+            </section>
           </article>
         </FadeIn>
       </>

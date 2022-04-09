@@ -33,72 +33,76 @@ export default class Home extends Component {
     return (
       <>
         <FadeIn transitionDuration={1000}>
-          <header className="hero">
-            <section>
-              <h1 className="hero-typography">
-                The internet <br /> we
-                <Typing
-                  startDelay={1000}
-                  speed={80}
-                  className="hero-typewriter"
-                >
-                  {" "}
-                  love
-                  <Typing.Backspace count={4} delay={1000} /> hate
-                  <Typing.Backspace count={4} delay={1000} />
-                  accept
-                </Typing>
-                <br />
-                today
-              </h1>
-              <p className="hero-typography-sub-text">
-                & the things we shouldn't overlook
-              </p>
+          <article className="hero">
+            <section className="page-container">
+              <header>
+                <h1 className="hero-typography">
+                  The internet <br /> we
+                  <Typing
+                    startDelay={1000}
+                    speed={80}
+                    className="hero-typewriter"
+                  >
+                    {" "}
+                    love
+                    <Typing.Backspace count={4} delay={1000} /> hate
+                    <Typing.Backspace count={4} delay={1000} />
+                    accept
+                  </Typing>
+                  <br />
+                  today
+                </h1>
+                <p className="hero-typography-sub-text">
+                  & the things we shouldn't overlook
+                </p>
+              </header>
             </section>
-          </header>
+          </article>
 
-          <HomepageCard
-            leftOrientation={true}
-            img={BlogCardImage}
-            imgInfo={{
-              title: "Blog Post Image",
-              altText: "A flat, wireframe-esque, sketch of a blog page",
-            }}
-            cardInfo={{
-              title: "Blog Posts",
-              contentP:
-                "The Internet We Know holds a collection of blog posts, posted biweekly, relating to a wide range of topics. These include:",
-              contentList: [
-                "Web Design Aesthetics",
-                "Net Art",
-                "Social Justice",
-              ],
-            }}
-            buttonText={"View Blog Posts"}
-            buttonLink={"/wsoa4175a_1894979/BlogSection"}
-          />
+          <article>
+            <HomepageCard
+              leftOrientation={true}
+              img={BlogCardImage}
+              imgInfo={{
+                title: "Blog Post Image",
+                altText: "A flat, wireframe-esque, sketch of a blog page",
+              }}
+              cardInfo={{
+                title: "Blog Posts",
+                contentP:
+                  "The Internet We Know holds a collection of blog posts, posted biweekly, relating to a wide range of topics. These include:",
+                contentList: [
+                  "Web Design Aesthetics",
+                  "Net Art",
+                  "Social Justice",
+                ],
+              }}
+              buttonText={"View Blog Posts"}
+              buttonLink={"/wsoa4175a_1894979/BlogSection"}
+            />
+            <HomepageCard
+              leftOrientation={false}
+              img={DesignCardImage}
+              imgInfo={{
+                title: "Design Decision Image",
+                altText:
+                  "A flat, wireframe-esque, sketch of a design between two pages",
+              }}
+              cardInfo={{
+                title: "Design Decisions",
+                contentP:
+                  "Design Decisions While the design of The Internet We Know may seem simple, it was carefully thought out. Visit the design section to see:",
+                contentList: [
+                  "User Interface/Experience Decisions",
+                  "Styleguides",
+                  "Wireframes",
+                ],
+              }}
+              buttonText={"View Design Decisions"}
+              buttonLink={"/wsoa4175a_1894979/DesignSection"}
+            />
+          </article>
 
-          <HomepageCard
-            leftOrientation={false}
-            img={DesignCardImage}
-            imgInfo={{
-              title: "Design Decision Image",
-              altText:
-                "A flat, wireframe-esque, sketch of a design between two pages",
-            }}
-            cardInfo={{
-              title: "Design Decisions",
-              contentP:
-                "Design Decisions While the design of The Internet We Know may seem simple, it was carefully thought out. Visit the design section to see:",
-              contentList: [
-                "User Interface/Experience Decisions",
-                "Styleguides",
-                "Wireframes",
-              ],
-            }}
-            buttonText={"View Design Decisions"}
-            buttonLink={"/wsoa4175a_1894979/DesignSection"}
-          />
           {/* 
 
           <article

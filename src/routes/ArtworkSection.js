@@ -19,13 +19,15 @@ export default class BlogSection extends Component {
     return (
       <>
         <FadeIn transitionDuration={1000}>
-          <Titles title="Net Art" />
-          <img
-            src={ArtImage}
-            title="Art Coming Soon Text"
-            alt="Text Saying 'Art Coming Soon'"
-            className="art-coming-soon-text"
-          ></img>
+          <article className="page-container">
+            <Titles title="Net Art" />
+            <img
+              src={ArtImage}
+              title="Art Coming Soon Text"
+              alt="Text Saying 'Art Coming Soon'"
+              className="art-coming-soon-text"
+            ></img>
+          </article>
         </FadeIn>
       </>
     );

@@ -83,6 +83,12 @@ h3{
   height: auto;
 }
 
+.page-container{
+  max-width: 90rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 @media only screen and (max-width: 64rem){
   .art-coming-soon-text{
     margin: 5rem;

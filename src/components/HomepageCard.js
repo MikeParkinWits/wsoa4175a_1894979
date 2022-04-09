@@ -7,7 +7,7 @@ export default class HomepageCard extends Component {
   render() {
     return (
       <>
-        <article
+        <section
           className={
             this.props.leftOrientation
               ? "homepage-card"
@@ -52,7 +52,7 @@ export default class HomepageCard extends Component {
               ></img>
             </section>
           )}
-        </article>
+        </section>
       </>
     );
   }
