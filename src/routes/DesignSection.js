@@ -21,7 +21,7 @@ export default class DesignSection extends Component {
       <>
         <FadeIn transitionDuration={1000}>
           <article className="page-container">
-            <Titles title="Design" />
+            <Titles mainTitle={true} title="Design" />
             <section className="card-grid">
               {DesignList.map((designItem, value) => {
                 return (

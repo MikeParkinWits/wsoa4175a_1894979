@@ -20,7 +20,7 @@ export default class BlogSection extends Component {
       <>
         <FadeIn transitionDuration={1000}>
           <article className="page-container">
-            <Titles title="Net Art" />
+            <Titles mainTitle={true} title="Net Art" />
             <img
               src={ArtImage}
               title="Art Coming Soon Text"

@@ -18,12 +18,18 @@
     transform: translate(-0.25rem, -0.25rem);
     box-shadow: 0.3rem 0.3rem #fc85f0, 0.3rem 0.3rem 0rem 0.1rem black;
   }
+
+  .main-button{
+    display: inline-block;
+    width: 15rem;
+
+    text-align: center;
+}
   
   @media only screen and (max-width: 47.8rem) {
       .main-button{
           text-align: center;
 
           margin: 1rem auto 1.5rem auto;
-
       }
   }

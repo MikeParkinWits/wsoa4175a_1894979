@@ -22,7 +22,7 @@ export default class BlogSection extends Component {
       <>
         <FadeIn transitionDuration={1000}>
           <article className="page-container">
-            <Titles title="Blog" />
+            <Titles mainTitle={true} title="Blog" />
             <section className="card-grid">
               {BlogList.map((blogItem, value) => {
                 return (

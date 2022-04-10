@@ -14,6 +14,7 @@ import DesignCardImage from "../assets/HomepageDesignImage.png";
 //External Packages
 import Typing from "react-typing-animation"; //Documentation can be found here => https://www.npmjs.com/package/react-typing-animation
 import FadeIn from "react-fade-in"; //Documentation can be found here => https://www.npmjs.com/package/react-fade-in
+import Button from "../components/Button";
 
 //Unused
 // import BigCard from "../components/BigCard";
