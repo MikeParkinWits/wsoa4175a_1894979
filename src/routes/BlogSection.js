@@ -21,7 +21,7 @@ export default class BlogSection extends Component {
     return (
       <>
         <FadeIn transitionDuration={1000}>
-          <article className="page-container">
+          <article className="page-container h-feed">
             <Titles mainTitle={true} title="Blog" />
             <section className="card-grid">
               {BlogList.map((blogItem, value) => {

@@ -13,7 +13,7 @@ export default class Titles extends Component {
   render() {
     return (
       <>
-        <header className="title-header">
+        <header className="title-header p-name">
           {this.props.mainTitle ? (
             <h1 className="title-main">{this.props.title}</h1>
           ) : (
@@ -22,7 +22,7 @@ export default class Titles extends Component {
           {this.props.subTitle && (
             <section className="blog-sub-title">
               <time
-                className="blog-sub-title-items"
+                className="blog-sub-title-items dt-published"
                 dateTime={this.props.blogDate}
               >
                 Date: {this.props.blogDate}

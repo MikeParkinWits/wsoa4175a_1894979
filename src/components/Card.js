@@ -11,7 +11,7 @@ export default class BlogCard extends Component {
     return (
       <>
         <section className="blog-card">
-          <Link className="blog-card-link" to="/DesignSection">
+          <Link className="blog-card-link" to={this.props.cardRoute}>
             <img
               className="blog-card-image"
               src={this.props.image}

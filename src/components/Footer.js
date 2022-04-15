@@ -5,11 +5,11 @@ export default class Footer extends Component {
   render() {
     return (
       <>
-        <footer className="main-footer">
+        <footer className="main-footer h-card">
           <section className="main-footer-contents">
-            <p>Michael Parkin</p>
+            <p className="p-name">Michael Parkin</p>
             <p>|</p>
-            <time dateTime="2022">2021</time>
+            <time dateTime="2022">2022</time>
           </section>
         </footer>
       </>

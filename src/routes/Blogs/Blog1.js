@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import BlogPhoto from "../assets/HeroImage.jpg";
-import BlogReferences from "../components/BlogReferences";
-import Button from "../components/Button";
-import Titles from "../components/Titles";
+import BlogPhoto from "../../assets/HeroImage.jpg";
+import BlogReferences from "../../components/BlogReferences";
+import Button from "../../components/Button";
+import Titles from "../../components/Titles";
 
-import "../styles/blog.css";
+import "../../styles/blog.css";
 
 export default class Blog extends Component {
   //Scrolls the page to the top on load
@@ -16,10 +16,10 @@ export default class Blog extends Component {
   render() {
     return (
       <>
-        <article className="page-container">
+        <article className="page-container h-entry">
           <article>
             <Titles mainTitle={true} title="Blog 1" subTitle={true} />
-            <section className="blog-contents">
+            <section className="blog-contents e-content">
               <p>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quasi
                 odio veritatis ratione reiciendis repellat pariatur, saepe quos

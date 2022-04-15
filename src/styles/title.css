@@ -63,6 +63,11 @@
 
         margin: 0rem 4rem 0.7rem 4rem;
     }
+
+    .blog-sub-title-items{
+        padding: 0rem 1rem 0.7rem 0rem;
+        margin: 0rem;
+    }
 }
 
 @media only screen and (max-width: 47.9rem) {
