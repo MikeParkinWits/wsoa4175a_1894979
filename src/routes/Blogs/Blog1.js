@@ -8,6 +8,11 @@ import Titles from "../../components/Titles";
 
 import "../../styles/blog.css";
 
+//Importing Helper
+import { BlogList } from "../../helpers/BlogList.js";
+import { useLocation } from "react-router-dom";
+import BlogButtons from "../../components/BlogButtons";
+
 export default class Blog extends Component {
   //Scrolls the page to the top on load
   componentDidMount() {
@@ -107,10 +112,7 @@ export default class Blog extends Component {
             </section>
           </article>
           <BlogReferences />
-          <section className="blog-buttons">
-            <Button buttonText="Previous Blog" buttonLink="" />
-            <Button buttonText="Next Blog" buttonLink="" />
-          </section>
+          <BlogButtons />
         </article>
       </>
     );

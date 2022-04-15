@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Helmet from "react-helmet";
 import { NavLink } from "react-router-dom";
 import BlogPhoto from "../../assets/HeroImage.jpg";
+import BlogButtons from "../../components/BlogButtons";
 import BlogReferences from "../../components/BlogReferences";
 import Button from "../../components/Button";
 import Titles from "../../components/Titles";
@@ -107,10 +108,7 @@ export default class Blog extends Component {
             </section>
           </article>
           <BlogReferences />
-          <section className="blog-buttons">
-            <Button buttonText="Previous Blog" buttonLink="" />
-            <Button buttonText="Next Blog" buttonLink="" />
-          </section>
+          <BlogButtons />
         </article>
       </>
     );

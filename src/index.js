@@ -7,19 +7,25 @@ import reportWebVitals from "./reportWebVitals";
 //Adding React Routing
 import { BrowserRouter } from "react-router-dom";
 
+//Adding React-snap
 import { hydrate, render } from "react-dom";
 
-const app = (
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-);
-
+//Using React-Snap package to allow meta tags dynamically generated with React-Helmet package to be rendered client side --> https://www.npmjs.com/package/react-snap
 const rootElement = document.getElementById("root");
 if (rootElement.hasChildNodes()) {
-  hydrate(app, rootElement);
+  hydrate(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>,
+    rootElement
+  );
 } else {
-  render(app, rootElement);
+  render(
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>,
+    rootElement
+  );
 }
 
 // If you want to start measuring performance in your app, pass a function

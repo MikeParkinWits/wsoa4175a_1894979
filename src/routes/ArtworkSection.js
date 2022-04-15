@@ -5,10 +5,10 @@ import Titles from "../components/Titles";
 
 //Import External Packages
 import FadeIn from "react-fade-in"; //Documentation can be found here => https://www.npmjs.com/package/react-fade-in
+import Helmet from "react-helmet";
 
 //Image Imports
 import ArtImage from "../assets/ArtComingSoonImage.svg";
-import Helmet from "react-helmet";
 
 export default class BlogSection extends Component {
   //Scrolls the page to the top on load
