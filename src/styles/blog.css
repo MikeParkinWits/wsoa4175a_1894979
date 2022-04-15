@@ -14,9 +14,9 @@
 
 .blog-figure figcaption{
     text-align: left;
-    margin-left: 8rem;
+    margin-left: 10%;
 
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
 
     border-left: 3px solid black;
 
@@ -50,8 +50,46 @@
     margin: 1rem 2rem;
 }
 
+@media only screen and (max-width: 64rem) {
+    .blog-contents{
+        margin: 3rem 4rem;
+    }
+
+    .blog-image{    
+        height: 90%;
+    
+        width: 90%;
+    }
+
+    .blog-figure figcaption{
+        margin-left: 5%;
+    }
+}
+
 @media only screen and (max-width: 47.8rem) {
     .blog-buttons{  
         flex-direction: column;
+    }
+
+    .blog-contents{
+        margin: 1.5rem 2rem;
+    }
+
+    .blog-image{    
+        height: 100%;
+    
+        width: 100%;
+
+        margin: 1rem 0rem 1rem 0rem;
+    }
+
+    .blog-figure figcaption{
+        margin-left: 0%;
+
+        margin-bottom: 1rem;
+    }
+
+    .blog-figure{
+        margin: 1rem;
     }
 }
