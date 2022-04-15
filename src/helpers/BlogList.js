@@ -10,7 +10,7 @@ export const BlogList = [
     image: BlogOneImage,
     imageTitle: "An image of",
     imageAltText: "Image of an",
-    cardRoute: "/wsoa4175a_1894979/Blog/1",
+    cardRoute: "/wsoa4175a_1894979/Blogs/Blog1",
   },
   {
     cardTitle: "Blog 2",
@@ -19,7 +19,7 @@ export const BlogList = [
     image: BlogTwoImage,
     imageTitle: "An image of",
     imageAltText: "Image of an",
-    cardRoute: "/wsoa4175a_1894979/Blog/2",
+    cardRoute: "/wsoa4175a_1894979/Blogs/Blog2",
   },
   {
     cardTitle: "Blog 3",
@@ -29,6 +29,6 @@ export const BlogList = [
     image: BlogThreeImage,
     imageTitle: "An image of",
     imageAltText: "Image of an",
-    cardRoute: "/wsoa4175a_1894979/Blog",
+    cardRoute: "/wsoa4175a_1894979/Blogs/Blog3",
   },
 ];

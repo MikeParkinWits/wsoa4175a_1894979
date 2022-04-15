@@ -15,6 +15,7 @@ import DesignCardImage from "../assets/HomepageDesignImage.png";
 import Typing from "react-typing-animation"; //Documentation can be found here => https://www.npmjs.com/package/react-typing-animation
 import FadeIn from "react-fade-in"; //Documentation can be found here => https://www.npmjs.com/package/react-fade-in
 import Button from "../components/Button";
+import Helmet from "react-helmet";
 
 //Unused
 // import BigCard from "../components/BigCard";
@@ -33,6 +34,23 @@ export default class Home extends Component {
   render() {
     return (
       <>
+        <Helmet>
+          <title>The Internet We Know</title>
+
+          <meta name="author" content="Michael Parkin" />
+
+          <meta
+            name="description"
+            content="The Internet We Know is a website about the internet that critiques the internet we know today"
+          />
+
+          <meta property="og:title" content="The Internet We Know Homepage" />
+
+          <meta
+            property="og:url"
+            content="https://mikeparkinwits.github.io/wsoa4175a_1894979"
+          />
+        </Helmet>
         <FadeIn transitionDuration={1000}>
           <article className="hero">
             <section className="page-container">

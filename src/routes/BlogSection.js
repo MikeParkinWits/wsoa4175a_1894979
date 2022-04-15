@@ -10,6 +10,7 @@ import { BlogList } from "../helpers/BlogList.js";
 
 //Import External Packages
 import FadeIn from "react-fade-in"; //Documentation can be found here => https://www.npmjs.com/package/react-fade-in
+import Helmet from "react-helmet";
 
 export default class BlogSection extends Component {
   //Scrolls the page to the top on load
@@ -20,6 +21,25 @@ export default class BlogSection extends Component {
   render() {
     return (
       <>
+        <Helmet>
+          <title>Blog Section</title>
+
+          <meta name="author" content="Michael Parkin" />
+
+          <meta
+            name="description"
+            property="og:description"
+            content="All of the theory blogs on the website"
+          />
+
+          <meta property="og:title" content="Blog Section" />
+
+          <meta
+            property="og:url"
+            content="https://mikeparkinwits.github.io/wsoa4175a_1894979/BlogSection"
+          />
+        </Helmet>
+
         <FadeIn transitionDuration={1000}>
           <article className="page-container h-feed">
             <Titles mainTitle={true} title="Blog" />

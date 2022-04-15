@@ -24,6 +24,7 @@ import FadeIn from "react-fade-in";
 //Component Imports
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Helmet from "react-helmet";
 
 //Unused
 // import Card from "./components/BlogCard";
@@ -36,6 +37,23 @@ library.add(faBars, faX, faXmark);
 function App() {
   return (
     <>
+      <Helmet>
+        <meta
+          name="keywords"
+          content="Internet, Net Art, Internet Art, Design"
+        />
+        <meta property="og:site_name" content="The Internet We Know" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content="https://mikeparkinwits.github.io/wsoa4175a_1894979/Images/Mini_Logo.png"
+        />
+        <meta property="og:image:alt" content="The Internet We Know Logo" />
+        <meta
+          property="og:description"
+          content="The Internet We Know is a website about the internet that critiques the internet we know today"
+        />
+      </Helmet>
       <Navbar />
       <main>
         <Routes>
@@ -53,8 +71,8 @@ function App() {
             element={<ArtworkSection />}
           />
           <Route path="/wsoa4175a_1894979/Blogs/Blog1" element={<Blog1 />} />
-          <Route path="/wsoa4175a_1894979/Blogs/Blog1" element={<Blog2 />} />
-          <Route path="/wsoa4175a_1894979/Blogs/Blog1" element={<Blog3 />} />
+          <Route path="/wsoa4175a_1894979/Blogs/Blog2" element={<Blog2 />} />
+          <Route path="/wsoa4175a_1894979/Blogs/Blog3" element={<Blog3 />} />
         </Routes>
       </main>
       <Footer />

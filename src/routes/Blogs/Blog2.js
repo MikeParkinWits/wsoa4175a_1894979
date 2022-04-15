@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Helmet from "react-helmet";
 import { NavLink } from "react-router-dom";
 import BlogPhoto from "../../assets/HeroImage.jpg";
 import BlogReferences from "../../components/BlogReferences";
@@ -16,6 +17,55 @@ export default class Blog extends Component {
   render() {
     return (
       <>
+        <Helmet>
+          <title>Blog 2</title>
+
+          <meta property="og:title" content="Blog 2" />
+          <meta property="og:type" content="article" />
+          <meta
+            name="author"
+            property="article:publisher"
+            content="Michael Parkin"
+          />
+          <meta property="article:section" content="Theory" />
+          <meta property="article:tag" content="Theory" />
+          <meta
+            property="og:url"
+            content="https://mikeparkinwits.github.io/wsoa4175a_1894979/Blogs/Blog2.html"
+          />
+          <meta
+            property="og:image"
+            content="https://mikeparkinwits.github.io/wsoa4175a_1894979/BlogPreviewImages/Blog2.jpg"
+          />
+          <meta
+            property="og:image:alt"
+            content="A picture of a pen lying on graph paper"
+          />
+          <meta
+            name="description"
+            property="og:description"
+            content="This blog is about..."
+          />
+
+          {/*Google Structured Data can only be added inline as it is using JSON-LD - as noted in the w3 here: https://www.w3.org/TR/2016/REC-html51-20161101/semantics-scripting.html#the-script-element */}
+          <script type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Article",
+              name: "Blog 1",
+              author: {
+                "@type": "Person",
+                name: "Michael Parkin",
+              },
+              url: "https://mikeparkinwits.github.io/wsoa4175a_1894979/Blogs/Blog1",
+              headline: "Blog 1",
+              image: [
+                "https://mikeparkinwits.github.io/wsoa4175a_1894979/BlogPreviewImages/Blog1.jpg",
+              ],
+              datePublished: "2021-08-17",
+            })}
+          </script>
+        </Helmet>
         <article className="page-container h-entry">
           <article>
             <Titles mainTitle={true} title="Blog 1" subTitle={true} />

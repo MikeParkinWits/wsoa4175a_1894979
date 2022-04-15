@@ -13,9 +13,9 @@ export default class Titles extends Component {
   render() {
     return (
       <>
-        <header className="title-header p-name">
+        <header className="title-header">
           {this.props.mainTitle ? (
-            <h1 className="title-main">{this.props.title}</h1>
+            <h1 className="title-main p-name">{this.props.title}</h1>
           ) : (
             <h2 className="title-second">{this.props.title}</h2>
           )}

@@ -8,6 +8,7 @@ import FadeIn from "react-fade-in"; //Documentation can be found here => https:/
 
 //Image Imports
 import ArtImage from "../assets/ArtComingSoonImage.svg";
+import Helmet from "react-helmet";
 
 export default class BlogSection extends Component {
   //Scrolls the page to the top on load
@@ -18,8 +19,26 @@ export default class BlogSection extends Component {
   render() {
     return (
       <>
+        <Helmet>
+          <title>Art Section</title>
+
+          <meta name="author" content="Michael Parkin" />
+
+          <meta
+            name="description"
+            property="og:description"
+            content="All of the art and the posts about art on the website"
+          />
+
+          <meta property="og:title" content="Art Section" />
+
+          <meta
+            property="og:url"
+            content="https://mikeparkinwits.github.io/wsoa4175a_1894979/ArtSection"
+          />
+        </Helmet>
         <FadeIn transitionDuration={1000}>
-          <article className="page-container">
+          <article className="page-container h-feed">
             <Titles mainTitle={true} title="Net Art" />
             <img
               src={ArtImage}
