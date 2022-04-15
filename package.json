@@ -20,6 +20,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
     "react-scroll-text": "^1.0.1",
+    "react-snap": "^1.23.0",
     "react-typewriter-effect": "^1.1.0",
     "react-typing-animation": "^1.6.2",
     "react-typist": "^2.0.5",
@@ -32,7 +33,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "postbuild": "react-snap"
   },
   "eslintConfig": {
     "extends": [
