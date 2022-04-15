@@ -9,24 +9,18 @@ import { BrowserRouter } from "react-router-dom";
 
 import { hydrate, render } from "react-dom";
 
+const app = (
+  <BrowserRouter>
+    <App />
+  </BrowserRouter>
+);
+
 const rootElement = document.getElementById("root");
 if (rootElement.hasChildNodes()) {
-  hydrate(
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>,
-    rootElement
-  );
+  hydrate(app, rootElement);
 } else {
-  render(
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>,
-    rootElement
-  );
+  render(app, rootElement);
 }
-
-ReactDOM.render(document.getElementById("root"));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
