@@ -45,7 +45,7 @@ function App() {
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
-          content="https://mikeparkinwits.github.io/wsoa4175a_1894979/Images/Mini_Logo.png"
+          content="https://mikeparkinwits.github.io/wsoa4175a_1894979/Images/Mini_Logo.svg"
         />
         <meta property="og:image:alt" content="The Internet We Know Logo" />
         <meta

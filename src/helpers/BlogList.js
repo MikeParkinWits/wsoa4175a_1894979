@@ -1,5 +1,5 @@
-import BlogOneImage from "../assets/HeroImage.jpg";
-import BlogTwoImage from "../assets/HeroImage.jpg";
+import BlogOneImage from "../assets/PreviewImages/Blog1.svg";
+import BlogTwoImage from "../assets/PreviewImages/Blog2.svg";
 import BlogThreeImage from "../assets/HeroImage.jpg";
 
 export const BlogList = [
@@ -9,8 +9,9 @@ export const BlogList = [
     cardSummary:
       "A critical analysis of FemmeAndroids Net Art This Website Will Self Destruct",
     image: BlogOneImage,
-    imageTitle: "An image of",
-    imageAltText: "Image of an",
+    imageTitle: "A diagram portraying a self destructing website",
+    imageAltText:
+      "A diagram showing a bomb in a website, with explosions around it",
     cardRoute: "/wsoa4175a_1894979/Blogs/Blog1",
     blogWords: 597,
   },

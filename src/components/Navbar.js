@@ -4,7 +4,7 @@ import React, { Component, useState } from "react";
 import { Route, Routes, Link, NavLink } from "react-router-dom";
 
 //Image Imports
-import logo from "../assets/Logo.png";
+import logo from "../assets/Logo.svg";
 
 //Style Imports
 import "../styles/navbar.css";
@@ -42,7 +42,7 @@ export default class Navbar extends Component {
                 to="/wsoa4175a_1894979"
                 onClick={this.closeHamburgerMenu}
               >
-                <img src={logo} width="90" alt="Alt Text"></img>
+                <img src={logo} width="130" alt="Alt Text"></img>
               </NavLink>
             </section>
             <section className="navigation">

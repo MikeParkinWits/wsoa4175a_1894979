@@ -51,11 +51,11 @@ export default class Blog extends Component {
           <meta property="article:tag" content="Theory" />
           <meta
             property="og:url"
-            content="https://mikeparkinwits.github.io/wsoa4175a_1894979/Blogs/Blog1.html"
+            content={`https://mikeparkinwits.github.io/wsoa4175a_1894979/Blogs/Blog${blogInfoToLoad}.html`}
           />
           <meta
             property="og:image"
-            content="https://mikeparkinwits.github.io/wsoa4175a_1894979/BlogPreviewImages/Blog1.jpg"
+            content={`https://mikeparkinwits.github.io/wsoa4175a_1894979/assets/PreviewImages/Blog${blogInfoToLoad}.svg`}
           />
           <meta
             property="og:image:alt"
@@ -77,10 +77,10 @@ export default class Blog extends Component {
                 "@type": "Person",
                 name: "Michael Parkin",
               },
-              url: "https://mikeparkinwits.github.io/wsoa4175a_1894979/Blogs/Blog1",
+              url: `https://mikeparkinwits.github.io/wsoa4175a_1894979/Blogs/Blog${blogInfoToLoad}.html`,
               headline: BlogList[blogInfoToLoad].cardTitle,
               image: [
-                "https://mikeparkinwits.github.io/wsoa4175a_1894979/BlogPreviewImages/Blog1.jpg",
+                `https://mikeparkinwits.github.io/wsoa4175a_1894979/assets/PreviewImages/Blog${blogInfoToLoad}.svg`,
               ],
               datePublished: BlogList[blogInfoToLoad].cardDate,
             })}
