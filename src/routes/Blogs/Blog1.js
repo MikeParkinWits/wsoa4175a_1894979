@@ -25,17 +25,21 @@ export default class Blog extends Component {
   }
 
   render() {
-    console.log(BlogList[0].cardTitle);
+    const blogInfoToLoad =
+      parseInt(
+        window.location.pathname.charAt(window.location.pathname.length - 1)
+      ) - 1;
+    console.log(BlogList[blogInfoToLoad].cardTitle);
     return (
       <>
         {/* React Helmet is used to dynamically adjust the head of the document and add meta data */}
         <Helmet>
-          <title>{BlogList[0].cardTitle}</title>
+          <title>{BlogList[blogInfoToLoad].cardTitle}</title>
 
           <meta
             name="title"
             property="og:title"
-            content={BlogList[0].cardTitle}
+            content={BlogList[blogInfoToLoad].cardTitle}
           />
           <meta property="og:type" content="article" />
           <meta
@@ -53,11 +57,14 @@ export default class Blog extends Component {
             property="og:image"
             content="https://mikeparkinwits.github.io/wsoa4175a_1894979/BlogPreviewImages/Blog1.jpg"
           />
-          <meta property="og:image:alt" content={BlogList[0].imageAltText} />
+          <meta
+            property="og:image:alt"
+            content={BlogList[blogInfoToLoad].imageAltText}
+          />
           <meta
             name="description"
             property="og:description"
-            content={BlogList[0].cardSummary}
+            content={BlogList[blogInfoToLoad].cardSummary}
           />
 
           {/*Google Structured Data can only be added inline as it is using JSON-LD - as noted in the w3 here: https://www.w3.org/TR/2016/REC-html51-20161101/semantics-scripting.html#the-script-element */}
@@ -65,17 +72,17 @@ export default class Blog extends Component {
             {JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Article",
-              name: BlogList[0].cardTitle,
+              name: BlogList[blogInfoToLoad].cardTitle,
               author: {
                 "@type": "Person",
                 name: "Michael Parkin",
               },
               url: "https://mikeparkinwits.github.io/wsoa4175a_1894979/Blogs/Blog1",
-              headline: BlogList[0].cardTitle,
+              headline: BlogList[blogInfoToLoad].cardTitle,
               image: [
                 "https://mikeparkinwits.github.io/wsoa4175a_1894979/BlogPreviewImages/Blog1.jpg",
               ],
-              datePublished: BlogList[0].cardDate,
+              datePublished: BlogList[blogInfoToLoad].cardDate,
             })}
           </script>
         </Helmet>
@@ -85,10 +92,10 @@ export default class Blog extends Component {
             <article>
               <Titles
                 mainTitle={true}
-                title={BlogList[0].cardTitle}
+                title={BlogList[blogInfoToLoad].cardTitle}
                 subTitle={true}
-                blogDate={BlogList[0].cardDate}
-                blogWords={597}
+                blogDate={BlogList[blogInfoToLoad].cardDate}
+                blogWords={BlogList[blogInfoToLoad].blogWords}
               />
               <section className="blog-contents e-content">
                 <p>

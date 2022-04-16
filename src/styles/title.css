@@ -11,6 +11,9 @@
     
     border-bottom: 0.3rem solid black;
     border-top: 0.3rem solid black;
+
+    line-height: 7rem;
+    padding: 1rem 0rem;
 }
 
 .title-second{

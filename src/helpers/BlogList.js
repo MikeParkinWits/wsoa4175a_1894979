@@ -12,15 +12,18 @@ export const BlogList = [
     imageTitle: "An image of",
     imageAltText: "Image of an",
     cardRoute: "/wsoa4175a_1894979/Blogs/Blog1",
+    blogWords: 597,
   },
   {
-    cardTitle: "Blog 2",
-    cardDate: "14 March 2022",
-    cardSummary: "Summary",
+    cardTitle: "The Core Principles of Design and Aesthetics on the Web",
+    cardDate: "04 April 2022",
+    cardSummary:
+      "A look at some of the core principles of design and aesthetics on the web",
     image: BlogTwoImage,
     imageTitle: "An image of",
     imageAltText: "Image of an",
     cardRoute: "/wsoa4175a_1894979/Blogs/Blog2",
+    blogWords: 665,
   },
   {
     cardTitle: "Blog 3",
@@ -31,5 +34,6 @@ export const BlogList = [
     imageTitle: "An image of",
     imageAltText: "Image of an",
     cardRoute: "/wsoa4175a_1894979/Blogs/Blog3",
+    blogWords: 665,
   },
 ];
