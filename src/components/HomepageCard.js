@@ -3,7 +3,26 @@ import React, { Component } from "react";
 //Component Imports
 import Button from "./Button";
 
+//Image Imports
+import MissingImage from "../assets/HeroImage.jpg";
+
 export default class HomepageCard extends Component {
+  static defaultProps = {
+    leftOrientation: true,
+    img: MissingImage,
+    imgInfo: {
+      title: "Missing Post Image",
+      altText: "A stock white missing image",
+    },
+    cardInfo: {
+      title: "Section Title",
+      contentP: "This is the description of the section",
+      contentList: ["Info 1", "Info 2", "Info 3"],
+    },
+    buttonText: "Button To View More",
+    buttonLink: "",
+  };
+
   render() {
     return (
       <>

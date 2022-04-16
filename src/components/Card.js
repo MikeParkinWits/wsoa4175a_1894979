@@ -6,7 +6,21 @@ import { Link } from "react-router-dom";
 //Importing Styles
 import "../styles/blogCard.css";
 
+//Image Imports
+import TestImage from "../assets/HeroImage.jpg";
+
 export default class BlogCard extends Component {
+  static defaultProps = {
+    cardTitle: "Card Title 1",
+    cardDate: "14 March 2022",
+    cardSummary:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, placeat.",
+    image: TestImage,
+    imageTitle: "Card Test Image",
+    imageAltText: "A flat black and grey image of shapes",
+    cardRoute: "",
+  };
+
   render() {
     return (
       <>

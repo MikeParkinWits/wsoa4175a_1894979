@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+//Style Imports
 import "../styles/title.css";
 
 export default class Titles extends Component {

@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 
+//Importing Helpers
 import { BlogList } from "../helpers/BlogList.js";
+
+//Importing Components
 import Button from "./Button.js";
 
 export default class BlogButtons extends Component {
@@ -9,8 +12,6 @@ export default class BlogButtons extends Component {
     const currBlog = parseInt(
       window.location.pathname.charAt(window.location.pathname.length - 1)
     );
-    console.log(numBlogs);
-    console.log(currBlog);
 
     return (
       <>

@@ -13,18 +13,16 @@ import Blog3 from "./routes/Blogs/Blog3";
 //Font Awesome Imports
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faBars, faX, faXmark } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 //Style Imports
 import "./styles/main.css";
 
-//Additional
-import FadeIn from "react-fade-in";
-
 //Component Imports
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import Helmet from "react-helmet";
+
+//External Packages
+import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
 
 //Unused
 // import Card from "./components/BlogCard";
@@ -37,6 +35,7 @@ library.add(faBars, faX, faXmark);
 function App() {
   return (
     <>
+      {/* React Helmet is used to dynamically adjust the head of the document and add meta data */}
       <Helmet>
         <meta
           name="keywords"
@@ -54,6 +53,7 @@ function App() {
           content="The Internet We Know is a website about the internet that critiques the internet we know today"
         />
       </Helmet>
+
       <Navbar />
       <main>
         <Routes>
@@ -70,6 +70,8 @@ function App() {
             path="/wsoa4175a_1894979/ArtworkSection"
             element={<ArtworkSection />}
           />
+
+          {/* Blog routes to be converted to dynamic routes later */}
           <Route path="/wsoa4175a_1894979/Blogs/Blog1" element={<Blog1 />} />
           <Route path="/wsoa4175a_1894979/Blogs/Blog2" element={<Blog2 />} />
           <Route path="/wsoa4175a_1894979/Blogs/Blog3" element={<Blog3 />} />

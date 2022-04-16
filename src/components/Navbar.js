@@ -1,8 +1,9 @@
 import React, { Component, useState } from "react";
-import Footer from "./Footer";
 
+//External Package Imports
 import { Route, Routes, Link, NavLink } from "react-router-dom";
 
+//Image Imports
 import logo from "../assets/Logo.png";
 
 //Style Imports
@@ -63,7 +64,7 @@ export default class Navbar extends Component {
                     onClick={this.closeHamburgerMenu}
                   >
                     Design
-                  </NavLink>{" "}
+                  </NavLink>
                 </li>
                 <li>
                   <NavLink

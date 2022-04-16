@@ -7,6 +7,11 @@ import { Link } from "react-router-dom";
 import "../styles/button.css";
 
 export default class Button extends Component {
+  static defaultProps = {
+    buttonLink: "",
+    buttonText: "Button",
+  };
+
   render() {
     return (
       <>
