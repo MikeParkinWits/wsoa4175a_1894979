@@ -8,11 +8,11 @@
     background-color: rgb(243, 243, 243);
 
     padding: 0.9rem;
-    height: 25rem;
+    height: 28rem;
 
     transition: all 0.2s ease-out;
     
-    max-width: 20rem;
+    max-width: 20.5rem;
 }
 
 .blog-card:hover{
@@ -24,7 +24,7 @@
     box-sizing: border-box;
     object-position: 50% 50%;
 
-    height: 13.5rem;
+    height: 14rem;
     max-width: 100%;
     min-width: 15rem;
     object-fit: cover;
@@ -49,6 +49,8 @@
 .card-content h2{
     padding: 0rem;
     margin: 0.5rem 0rem;
+    line-height: 1.8rem;
+    font-size: 1.5rem;
 }
 
 .card-content p{    

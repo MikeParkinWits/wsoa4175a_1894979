@@ -4,9 +4,10 @@ import BlogThreeImage from "../assets/HeroImage.jpg";
 
 export const BlogList = [
   {
-    cardTitle: "Blog 1",
+    cardTitle: "An Analysis of the Net Art This Website Will Self Destruct",
     cardDate: "14 March 2022",
-    cardSummary: "This is an in detail summary of how this card works",
+    cardSummary:
+      "A critical analysis of FemmeAndroids Net Art This Website Will Self Destruct",
     image: BlogOneImage,
     imageTitle: "An image of",
     imageAltText: "Image of an",
