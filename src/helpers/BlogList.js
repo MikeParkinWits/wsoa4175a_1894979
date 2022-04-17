@@ -1,8 +1,20 @@
 import BlogOneImage from "../assets/PreviewImages/Blog1.svg";
 import BlogTwoImage from "../assets/PreviewImages/Blog2.svg";
 import BlogThreeImage from "../assets/PreviewImages/Blog3.svg";
+import BlogFourImage from "../assets/PreviewImages/Blog4.svg";
 
 export const BlogList = [
+  {
+    cardTitle: "Reflections on Assignment 1",
+    cardDate: "18 April 2022",
+    cardSummary:
+      "A reflection on the theoretical, and practical, aspects of assignment 1",
+    image: BlogFourImage,
+    imageTitle: "A diagram with  the words reflection repeated",
+    imageAltText: "A diagram with  the words reflection repeated",
+    cardRoute: "/wsoa4175a_1894979/Blogs/Blog4",
+    blogWords: 815,
+  },
   {
     cardTitle: "Internet Justice: The Digital Divide Today",
     cardDate: "17 April 2022",
