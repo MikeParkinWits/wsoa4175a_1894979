@@ -43,7 +43,7 @@ export default class BlogSection extends Component {
               {BlogList.map((blogItem, value) => {
                 return (
                   <BlogCard
-                    key={value}
+                    key={BlogList.length - value}
                     cardTitle={blogItem.cardTitle}
                     cardDate={blogItem.cardDate}
                     cardSummary={blogItem.cardSummary}

@@ -26,9 +26,10 @@ export default class Blog extends Component {
 
   render() {
     const blogInfoToLoad =
+      BlogList.length -
       parseInt(
         window.location.pathname.charAt(window.location.pathname.length - 1)
-      ) - 1;
+      );
     console.log(BlogList[blogInfoToLoad].cardTitle);
     return (
       <>

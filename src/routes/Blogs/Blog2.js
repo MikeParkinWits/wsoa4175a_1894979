@@ -26,9 +26,10 @@ export default class Blog extends Component {
 
   render() {
     const blogInfoToLoad =
+      BlogList.length -
       parseInt(
         window.location.pathname.charAt(window.location.pathname.length - 1)
-      ) - 1;
+      );
     console.log(BlogList[blogInfoToLoad].cardTitle);
     return (
       <>
@@ -158,23 +159,23 @@ export default class Blog extends Component {
                 </figure>
                 <p>
                   Next, Thorlacius notes that the aesthetic design of a website
-                  should <cite>align with the sites genre</cite>. For example,
-                  if Apple.com, a minimalistic information and e-commerce site,
-                  were to swap aesthetics with Netflix.com, an entertainment
-                  site that prioritizes large visuals, then many users would
-                  become confused – as Netflix’s aesthetic is not conducive to
-                  sales and minimalism. Lastly, she states that the aesthetics
-                  should <cite>match the target audience</cite>. If Apple’s
-                  target audience was an older, less technologically inclined,
-                  generation then the websites visual aesthetics should consist
-                  of big text and less visual signifiers – or vice versa, for a
-                  younger audience. However, Apple targets all ages and thus
-                  their aesthetic caters to this – making use of mid-sized fonts
-                  and minimal, but effective, signs and signifiers. As such, we
-                  can then conclude that, through these principles and the
-                  example of the Apple.com homepage, good use of aesthetics is
-                  important in web design and enhances the overall user
-                  experience.
+                  should <strong>align with the sites genre</strong>. For
+                  example, if Apple.com, a minimalistic information and
+                  e-commerce site, were to swap aesthetics with Netflix.com, an
+                  entertainment site that prioritizes large visuals, then many
+                  users would become confused – as Netflix’s aesthetic is not
+                  conducive to sales and minimalism. Lastly, she states that the
+                  aesthetics should <strong>match the target audience</strong>.
+                  If Apple’s target audience was an older, less technologically
+                  inclined, generation then the websites visual aesthetics
+                  should consist of big text and less visual signifiers – or
+                  vice versa, for a younger audience. However, Apple targets all
+                  ages and thus their aesthetic caters to this – making use of
+                  mid-sized fonts and minimal, but effective, signs and
+                  signifiers. As such, we can then conclude that, through these
+                  principles and the example of the Apple.com homepage, good use
+                  of aesthetics is important in web design and enhances the
+                  overall user experience.
                 </p>
                 <p>
                   So, by using these principles we can then see that, as Anton

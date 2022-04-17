@@ -90,7 +90,7 @@ export default class Home extends Component {
                 contentList: [
                   "Web Design Aesthetics",
                   "Net Art",
-                  "Social Justice",
+                  "Internet Justice",
                 ],
               }}
               buttonText={"View Blog Posts"}
