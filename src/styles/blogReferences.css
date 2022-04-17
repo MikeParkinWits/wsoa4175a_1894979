@@ -3,6 +3,11 @@
     text-align: left;
 
     font-weight: 400;
+
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  
+    word-break: break-word;
 }
 
 .blog-list{
