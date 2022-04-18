@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/wsoa4175a_1894979/static/css/main.ad282d3e.css",
-    "main.js": "/wsoa4175a_1894979/static/js/main.802b0c43.js",
+    "main.js": "/wsoa4175a_1894979/static/js/main.87086757.js",
     "static/js/787.92a65116.chunk.js": "/wsoa4175a_1894979/static/js/787.92a65116.chunk.js",
     "static/media/ArtComingSoonImage.svg": "/wsoa4175a_1894979/static/media/ArtComingSoonImage.ac219dd6a58da170646cdf1de8af94df.svg",
     "static/media/Homepage-Desktop.png": "/wsoa4175a_1894979/static/media/Homepage-Desktop.e8b7e2726407e83df36f.png",
@@ -9,7 +9,11 @@
     "static/media/HeroImage.jpg": "/wsoa4175a_1894979/static/media/HeroImage.88727321916a7546f3e8.jpg",
     "static/media/Blog4.svg": "/wsoa4175a_1894979/static/media/Blog4.6d522c7d83813a41e24f4b337ee33860.svg",
     "static/media/Post-Selector-Desktop.png": "/wsoa4175a_1894979/static/media/Post-Selector-Desktop.b8db5b3da0ba6b57deba.png",
+    "static/media/Figma.png": "/wsoa4175a_1894979/static/media/Figma.fe5c271881799c0fbc79.png",
+    "static/media/Gumroad.png": "/wsoa4175a_1894979/static/media/Gumroad.63d4c83d30396ebe9542.png",
+    "static/media/Styleguide.svg": "/wsoa4175a_1894979/static/media/Styleguide.ab0a8df55a22acb9a08a3b8ffdd78186.svg",
     "static/media/Blog2.svg": "/wsoa4175a_1894979/static/media/Blog2.81e3f5e27ecb6059d5ccf70ac5723b5f.svg",
+    "static/media/Design2.svg": "/wsoa4175a_1894979/static/media/Design2.f31d3b873fbc8009da253709fde9af54.svg",
     "static/media/BlogPicture.png": "/wsoa4175a_1894979/static/media/BlogPicture.29160ced7603baa47923.png",
     "static/media/Blog3.svg": "/wsoa4175a_1894979/static/media/Blog3.07f70713d48c03a2a00b997e20c1226a.svg",
     "static/media/Design1.svg": "/wsoa4175a_1894979/static/media/Design1.005a86bbc24807188a2d13cdef0f6a73.svg",
@@ -19,11 +23,11 @@
     "static/media/HomepageBlogImage.png": "/wsoa4175a_1894979/static/media/HomepageBlogImage.0600344afaf8b53b1096.png",
     "index.html": "/wsoa4175a_1894979/index.html",
     "main.ad282d3e.css.map": "/wsoa4175a_1894979/static/css/main.ad282d3e.css.map",
-    "main.802b0c43.js.map": "/wsoa4175a_1894979/static/js/main.802b0c43.js.map",
+    "main.87086757.js.map": "/wsoa4175a_1894979/static/js/main.87086757.js.map",
     "787.92a65116.chunk.js.map": "/wsoa4175a_1894979/static/js/787.92a65116.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.ad282d3e.css",
-    "static/js/main.802b0c43.js"
+    "static/js/main.87086757.js"
   ]
 }
