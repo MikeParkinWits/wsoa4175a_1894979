@@ -200,31 +200,30 @@ export default class Blog2 extends Component {
             <BlogReferences
               references={[
                 {
-                  referenceStart: "Apple. 2021. ",
+                  referenceStart: "Apple. (2022). ",
                   referenceCite: <cite>Apple. </cite>,
-                  referenceEnd: "[online]. https://www.apple.com",
+                  referenceEnd: "[Online]. Available At: https://www.apple.com",
                 },
                 {
-                  referenceStart: "Nielsen, J. 2012. ",
-                  referenceCite: (
-                    <cite>Usability 101: Introduction to Usability. </cite>
-                  ),
+                  referenceStart:
+                    "Nielsen, J. (2012). Usability 101: Introduction to Usability. ",
+                  referenceCite: <cite>Nielsen Norman Group. </cite>,
                   referenceEnd:
-                    "Nielsen Norman Group. Available At: https://www.nngroup.com/articles/usability-101-introduction-to-usability/",
+                    "Available At: https://www.nngroup.com/articles/usability-101-introduction-to-usability/",
                 },
                 {
-                  referenceStart: "Nikolov, A. 2017. ",
-                  referenceCite: <cite>Design Principle: Aesthetics. </cite>,
+                  referenceStart:
+                    "Nikolov, A. (2017). Design Principle: Aesthetics.",
+                  referenceCite: <cite>UX Des. </cite>,
                   referenceEnd:
-                    "UX Des. Available At: https://uxdesign.cc/design-principle-aesthetics-af926f8f86fe",
+                    "Available At: https://uxdesign.cc/design-principle-aesthetics-af926f8f86fe",
                 },
                 {
-                  referenceStart: "Thorlacius, L. 2007. ",
-                  referenceCite: (
-                    <cite>The Role of Aesthetics in Web Design. </cite>
-                  ),
+                  referenceStart:
+                    "Thorlacius, L. (2007). The Role of Aesthetics in Web Design. ",
+                  referenceCite: <cite>Nord. Rev. 28, 63–76. </cite>,
                   referenceEnd:
-                    "Nord. Rev. 28, 63–76. https://doi.org/10.1515/nor-2017-0201",
+                    "Available At: https://doi.org/10.1515/nor-2017-0201",
                 },
               ]}
             />

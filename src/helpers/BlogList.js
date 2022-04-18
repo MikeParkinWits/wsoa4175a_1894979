@@ -10,8 +10,8 @@ export const BlogList = [
     cardSummary:
       "A reflection on the theoretical, and practical, aspects of assignment 1",
     image: BlogFourImage,
-    imageTitle: "A diagram with  the words reflection repeated",
-    imageAltText: "A diagram with  the words reflection repeated",
+    imageTitle: "A diagram with the words reflection repeated",
+    imageAltText: "A diagram with the words reflection repeated",
     cardRoute: "/wsoa4175a_1894979/Blogs/Blog4",
     blogWords: 815,
   },

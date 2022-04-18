@@ -10,6 +10,8 @@ import Blog1 from "./routes/Blogs/Blog1";
 import Blog2 from "./routes/Blogs/Blog2";
 import Blog3 from "./routes/Blogs/Blog3";
 import Blog4 from "./routes/Blogs/Blog4";
+import Design1 from "./routes/Design/Design1";
+import Design2 from "./routes/Design/Design2";
 
 //Font Awesome Imports
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -24,7 +26,6 @@ import Footer from "./components/Footer";
 
 //External Packages
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
-import Design1 from "./routes/Design/Design1";
 
 //Unused
 // import Card from "./components/BlogCard";
@@ -83,6 +84,10 @@ function App() {
           <Route
             path="/wsoa4175a_1894979/Design/Design1"
             element={<Design1 />}
+          />
+          <Route
+            path="/wsoa4175a_1894979/Design/Design2"
+            element={<Design2 />}
           />
         </Routes>
       </main>

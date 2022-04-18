@@ -109,11 +109,7 @@ export default class Home extends Component {
                 title: "Design Decisions",
                 contentP:
                   "Design Decisions While the design of The Internet We Know may seem simple, it was carefully thought out. Visit the design section to see:",
-                contentList: [
-                  "User Interface/Experience Decisions",
-                  "Styleguides",
-                  "Wireframes",
-                ],
+                contentList: ["Styleguides", "Wireframes", "And More to Come"],
               }}
               buttonText={"View Design Decisions"}
               buttonLink={"/wsoa4175a_1894979/DesignSection"}
