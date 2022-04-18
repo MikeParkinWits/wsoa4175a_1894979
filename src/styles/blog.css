@@ -53,6 +53,11 @@
     margin: 1rem 2rem;
 }
 
+.inline-link{
+    text-decoration: underline;
+    color: blue;
+}
+
 @media only screen and (max-width: 64rem) {
     .blog-contents{
         margin: 3rem 4rem;

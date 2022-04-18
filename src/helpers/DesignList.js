@@ -1,34 +1,17 @@
-import DesignOneImage from "../assets/HeroImage.jpg";
-import DesignTwoImage from "../assets/HeroImage.jpg";
-import DesignThreeImage from "../assets/HeroImage.jpg";
+import BlogOneImage from "../assets/PreviewImages/Blog1.svg";
+import BlogTwoImage from "../assets/PreviewImages/Blog2.svg";
+import BlogThreeImage from "../assets/PreviewImages/Blog3.svg";
+import BlogFourImage from "../assets/PreviewImages/Design1.svg";
 
 export const DesignList = [
   {
-    cardTitle: "Design 1",
-    cardDate: "14 March 2022",
-    cardSummary: "This is an in detail summary of how this card works",
-    image: DesignOneImage,
-    imageTitle: "An image of",
-    imageAltText: "Image of an",
-    cardRoute: "/DesignSelection",
-  },
-  {
-    cardTitle: "Design 2",
-    cardDate: "14 March 2022",
-    cardSummary: "Summary",
-    image: DesignTwoImage,
-    imageTitle: "An image of",
-    imageAltText: "Image of an",
-    cardRoute: "/DesignSelection",
-  },
-  {
-    cardTitle: "Design 3",
-    cardDate: "14 March 2022",
-    cardSummary:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores obcaecati",
-    image: DesignThreeImage,
-    imageTitle: "An image of",
-    imageAltText: "Image of an",
-    cardRoute: "/ArtworkSelection",
+    cardTitle: "Desktop Wireframes",
+    cardDate: "20 March 2022",
+    cardSummary: "A breakdown of my websites desktop wireframes",
+    image: BlogFourImage,
+    imageTitle: "A diagram with  the words reflection repeated",
+    imageAltText: "A diagram with  the words reflection repeated",
+    cardRoute: "/wsoa4175a_1894979/Design/Design1",
+    blogWords: 493,
   },
 ];

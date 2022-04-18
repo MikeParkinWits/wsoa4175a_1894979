@@ -44,6 +44,7 @@
     padding: 0rem;
     font-weight: 400;
     border-bottom: 0.125rem solid black;
+    padding-bottom: 0.2rem;
 }
 
 .card-content h2{

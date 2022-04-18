@@ -18,7 +18,7 @@ import BlogButtons from "../../components/BlogButtons";
 import FadeIn from "react-fade-in"; //Used for smooth page transition load - Documentation can be found here => https://www.npmjs.com/package/react-fade-in
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
 
-export default class Blog extends Component {
+export default class Blog1 extends Component {
   //Scrolls the page to the top on load
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -193,7 +193,7 @@ export default class Blog extends Component {
                 },
               ]}
             />
-            <BlogButtons />
+            <BlogButtons type="Blog" />
           </article>
         </FadeIn>
       </>
