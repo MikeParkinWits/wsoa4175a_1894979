@@ -1,3 +1,5 @@
+/* Desktop View */
+
 .title-main,
 .title-second{
     text-align: left;
@@ -42,6 +44,7 @@
     margin: 0rem;
 }
 
+/* Response View */
 
 @media only screen and (max-width: 64rem) {
     .title-main,

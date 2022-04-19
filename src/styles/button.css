@@ -1,3 +1,5 @@
+/* Desktop View */
+
 .main-button{
   
     margin-top: 1.3rem;
@@ -25,6 +27,8 @@
 
     text-align: center;
 }
+
+/* Response View */
   
   @media only screen and (max-width: 47.8rem) {
       .main-button{

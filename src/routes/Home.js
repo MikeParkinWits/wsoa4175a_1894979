@@ -16,14 +16,6 @@ import Typing from "react-typing-animation"; //Used for Hero Typography Animatio
 import FadeIn from "react-fade-in"; //Used for smooth page transition load - Documentation can be found here => https://www.npmjs.com/package/react-fade-in
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
 
-//Unused
-// import BigCard from "../components/BigCard";
-// import HeroPage from "../components/HeroPage";
-// import BigCardTwo from "../components/BigCardTwo.js";
-// import { CategoryList } from "../helpers/CategoryList";
-// import ScrollText from "react-scroll-text";
-// import Untitled from "../assets/Untitled-2.jpg";
-
 export default class Home extends Component {
   //Scrolls the page to the top on load
   componentDidMount() {
@@ -115,113 +107,6 @@ export default class Home extends Component {
               buttonLink={"/wsoa4175a_1894979/DesignSection"}
             />
           </article>
-
-          {/* 
-
-          <article
-            className="hero-container"
-            style={{
-              backgroundImage: `URL(${test2})`,
-              height: "100%",
-              justifyContent: "center",
-              backgroundPosition: "center",
-              filter: "brightness(120%)",
-            }}
-          >
-            <HeroPage />
-          </article>
-
-
-          */}
-
-          {/*<ScrollText className="hero-typography">
-          <h1>
-            this'a a very long text... this'a a very long text...this'a a very
-            long text...this'a a very long text...this'a a very long
-            text...this'a a very long text...this'a a very long text...this'a a
-            very long text...this'a a very long text...
-          </h1>
-    </ScrollText> */}
-
-          {/*
-
-
-          <div className="about-website">
-            <div>
-              <h2 className="sub-heading">
-                What should I know about this website?
-              </h2>
-              <h3>The Short Answer</h3>
-              <p>
-                Well... We're still trying to figure that out for ourselves!
-              </p>
-              <h3>The Long Answer</h3>
-              <p>
-                It's complicated. Right now, all this website holds is a
-                collection of blog posts surrounding various topics - from web
-                design, to net art, and even some social justice on the web. In
-                the future however, we'll continue to expand the site -
-                eventually leading to the inclusion of our own piece of net art.
-                So stay tuned!
-              </p>
-            </div>
-            <div className="image-one">
-              <img className="untit-img" src={Untitled}></img>
-            </div>
-          </div>
-
-           */}
-
-          {/*
-           
-                     <h2 className="sub-heading">Where to?</h2>
-
-           
-           */}
-
-          {/*
-          <article className="homepage-grid">
-            {CategoryList.map((categoryItem, value) => {
-              return (
-                <BigCard
-                  key={value}
-                  cardType={categoryItem.name}
-                  cardRoute={categoryItem.cardRoute}
-                  image={categoryItem.image}
-                  className={categoryItem.className}
-                />
-              );
-            })}
-
-
-            */}
-
-          {/*           
-
-          
-
-                            <BigCardTwo
-              className="big-card-comp"
-              cardRoute="/ArtworkSection"
-              cardType="Blog"
-              image={ImageFive}
-            />
-            <BigCardTwo
-              className="big-card-comp"
-              cardRoute="/ArtworkSection"
-              cardType="Design"
-              image={ImageSix}
-            />
-            <BigCardTwo
-              className="big-card-comp"
-              cardRoute="/ArtworkSection"
-              cardType="Artwork"
-              image={ImageFour}
-            />    
-          */}
-          {/*
-          </article>
-          */}
         </FadeIn>
       </>
     );

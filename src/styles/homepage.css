@@ -1,3 +1,5 @@
+/* Desktop View */
+
 .hero{
   text-align: left;
   
@@ -39,6 +41,8 @@
   width:fit-content;
   height:fit-content;
 }
+
+/* Response View */
 
 @media only screen and (max-width: 64rem) {
     .hero-typography{

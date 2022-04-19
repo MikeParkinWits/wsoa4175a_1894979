@@ -24,7 +24,7 @@ export const BlogList = [
     imageTitle: "An diagram of the digital divide",
     imageAltText: "A diagram with the words digital and divide seperated",
     cardRoute: "/wsoa4175a_1894979/Blogs/Blog3",
-    blogWords: 883,
+    blogWords: 902,
   },
   {
     cardTitle: "The Core Principles of Design and Aesthetics on the Web",
@@ -35,7 +35,7 @@ export const BlogList = [
     imageTitle: "A diagram of question marks",
     imageAltText: "A diagram of multiple question marks scattered around",
     cardRoute: "/wsoa4175a_1894979/Blogs/Blog2",
-    blogWords: 665,
+    blogWords: 679,
   },
   {
     cardTitle: "An Analysis of the Net Art This Website Will Self Destruct",
@@ -47,6 +47,6 @@ export const BlogList = [
     imageAltText:
       "A diagram showing a bomb in a website, with explosions around it",
     cardRoute: "/wsoa4175a_1894979/Blogs/Blog1",
-    blogWords: 597,
+    blogWords: 652,
   },
 ];

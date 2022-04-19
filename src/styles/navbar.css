@@ -100,7 +100,7 @@
 
   .nav-list.active {
     background-color: white;
-    top: 5rem;
+    top: 4.9rem;
     left: 0%;
     transition: all 0.5s cubic-bezier(0, 0.55, 0.45, 1);
     align-content: center;

@@ -10,11 +10,9 @@ export default class BlogReferences extends Component {
   static defaultProps = {
     references: [
       {
-        referenceStart:
-          "Diakopoulos, N., 2018. Ethics in Data-Driven Visual Storytelling, in: Riche, N.H., Hurter, C., Diakopoulos, N., Carpendale, S. (Eds.), ",
-        referenceCite: <cite>Data-Driven Storytelling. </cite>,
-        referenceEnd:
-          " A K Peters/CRC Press, Boca Raton, Florida : Taylor &amp; Francis/CRC Press, [2018], pp. 233–248. https://doi.org/10.1201 /9781315 281575-10",
+        referenceStart: "Name, Initial, (Date). Reference Title, ",
+        referenceCite: <cite>Citation </cite>,
+        referenceEnd: "Available At: ",
       },
     ],
   };

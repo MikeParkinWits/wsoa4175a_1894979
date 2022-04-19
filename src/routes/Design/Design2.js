@@ -19,6 +19,7 @@ import BlogButtons from "../../components/BlogButtons";
 //Import External Packages
 import FadeIn from "react-fade-in"; //Used for smooth page transition load - Documentation can be found here => https://www.npmjs.com/package/react-fade-in
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
+import BlogFigure from "../../components/BlogFigure";
 
 export default class Design1 extends Component {
   //Scrolls the page to the top on load
@@ -146,15 +147,19 @@ export default class Design1 extends Component {
                   my website, but it would also allow me to experiment with a
                   new aesthetic.
                 </p>
-                <figure className="blog-figure">
-                  <img className="blog-image" src={Design1Photo}></img>
-                  <figcaption>Figure 1: Screenshot of Gumroad.com</figcaption>
-                </figure>
+                <BlogFigure
+                  imageSource={Design1Photo}
+                  title="A screenshot of Gumroad.com"
+                  imageAlt="A screenshot of the website Gumroad.com's homepage"
+                  figureCaption="Figure 1: Screenshot of Gumroad.com"
+                />
 
-                <figure className="blog-figure">
-                  <img className="blog-image" src={Design2Photo}></img>
-                  <figcaption>Figure 2: Screenshot of Figma.com</figcaption>
-                </figure>
+                <BlogFigure
+                  imageSource={Design2Photo}
+                  title="A screenshot of Figma.com"
+                  imageAlt="A screenshot of the website Figma.com's homepage"
+                  figureCaption="Figure 2: Screenshot of Figma.com"
+                />
                 <p>
                   With that in mind, we can then start to look more closely at
                   my websites style guide below – beginning with the colour
@@ -167,10 +172,12 @@ export default class Design1 extends Component {
                   to these illustrations, while keeping everything extremely
                   legible.
                 </p>
-                <figure className="blog-figure">
-                  <img className="blog-image" src={Design3Photo}></img>
-                  <figcaption>Figure 3: My websites style guide</figcaption>
-                </figure>
+                <BlogFigure
+                  imageSource={Design3Photo}
+                  title="My websites style guide"
+                  imageAlt="My websites style guide showing its colour scheme, typefaces, logo, and interaction visuals"
+                  figureCaption="Figure 3: My websites style guide"
+                />
                 <p>
                   Next, we can look at the websites typeface. Unlike pure
                   brutalism, neubrutalism makes use of much cleaner, more

@@ -1,3 +1,5 @@
+/* Desktop View */
+
 .main-footer {
   background-color: black;
   
@@ -21,6 +23,8 @@
 time {
   padding: 0.5rem;
 }
+
+/* Response View */
 
 @media only screen and (max-width: 64rem) {
   .main-footer {    

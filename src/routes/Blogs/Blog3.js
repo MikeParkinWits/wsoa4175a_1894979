@@ -193,10 +193,12 @@ export default class Blog3 extends Component {
                   the entire community (Harrisberg, 2021: para. 5 - 10). This is
                   an extremely simple, and cost-effective, method to bring more
                   affordable access to areas in which bigger network companies
-                  see little monetary gain. Although, it is merely a single
+                  see little monetary gain. Although, this is merely a single
                   solution and should be done in combination with things such as
                   better policies, cheaper data prices, and bigger global
-                  internet initiatives.
+                  internet initiatives - all of which, I believe, should be a
+                  top priority for both governments, and external agencies,
+                  around the world.
                 </p>
                 <p>
                   So, in conclusion, by first explaining what the digital divide

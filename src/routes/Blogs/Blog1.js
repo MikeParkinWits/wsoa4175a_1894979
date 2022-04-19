@@ -157,11 +157,16 @@ export default class Blog1 extends Component {
                   artwork and shows the true value of net art – as without the
                   internet and its 24/7 access, this type of artwork would have
                   already self-destructed and not been nearly as impactful.
-                  However, even when that day does come, because of the nature
-                  of the internet and its reproducibility, the site will always
-                  be accessible through archive services such as the{" "}
-                  <cite>Wayback Machine</cite>, leaving much of the same effect
-                  as when it was live.
+                  However, even when the day does come, because of the nature of
+                  the internet and its reproducibility, the site will always be
+                  accessible through archive services such as the{" "}
+                  <cite>Wayback Machine</cite>, allowing for much of the same
+                  effect as when it was live. All of this then reiterates the
+                  importance of how, as Marshal McLuhan said in his 2001 book
+                  <cite>Understanding Media</cite>, the medium is the message
+                  (McLuhan, 2001) – that is, without the medium of the internet,
+                  the message of the artwork would not have come across in the
+                  same way, and nor would it have been as impactful.
                 </p>
                 <p>
                   In conclusion, we can then see that through the example of
@@ -190,6 +195,12 @@ export default class Blog1 extends Component {
                   referenceCite: <cite>This Website Will Self Destruct. </cite>,
                   referenceEnd:
                     "[Online] Available At: https://www.thiswebsitewillselfdestruct.com",
+                },
+                {
+                  referenceStart:
+                    "McLuhan, M., Fiore, Q., & Fairey, S. (2001). ",
+                  referenceCite: <cite>Medium is the Massage (1st ed.). </cite>,
+                  referenceEnd: "Gingko Press.",
                 },
               ]}
             />

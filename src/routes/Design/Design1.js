@@ -19,6 +19,7 @@ import BlogButtons from "../../components/BlogButtons";
 //Import External Packages
 import FadeIn from "react-fade-in"; //Used for smooth page transition load - Documentation can be found here => https://www.npmjs.com/package/react-fade-in
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
+import BlogFigure from "../../components/BlogFigure";
 
 export default class Design1 extends Component {
   //Scrolls the page to the top on load
@@ -128,10 +129,12 @@ export default class Design1 extends Component {
                   access all blog, or design, posts by clicking the button under
                   each section.
                 </p>
-                <figure className="blog-figure">
-                  <img className="blog-image" src={Design1Photo}></img>
-                  <figcaption>Figure 1: Homepage Wireframes</figcaption>
-                </figure>
+                <BlogFigure
+                  imageSource={Design1Photo}
+                  title="My Homepage Wireframes"
+                  imageAlt="A picture of my homepage wireframes showing the layout of the site"
+                  figureCaption="Figure 1: Homepage Wireframes"
+                />
                 <p>
                   Next, we can explore the blog/design post selector page. Here,
                   users are shown a grid of cards that represent each post in
@@ -150,10 +153,12 @@ export default class Design1 extends Component {
                   that will allow for only six posts to be shown at first, but
                   when clicked will expand to show a further six, and so on.
                 </p>
-                <figure className="blog-figure">
-                  <img className="blog-image" src={Design2Photo}></img>
-                  <figcaption>Figure 2: Post Selector Wireframes</figcaption>
-                </figure>
+                <BlogFigure
+                  imageSource={Design2Photo}
+                  title="My Post Selector Wireframes"
+                  imageAlt="A picture of my post selector wireframes showing the layout of that page"
+                  figureCaption="Figure 2: Post Selector Wireframes"
+                />
                 <p>
                   Lastly, there is the blog/design post page. While extremely
                   simple, this minimalism was done purposefully to put a focus
@@ -164,10 +169,12 @@ export default class Design1 extends Component {
                   with some navigation buttons at the bottom of the page, which
                   make it extremely easy to move between adjacent posts.
                 </p>
-                <figure className="blog-figure">
-                  <img className="blog-image" src={Design3Photo}></img>
-                  <figcaption>Figure 3: Post Page Wireframes</figcaption>
-                </figure>
+                <BlogFigure
+                  imageSource={Design3Photo}
+                  title="My Post Page Wireframes"
+                  imageAlt="A picture of my post page wireframes showing the layout of that page"
+                  figureCaption="Figure 3: Post Page Wireframes"
+                />
               </section>
             </article>
             <BlogButtons type="Design" />

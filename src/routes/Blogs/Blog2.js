@@ -17,6 +17,7 @@ import BlogButtons from "../../components/BlogButtons";
 //Import External Packages
 import FadeIn from "react-fade-in"; //Used for smooth page transition load - Documentation can be found here => https://www.npmjs.com/package/react-fade-in
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
+import BlogFigure from "../../components/BlogFigure";
 
 export default class Blog2 extends Component {
   //Scrolls the page to the top on load
@@ -151,12 +152,12 @@ export default class Blog2 extends Component {
                   them, and the importance of information, through a good visual
                   hierarchy.
                 </p>
-                <figure className="blog-figure">
-                  <img className="blog-image" src={BlogPhoto}></img>
-                  <figcaption>
-                    Figure 1: A screenshot of Apple.com's homepage (Apple, 2021)
-                  </figcaption>
-                </figure>
+                <BlogFigure
+                  imageSource={BlogPhoto}
+                  title="A screenshot of the Apple.com homepage"
+                  imageAlt="A screenshot of the Apple.com homepage showing an iPhone on the front"
+                  figureCaption="Figure 1: A screenshot of Apple.com's homepage (Apple, 2021)"
+                />
                 <p>
                   Next, Thorlacius notes that the aesthetic design of a website
                   should <strong>align with the sites genre</strong>. For
@@ -190,10 +191,13 @@ export default class Blog2 extends Component {
                   However, the four aesthetic principles covered in this blog
                   post merely form the foundation for aesthetics in web design,
                   and there are countless other ideas that can be applied, in
-                  addition to this, that I did not cover. But, by utilizing
-                  these principles as a foundation, designers can then create
-                  more impactful experiences for the user interacting with their
-                  site.
+                  addition to this, that I did not cover cover – such as Raunak
+                  Trikha’s{" "}
+                  <cite>7 rules for creating visually aesthetic UI</cite>{" "}
+                  (Trikha, 2018). But, by utilizing these principles as a
+                  foundation, designers can then create more impactful
+                  experiences for the user interacting with their site –
+                  something which all designers should be striving for.
                 </p>
               </section>
             </article>
@@ -224,6 +228,13 @@ export default class Blog2 extends Component {
                   referenceCite: <cite>Nord. Rev. 28, 63–76. </cite>,
                   referenceEnd:
                     "Available At: https://doi.org/10.1515/nor-2017-0201",
+                },
+                {
+                  referenceStart:
+                    "Trikha, R. (2018). 7 rules for creating visually aesthetic UI. ",
+                  referenceCite: <cite>Medium. </cite>,
+                  referenceEnd:
+                    "Available At: https://medium.com/nyc-design/7-rules-for-creating-visually-aesthetic-ui-6ac0fe8856f",
                 },
               ]}
             />

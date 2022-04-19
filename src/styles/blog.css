@@ -1,3 +1,5 @@
+/* Desktop View */
+
 .blog-contents{
     margin: 3rem 6rem;
     text-align: left;
@@ -58,6 +60,8 @@
     color: blue;
 }
 
+/* Response View */
+
 @media only screen and (max-width: 64rem) {
     .blog-contents{
         margin: 3rem 4rem;
@@ -94,7 +98,8 @@
     .blog-figure figcaption{
         margin-left: 0%;
 
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
+        font-size: 1rem;
     }
 
     .blog-figure{

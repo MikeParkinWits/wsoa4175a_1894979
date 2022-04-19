@@ -13,12 +13,9 @@ export default class BlogButtons extends Component {
   };
   render() {
     const url = window.location.pathname;
-
     const currBlog = parseInt(url.charAt(window.location.pathname.length - 1));
-
     const urlEnd = url.indexOf("/");
     const path = url.substring(urlEnd).slice(0, -1);
-
     let numPosts = null;
 
     if (this.props.type == "Blog") {
