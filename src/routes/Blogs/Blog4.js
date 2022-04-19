@@ -31,7 +31,6 @@ export default class Blog4 extends Component {
       parseInt(
         window.location.pathname.charAt(window.location.pathname.length - 1)
       );
-    console.log(BlogList[blogInfoToLoad].cardTitle);
     return (
       <>
         {/* React Helmet is used to dynamically adjust the head of the document and add meta data */}
