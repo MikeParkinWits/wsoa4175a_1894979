@@ -118,12 +118,12 @@ export default class Blog4 extends Component {
                 <p>
                   Firstly, we can start by looking at the technical progress of
                   my website, and the goals I set for myself. As I was
-                  unfamiliar with the React.js framework – having only worked
+                  unfamiliar with the ReactJS framework – having only worked
                   with vanilla JavaScript, HTML, and CSS for web creation – I
                   wanted to start my development by researching three things:
-                  what React.js is, other websites that use it, and basic
+                  what ReactJS is, other websites that use it, and basic
                   tutorials to understand how it works. Upon completing this,
-                  and having a good grasp of what React.js is capable of, I then
+                  and having a good grasp of what ReactJS is capable of, I then
                   began outlining where I wanted my website to be, from a
                   technical perspective, for assignment one. Firstly, I wanted
                   to make sure that, just because I was using a new framework, I
@@ -132,7 +132,7 @@ export default class Blog4 extends Component {
                   responsive design, reusable JavaScript, and good metadata –
                   and thus this became my first set of goals for the website.
                   Secondly, I knew that I wanted my website to make use of only
-                  the best React.js conventions – which include the correct use
+                  the best ReactJS conventions – which include the correct use
                   of props & states, reusable components where necessary, good
                   file structure, and client-side routing. So, with these goals
                   in mind, and my wireframes and design complete (which is
@@ -168,7 +168,7 @@ export default class Blog4 extends Component {
                   the site turned out – achieving everything I set out to
                   achieve from a technical perspective, while also tackling
                   unexpected problems along the way through the use of the
-                  React.js framework and library.
+                  ReactJS framework and library.
                 </p>
                 <p>
                   Next, we can explore my theoretical engagement. As each blog
