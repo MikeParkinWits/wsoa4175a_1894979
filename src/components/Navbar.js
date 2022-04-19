@@ -39,7 +39,7 @@ export default class Navbar extends Component {
             <section className="logo">
               <NavLink
                 className="logo"
-                to="/wsoa4175a_1894979"
+                to="/wsoa4175a_1894979/"
                 onClick={this.closeHamburgerMenu}
               >
                 <img src={logo} width="130" alt="Alt Text"></img>
@@ -50,7 +50,7 @@ export default class Navbar extends Component {
                 <li>
                   <NavLink
                     className="nav-item"
-                    to="/wsoa4175a_1894979/BlogSection"
+                    to="/wsoa4175a_1894979/BlogSection/"
                     onClick={this.closeHamburgerMenu}
                   >
                     Blog
@@ -60,7 +60,7 @@ export default class Navbar extends Component {
                 <li>
                   <NavLink
                     className="nav-item"
-                    to="/wsoa4175a_1894979/DesignSection"
+                    to="/wsoa4175a_1894979/DesignSection/"
                     onClick={this.closeHamburgerMenu}
                   >
                     Design
@@ -69,7 +69,7 @@ export default class Navbar extends Component {
                 <li>
                   <NavLink
                     className="nav-item"
-                    to="/wsoa4175a_1894979/ArtworkSection"
+                    to="/wsoa4175a_1894979/ArtworkSection/"
                     onClick={this.closeHamburgerMenu}
                   >
                     Art

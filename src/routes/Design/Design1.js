@@ -31,7 +31,7 @@ export default class Design1 extends Component {
     const designInfoToLoad =
       DesignList.length -
       parseInt(
-        window.location.pathname.charAt(window.location.pathname.length - 1)
+        window.location.pathname.charAt(window.location.pathname.length - 2)
       );
     return (
       <>

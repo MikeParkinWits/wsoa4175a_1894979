@@ -27,12 +27,6 @@ import Footer from "./components/Footer";
 //External Packages
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
 
-//Unused
-// import Card from "./components/BlogCard";
-// import BigCard from "./components/BigCard";
-// import HeroPage from "./components/HeroPage";
-// import logo from "./logo.svg";
-
 library.add(faBars, faX, faXmark);
 
 function App() {
@@ -62,31 +56,31 @@ function App() {
         <Routes>
           <Route path="/wsoa4175a_1894979/" element={<Home />} />
           <Route
-            path="/wsoa4175a_1894979/BlogSection"
+            path="/wsoa4175a_1894979/BlogSection/"
             element={<BlogSection />}
           />
           <Route
-            path="/wsoa4175a_1894979/DesignSection"
+            path="/wsoa4175a_1894979/DesignSection/"
             element={<DesignSection />}
           />
           <Route
-            path="/wsoa4175a_1894979/ArtworkSection"
+            path="/wsoa4175a_1894979/ArtworkSection/"
             element={<ArtworkSection />}
           />
 
           {/* Blog routes to be converted to dynamic routes later */}
-          <Route path="/wsoa4175a_1894979/Blogs/Blog1" element={<Blog1 />} />
-          <Route path="/wsoa4175a_1894979/Blogs/Blog2" element={<Blog2 />} />
-          <Route path="/wsoa4175a_1894979/Blogs/Blog3" element={<Blog3 />} />
-          <Route path="/wsoa4175a_1894979/Blogs/Blog4" element={<Blog4 />} />
+          <Route path="/wsoa4175a_1894979/Blogs/Blog1/" element={<Blog1 />} />
+          <Route path="/wsoa4175a_1894979/Blogs/Blog2/" element={<Blog2 />} />
+          <Route path="/wsoa4175a_1894979/Blogs/Blog3/" element={<Blog3 />} />
+          <Route path="/wsoa4175a_1894979/Blogs/Blog4/" element={<Blog4 />} />
 
           {/* Design routes to be converted to dynamic routes later */}
           <Route
-            path="/wsoa4175a_1894979/Design/Design1"
+            path="/wsoa4175a_1894979/Design/Design1/"
             element={<Design1 />}
           />
           <Route
-            path="/wsoa4175a_1894979/Design/Design2"
+            path="/wsoa4175a_1894979/Design/Design2/"
             element={<Design2 />}
           />
         </Routes>

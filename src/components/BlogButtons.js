@@ -13,9 +13,9 @@ export default class BlogButtons extends Component {
   };
   render() {
     const url = window.location.pathname;
-    const currBlog = parseInt(url.charAt(window.location.pathname.length - 1));
+    const currBlog = parseInt(url.charAt(window.location.pathname.length - 2));
     const urlEnd = url.indexOf("/");
-    const path = url.substring(urlEnd).slice(0, -1);
+    const path = url.substring(urlEnd).slice(0, -2);
     let numPosts = null;
 
     if (this.props.type == "Blog") {
@@ -30,13 +30,13 @@ export default class BlogButtons extends Component {
           {currBlog > 1 && (
             <Button
               buttonText={`Previous ${this.props.type} Post`}
-              buttonLink={path + (currBlog - 1)}
+              buttonLink={path + (currBlog - 1) + "/"}
             />
           )}
           {currBlog < numPosts && (
             <Button
               buttonText={`Next ${this.props.type} Post`}
-              buttonLink={path + (currBlog + 1)}
+              buttonLink={path + (currBlog + 1) + "/"}
             />
           )}
         </section>

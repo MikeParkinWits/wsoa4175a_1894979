@@ -29,7 +29,7 @@ export default class Blog2 extends Component {
     const blogInfoToLoad =
       BlogList.length -
       parseInt(
-        window.location.pathname.charAt(window.location.pathname.length - 1)
+        window.location.pathname.charAt(window.location.pathname.length - 2)
       );
     return (
       <>

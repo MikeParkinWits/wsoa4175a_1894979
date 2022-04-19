@@ -10,7 +10,7 @@ export const DesignList = [
     imageTitle: "An illustration showing the different colour palettes",
     imageAltText:
       "An illustration showing six of the websites possible colours",
-    cardRoute: "/wsoa4175a_1894979/Design/Design2",
+    cardRoute: "/wsoa4175a_1894979/Design/Design2/",
     blogWords: 761,
   },
   {
@@ -21,7 +21,7 @@ export const DesignList = [
     imageTitle: "An illustration showing a website being built",
     imageAltText:
       "An illustration showing a website with a ladder on it, and pins on the website",
-    cardRoute: "/wsoa4175a_1894979/Design/Design1",
+    cardRoute: "/wsoa4175a_1894979/Design/Design1/",
     blogWords: 493,
   },
 ];

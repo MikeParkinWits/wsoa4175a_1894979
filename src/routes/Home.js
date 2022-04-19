@@ -86,7 +86,7 @@ export default class Home extends Component {
                 ],
               }}
               buttonText={"View Blog Posts"}
-              buttonLink={"/wsoa4175a_1894979/BlogSection"}
+              buttonLink={"/wsoa4175a_1894979/BlogSection/"}
             />
 
             <HomepageCard
@@ -104,7 +104,7 @@ export default class Home extends Component {
                 contentList: ["Styleguides", "Wireframes", "And More to Come"],
               }}
               buttonText={"View Design Decisions"}
-              buttonLink={"/wsoa4175a_1894979/DesignSection"}
+              buttonLink={"/wsoa4175a_1894979/DesignSection/"}
             />
           </article>
         </FadeIn>

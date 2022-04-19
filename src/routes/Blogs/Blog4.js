@@ -29,7 +29,7 @@ export default class Blog4 extends Component {
     const blogInfoToLoad =
       BlogList.length -
       parseInt(
-        window.location.pathname.charAt(window.location.pathname.length - 1)
+        window.location.pathname.charAt(window.location.pathname.length - 2)
       );
     return (
       <>
@@ -138,7 +138,7 @@ export default class Blog4 extends Component {
                   in mind, and my wireframes and design complete (which is
                   explored in more detail{" "}
                   <Link
-                    to="/wsoa4175a_1894979/DesignSection"
+                    to="/wsoa4175a_1894979/DesignSection/"
                     className="inline-link"
                   >
                     here

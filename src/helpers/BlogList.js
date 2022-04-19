@@ -12,7 +12,7 @@ export const BlogList = [
     image: BlogFourImage,
     imageTitle: "A diagram with the words reflection repeated",
     imageAltText: "A diagram with the words reflection repeated",
-    cardRoute: "/wsoa4175a_1894979/Blogs/Blog4",
+    cardRoute: "/wsoa4175a_1894979/Blogs/Blog4/",
     blogWords: 815,
   },
   {
@@ -23,7 +23,7 @@ export const BlogList = [
     image: BlogThreeImage,
     imageTitle: "An diagram of the digital divide",
     imageAltText: "A diagram with the words digital and divide seperated",
-    cardRoute: "/wsoa4175a_1894979/Blogs/Blog3",
+    cardRoute: "/wsoa4175a_1894979/Blogs/Blog3/",
     blogWords: 902,
   },
   {
@@ -34,7 +34,7 @@ export const BlogList = [
     image: BlogTwoImage,
     imageTitle: "A diagram of question marks",
     imageAltText: "A diagram of multiple question marks scattered around",
-    cardRoute: "/wsoa4175a_1894979/Blogs/Blog2",
+    cardRoute: "/wsoa4175a_1894979/Blogs/Blog2/",
     blogWords: 679,
   },
   {
@@ -46,7 +46,7 @@ export const BlogList = [
     imageTitle: "A diagram portraying a self destructing website",
     imageAltText:
       "A diagram showing a bomb in a website, with explosions around it",
-    cardRoute: "/wsoa4175a_1894979/Blogs/Blog1",
+    cardRoute: "/wsoa4175a_1894979/Blogs/Blog1/",
     blogWords: 652,
   },
 ];
