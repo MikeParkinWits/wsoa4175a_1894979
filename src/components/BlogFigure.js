@@ -11,16 +11,18 @@ export default class BlogFigure extends Component {
     figureCaption: "Figure 1: Caption Missing",
   };
   render() {
+    const { imageSource, imageTitle, imageAlt, figureCaption } = this.props;
+
     return (
       <>
         <figure className="blog-figure">
           <img
             className="blog-image u-photo"
-            src={this.props.imageSource}
-            title={this.props.imageTitle}
-            alt={this.props.imageAlt}
+            src={imageSource}
+            title={imageTitle}
+            alt={imageAlt}
           ></img>
-          <figcaption>{this.props.figureCaption}</figcaption>
+          <figcaption>{figureCaption}</figcaption>
         </figure>
       </>
     );

@@ -18,7 +18,9 @@ export default class BlogButtons extends Component {
     const path = url.substring(urlEnd).slice(0, -2);
     let numPosts = null;
 
-    if (this.props.type == "Blog") {
+    const { type } = this.props;
+
+    if (type == "Blog") {
       numPosts = BlogList.length;
     } else {
       numPosts = DesignList.length;
@@ -29,13 +31,13 @@ export default class BlogButtons extends Component {
         <section className="blog-buttons">
           {currBlog > 1 && (
             <Button
-              buttonText={`Previous ${this.props.type} Post`}
+              buttonText={`Previous ${type} Post`}
               buttonLink={path + (currBlog - 1) + "/"}
             />
           )}
           {currBlog < numPosts && (
             <Button
-              buttonText={`Next ${this.props.type} Post`}
+              buttonText={`Next ${type} Post`}
               buttonLink={path + (currBlog + 1) + "/"}
             />
           )}

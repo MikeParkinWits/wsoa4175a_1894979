@@ -24,30 +24,29 @@ export default class HomepageCard extends Component {
   };
 
   render() {
+    const { leftOrientation, img, imgInfo, cardInfo, buttonText, buttonLink } =
+      this.props;
+
     return (
       <>
         <section
           className={
-            this.props.leftOrientation
+            leftOrientation
               ? "homepage-card"
               : "homepage-card homepage-card-reverse"
           }
         >
-          {!this.props.leftOrientation && (
+          {!leftOrientation && (
             <section className="homepage-card-image">
-              <img
-                src={this.props.img}
-                title={this.props.imgInfo.title}
-                alt={this.props.imgInfo.altText}
-              ></img>
+              <img src={img} title={imgInfo.title} alt={imgInfo.altText}></img>
             </section>
           )}
           <section className="homepage-card-info">
-            <h2>{this.props.cardInfo.title}</h2>
+            <h2>{cardInfo.title}</h2>
             <section className="homepage-card-content">
-              <p>{this.props.cardInfo.contentP}</p>
+              <p>{cardInfo.contentP}</p>
               <ul>
-                {this.props.cardInfo.contentList.map((element, key) => {
+                {cardInfo.contentList.map((element, key) => {
                   return (
                     <li key={key} className="homepage-list-item">
                       {element}
@@ -57,18 +56,11 @@ export default class HomepageCard extends Component {
               </ul>
             </section>
 
-            <Button
-              buttonText={this.props.buttonText}
-              buttonLink={this.props.buttonLink}
-            />
+            <Button buttonText={buttonText} buttonLink={buttonLink} />
           </section>
-          {this.props.leftOrientation && (
+          {leftOrientation && (
             <section className="homepage-card-image">
-              <img
-                src={this.props.img}
-                title={this.props.imgInfo.title}
-                alt={this.props.imgInfo.altText}
-              ></img>
+              <img src={img} title={imgInfo.title} alt={imgInfo.altText}></img>
             </section>
           )}
         </section>

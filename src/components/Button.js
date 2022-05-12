@@ -13,10 +13,12 @@ export default class Button extends Component {
   };
 
   render() {
+    const { buttonLink, buttonText } = this.props;
+
     return (
       <>
-        <Link className="main-button" to={this.props.buttonLink}>
-          {this.props.buttonText}
+        <Link className="main-button" to={buttonLink}>
+          {buttonText}
         </Link>
       </>
     );

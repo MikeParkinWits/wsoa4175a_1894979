@@ -32,6 +32,8 @@ export default class Navbar extends Component {
   }
 
   render() {
+    const { click } = this.state;
+
     return (
       <>
         <header className="header-nav">
@@ -46,7 +48,7 @@ export default class Navbar extends Component {
               </NavLink>
             </section>
             <section className="navigation">
-              <ul className={this.state.click ? "nav-list active" : "nav-list"}>
+              <ul className={click ? "nav-list active" : "nav-list"}>
                 <li>
                   <NavLink
                     className="nav-item"
@@ -82,7 +84,7 @@ export default class Navbar extends Component {
               className="hamburger-menu"
               onClick={this.hamburgerMenuClick}
             >
-              {this.state.click ? (
+              {click ? (
                 <FontAwesomeIcon icon="fa-xmark" className="menu-icon" />
               ) : (
                 <FontAwesomeIcon icon="fa-bars" className="menu-icon" />

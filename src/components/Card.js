@@ -22,24 +22,32 @@ export default class BlogCard extends Component {
   };
 
   render() {
+    const {
+      cardTitle,
+      cardDate,
+      cardSummary,
+      image,
+      imageTitle,
+      imageAltText,
+      cardRoute,
+    } = this.props;
+
     return (
       <>
         <section className="blog-card">
-          <Link className="blog-card-link" to={this.props.cardRoute}>
+          <Link className="blog-card-link" to={cardRoute}>
             <img
               className="blog-card-image"
-              src={this.props.image}
-              title={this.props.imageTitle}
-              alt={this.props.imageAltText}
+              src={image}
+              title={imageTitle}
+              alt={imageAltText}
             ></img>
             <section className="card-content">
               <header>
-                <time dateTime={this.props.cardDate}>
-                  {this.props.cardDate}
-                </time>
-                <h2>{this.props.cardTitle}</h2>
+                <time dateTime={cardDate}>{cardDate}</time>
+                <h2>{cardTitle}</h2>
               </header>
-              <p>{this.props.cardSummary}</p>
+              <p>{cardSummary}</p>
             </section>
           </Link>
         </section>

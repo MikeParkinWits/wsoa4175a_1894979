@@ -18,13 +18,15 @@ export default class BlogReferences extends Component {
   };
 
   render() {
+    const { references } = this.props;
+
     return (
       <>
         <footer>
           <Titles title="References" mainTitle={false} />
           <section className="blog-references">
             <ol className="blog-list">
-              {this.props.references.map((blogItem, value) => {
+              {references.map((blogItem, value) => {
                 return (
                   <li>
                     {blogItem.referenceStart}
