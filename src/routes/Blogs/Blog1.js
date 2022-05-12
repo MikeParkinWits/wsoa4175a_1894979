@@ -161,7 +161,7 @@ export default class Blog1 extends Component {
                   accessible through archive services such as the{" "}
                   <cite>Wayback Machine</cite>, allowing for much of the same
                   effect as when it was live. All of this then reiterates the
-                  importance of how, as Marshal McLuhan said in his 2001 book
+                  importance of how, as Marshal McLuhan said in his 2001 book{" "}
                   <cite>Understanding Media</cite>, the medium is the message
                   (McLuhan, 2001) – that is, without the medium of the internet,
                   the message of the artwork would not have come across in the

@@ -100,7 +100,7 @@ export default class Home extends Component {
               cardInfo={{
                 title: "Design Decisions",
                 contentP:
-                  "Design Decisions While the design of The Internet We Know may seem simple, it was carefully thought out. Visit the design section to see:",
+                  "While the design of The Internet We Know may seem simple, it was carefully thought out. Visit the design section to see:",
                 contentList: ["Styleguides", "Wireframes", "And More to Come"],
               }}
               buttonText={"View Design Decisions"}
