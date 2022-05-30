@@ -26,6 +26,7 @@ import Footer from "./components/Footer";
 
 //External Packages
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
+import Blog5 from "./routes/Blogs/Blog5";
 
 library.add(faBars, faX, faXmark);
 
@@ -73,6 +74,7 @@ function App() {
           <Route path="/wsoa4175a_1894979/Blogs/Blog2/" element={<Blog2 />} />
           <Route path="/wsoa4175a_1894979/Blogs/Blog3/" element={<Blog3 />} />
           <Route path="/wsoa4175a_1894979/Blogs/Blog4/" element={<Blog4 />} />
+          <Route path="/wsoa4175a_1894979/Blogs/Blog5/" element={<Blog5 />} />
 
           {/* Design routes to be converted to dynamic routes later */}
           <Route

@@ -2,8 +2,21 @@ import BlogOneImage from "../assets/PreviewImages/Blog1.svg";
 import BlogTwoImage from "../assets/PreviewImages/Blog2.svg";
 import BlogThreeImage from "../assets/PreviewImages/Blog3.svg";
 import BlogFourImage from "../assets/PreviewImages/Blog4.svg";
+import BlogFiveImage from "../assets/PreviewImages/Blog5.svg";
 
 export const BlogList = [
+  {
+    cardTitle: "Internet Artwork Preparatory Work",
+    cardDate: "28 April 2022",
+    cardSummary:
+      "A breakdown of my internet artwork and the process behind its inception",
+    image: BlogFiveImage,
+    imageTitle: "A diagram with four browser windows",
+    imageAltText:
+      "A diagram with four browser windows with question marks inside",
+    cardRoute: "/wsoa4175a_1894979/Blogs/Blog5/",
+    blogWords: 664,
+  },
   {
     cardTitle: "Reflections on Assignment 1",
     cardDate: "18 April 2022",

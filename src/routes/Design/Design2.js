@@ -216,7 +216,7 @@ export default class Design1 extends Component {
               references={[
                 {
                   referenceStart: "Figma. (2022). ",
-                  referenceCite: <cite>Apple. </cite>,
+                  referenceCite: <cite>Figma. </cite>,
                   referenceEnd:
                     "[Online]. Availalble At: https://www.figma.com",
                 },
