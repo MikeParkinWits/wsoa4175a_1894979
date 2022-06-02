@@ -59,78 +59,65 @@ class App extends Component {
   render() {
     const { showCookiePopup } = this.state;
 
-    if (navigator.cookieEnabled) {
-      return (
-        <>
-          {/* React Helmet is used to dynamically adjust the head of the document and add meta data */}
-          <Helmet>
-            <meta
-              name="keywords"
-              content="Internet, Net Art, Internet Art, Design"
+    return (
+      <>
+        {/* React Helmet is used to dynamically adjust the head of the document and add meta data */}
+        <Helmet>
+          <meta
+            name="keywords"
+            content="Internet, Net Art, Internet Art, Design"
+          />
+          <meta property="og:site_name" content="The Internet We Know" />
+          <meta property="og:type" content="website" />
+          <meta
+            property="og:image"
+            content="https://mikeparkinwits.github.io/wsoa4175a_1894979/Images/Mini_Logo.svg"
+          />
+          <meta property="og:image:alt" content="The Internet We Know Logo" />
+          <meta
+            property="og:description"
+            content="The Internet We Know is a website about the internet that critiques the internet we know today"
+          />
+        </Helmet>
+        <Navbar />
+        <main>
+          <Routes>
+            <Route path="/wsoa4175a_1894979/" element={<Home />} />
+            <Route
+              path="/wsoa4175a_1894979/BlogSection/"
+              element={<BlogSection />}
             />
-            <meta property="og:site_name" content="The Internet We Know" />
-            <meta property="og:type" content="website" />
-            <meta
-              property="og:image"
-              content="https://mikeparkinwits.github.io/wsoa4175a_1894979/Images/Mini_Logo.svg"
+            <Route
+              path="/wsoa4175a_1894979/DesignSection/"
+              element={<DesignSection />}
             />
-            <meta property="og:image:alt" content="The Internet We Know Logo" />
-            <meta
-              property="og:description"
-              content="The Internet We Know is a website about the internet that critiques the internet we know today"
+            <Route
+              path="/wsoa4175a_1894979/ArtworkSection/"
+              element={<ArtworkSection />}
             />
-          </Helmet>
-          <Navbar />
-          <main>
-            <Routes>
-              <Route path="/wsoa4175a_1894979/" element={<Home />} />
-              <Route
-                path="/wsoa4175a_1894979/BlogSection/"
-                element={<BlogSection />}
-              />
-              <Route
-                path="/wsoa4175a_1894979/DesignSection/"
-                element={<DesignSection />}
-              />
-              <Route
-                path="/wsoa4175a_1894979/ArtworkSection/"
-                element={<ArtworkSection />}
-              />
 
-              {/* Blog Routes*/}
-              <Route
-                path="/wsoa4175a_1894979/Blogs/Blog1/"
-                element={<Blog1 />}
-              />
-              <Route
-                path="/wsoa4175a_1894979/Blogs/Blog2/"
-                element={<Blog2 />}
-              />
-              <Route
-                path="/wsoa4175a_1894979/Blogs/Blog3/"
-                element={<Blog3 />}
-              />
-              <Route
-                path="/wsoa4175a_1894979/Blogs/Blog4/"
-                element={<Blog4 />}
-              />
-              <Route
-                path="/wsoa4175a_1894979/Blogs/Blog5/"
-                element={<Blog5 />}
-              />
+            {/* Blog Routes*/}
+            <Route path="/wsoa4175a_1894979/Blogs/Blog1/" element={<Blog1 />} />
+            <Route path="/wsoa4175a_1894979/Blogs/Blog2/" element={<Blog2 />} />
+            <Route path="/wsoa4175a_1894979/Blogs/Blog3/" element={<Blog3 />} />
+            <Route path="/wsoa4175a_1894979/Blogs/Blog4/" element={<Blog4 />} />
+            <Route path="/wsoa4175a_1894979/Blogs/Blog5/" element={<Blog5 />} />
 
-              {/* Design Routes*/}
-              <Route
-                path="/wsoa4175a_1894979/Design/Design1/"
-                element={<Design1 />}
-              />
-              <Route
-                path="/wsoa4175a_1894979/Design/Design2/"
-                element={<Design2 />}
-              />
-            </Routes>
-          </main>
+            {/* Design Routes*/}
+            <Route
+              path="/wsoa4175a_1894979/Design/Design1/"
+              element={<Design1 />}
+            />
+            <Route
+              path="/wsoa4175a_1894979/Design/Design2/"
+              element={<Design2 />}
+            />
+          </Routes>
+        </main>
 
+        {!navigator.cookieEnabled ? (
+          <CookieBlocked />
+        ) : (
           <CookieConsent
             enableDeclineButton
             debug="true"
@@ -154,16 +141,15 @@ class App extends Component {
             </span>{" "}
             enhance the user experience.
           </CookieConsent>
-          <CookiePopup
-            showCookiePopup={showCookiePopup}
-            onCookieSwitch={this.switchCookieState}
-          />
-          <Footer />
-        </>
-      );
-    } else {
-      return <CookieBlocked />;
-    }
+        )}
+
+        <CookiePopup
+          showCookiePopup={showCookiePopup}
+          onCookieSwitch={this.switchCookieState}
+        />
+        <Footer />
+      </>
+    );
   }
 }
 

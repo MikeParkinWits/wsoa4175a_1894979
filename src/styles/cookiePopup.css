@@ -68,9 +68,10 @@
 .modal-cookie-buttons{
     text-align: right;
 }
-  .denied-mouse{
-      cursor: not-allowed;
-  }
+
+.denied-mouse{
+    cursor: not-allowed;
+}
 
   /* Response View */
   
