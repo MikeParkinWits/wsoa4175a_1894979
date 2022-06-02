@@ -15,8 +15,9 @@ import DesignCardImage from "../assets/HomepageDesignImage.png";
 import Typing from "react-typing-animation"; //Used for Hero Typography Animation - Documentation can be found here => https://www.npmjs.com/package/react-typing-animation
 import FadeIn from "react-fade-in"; //Used for smooth page transition load - Documentation can be found here => https://www.npmjs.com/package/react-fade-in
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
+import { memo } from "react"; //React memo is used to memorize the component and prevent it from rerendering when there are state changes - Documentation can be found here => https://www.npmjs.com/package/react-memo
 
-export default class Home extends Component {
+class Home extends Component {
   //Scrolls the page to the top on load
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -111,4 +112,10 @@ export default class Home extends Component {
       </>
     );
   }
+}
+
+export default memo(Home);
+
+{
+  /* React Memo is used to memorize component to prevent re-rendering when there are state changes, allowing react-typing-animation package not to reload*/
 }

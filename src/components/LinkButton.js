@@ -4,9 +4,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 //Styling
-import "../styles/button.css";
+import "../styles/linkButton.css";
 
-export default class Button extends Component {
+export default class LinkButton extends Component {
   static defaultProps = {
     buttonLink: "",
     buttonText: "Button",

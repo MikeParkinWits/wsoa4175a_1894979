@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 //Component Imports
-import Button from "./Button";
+import LinkButton from "./LinkButton";
 
 //Image Imports
 import MissingImage from "../assets/HeroImage.jpg";
@@ -56,7 +56,7 @@ export default class HomepageCard extends Component {
               </ul>
             </section>
 
-            <Button buttonText={buttonText} buttonLink={buttonLink} />
+            <LinkButton buttonText={buttonText} buttonLink={buttonLink} />
           </section>
           {leftOrientation && (
             <section className="homepage-card-image">

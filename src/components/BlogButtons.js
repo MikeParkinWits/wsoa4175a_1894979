@@ -5,7 +5,7 @@ import { BlogList } from "../helpers/BlogList.js";
 import { DesignList } from "../helpers/DesignList.js";
 
 //Importing Components
-import Button from "./Button.js";
+import LinkButton from "./LinkButton.js";
 
 export default class BlogButtons extends Component {
   static defaultProps = {
@@ -30,13 +30,13 @@ export default class BlogButtons extends Component {
       <>
         <section className="blog-buttons">
           {currBlog > 1 && (
-            <Button
+            <LinkButton
               buttonText={`Previous ${type} Post`}
               buttonLink={path + (currBlog - 1) + "/"}
             />
           )}
           {currBlog < numPosts && (
-            <Button
+            <LinkButton
               buttonText={`Next ${type} Post`}
               buttonLink={path + (currBlog + 1) + "/"}
             />
