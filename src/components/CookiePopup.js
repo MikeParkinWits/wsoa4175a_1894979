@@ -35,17 +35,26 @@ export default class CookiePopup extends Component {
 
     if (cookieState.functionalCookies && cookieState.performanceCookies) {
       Cookies.set("CookieConsent", true);
+      this.props.onNew();
     } else {
       Cookies.set("CookieConsent", false);
     }
   };
 
+  acceptAll = () => {
+    this.props.onCookieSwitch();
+    Cookies.set("necessaryCookies", true);
+    Cookies.set("functionalCookies", true);
+    Cookies.set("performanceCookies", true);
+    this.props.onNew();
+  };
   static defaultProps = {
     showCookiePopup: false,
   };
 
   render() {
-    const { showCookiePopup, onCookieSwitch } = this.props;
+    const { showCookiePopup, onCookieSwitch, isPopupSubtext, popupSubtext } =
+      this.props;
 
     if (!showCookiePopup) {
       console.log(showCookiePopup);
@@ -56,6 +65,7 @@ export default class CookiePopup extends Component {
         <section className="modal">
           <header>
             <h2 className="modal-title">Cookie Settings</h2>
+            {isPopupSubtext && <p className="modal-subtext">{popupSubtext}</p>}
           </header>
 
           <CookieCheckbox
@@ -122,7 +132,7 @@ export default class CookiePopup extends Component {
             <ActionButton
               buttonText="Accept All"
               buttonClass="cookie-banner-accept-button"
-              onClickAction={onCookieSwitch}
+              onClickAction={this.acceptAll}
             />
           </section>
         </section>

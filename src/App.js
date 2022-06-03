@@ -32,6 +32,7 @@ import CookieBlocked from "./components/CookieBlocked";
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
 import CookieConsent from "react-cookie-consent"; //External Package used to load template cookie banner - Documentation can be found here => https://www.npmjs.com/package/react-cookie-consent?activeTab=versions
 import Cookies from "js-cookie"; //External Package used to edit cookie information in browser - Documentation can be found here => https://www.npmjs.com/package/js-cookie
+import CookieBanner from "./components/CookieBanner";
 
 library.add(faBars, faX, faXmark);
 
@@ -40,25 +41,49 @@ class App extends Component {
     super(props);
     this.state = {
       showCookiePopup: false,
+      showNewCookies: false,
+      closeNew: true,
     };
 
     this.switchCookieState = this.switchCookieState.bind(this);
     this.acceptClick = this.acceptClick.bind(this);
+    this.new = this.new.bind(this);
+    this.switchCookieStateNew = this.switchCookieStateNew.bind(this);
+    this.newAssignFalse = this.newAssignFalse.bind(this);
   }
 
   switchCookieState() {
     this.setState({ showCookiePopup: !this.state.showCookiePopup });
   }
 
+  switchCookieStateNew() {
+    this.setState({ showNewCookies: !this.state.showNewCookies });
+    this.setState({ closeNew: false });
+  }
+
   acceptClick() {
     Cookies.set("functionalCookies", true);
     Cookies.set("performanceCookies", true);
     Cookies.set("necessaryCookies", true);
+
+    Cookies.set("CookieConsent", true);
+    this.setState({ closeNew: !this.state.closeNew });
+  }
+
+  new() {
+    if (this.state.closeNew) {
+      this.setState({ showNewCookies: !this.state.showNewCookies }, () => {
+        console.log(" s " + this.state.showNewCookies);
+      });
+    }
+  }
+
+  newAssignFalse() {
+    this.setState({ closeNew: false });
   }
 
   render() {
-    const { showCookiePopup } = this.state;
-
+    const { showCookiePopup, showSupCookiePopup, showOne } = this.state;
     return (
       <>
         {/* React Helmet is used to dynamically adjust the head of the document and add meta data */}
@@ -82,7 +107,10 @@ class App extends Component {
         <Navbar />
         <main>
           <Routes>
-            <Route path="/wsoa4175a_1894979/" element={<Home />} />
+            <Route
+              path="/wsoa4175a_1894979/"
+              element={<Home new={this.new} />}
+            />
             <Route
               path="/wsoa4175a_1894979/BlogSection/"
               element={<BlogSection />}
@@ -114,39 +142,42 @@ class App extends Component {
             />
           </Routes>
         </main>
-
-        {!navigator.cookieEnabled ? (
-          <CookieBlocked />
-        ) : (
-          <CookieConsent
-            enableDeclineButton
-            debug="true"
-            overlay="true"
-            location="bottom"
-            containerClasses="cookie-banner-container"
-            buttonWrapperClasses="cookie-banner-button-container"
-            contentClasses="cookie-banner-contents"
-            declineButtonClasses="cookie-banner-decline-button"
-            buttonClasses="cookie-banner-accept-button"
-            overlayClasses="cookie-banner-overlay"
-            disableStyles="true"
-            declineButtonText="Update Preferences"
-            buttonText="Accept All Cookies"
-            onDecline={this.switchCookieState}
-            onAccept={this.acceptClick}
-          >
-            This website uses cookies to{" "}
-            <span className="strike-through-text">
-              monitor your activity and track you on the internet
-            </span>{" "}
-            enhance the user experience.
-          </CookieConsent>
-        )}
+        {
+          //Checking if cookies are blocked
+          !navigator.cookieEnabled ? (
+            <CookieBlocked />
+          ) : (
+            <CookieBanner
+              debug="true"
+              onPreferences={this.switchCookieState}
+              onPopupAccept={this.acceptClick}
+            />
+          )
+        }
 
         <CookiePopup
           showCookiePopup={showCookiePopup}
           onCookieSwitch={this.switchCookieState}
+          onNew={this.newAssignFalse}
+          isPopupSubtext="false"
         />
+
+        <CookiePopup
+          showCookiePopup={this.state.showNewCookies}
+          onCookieSwitch={this.switchCookieStateNew}
+          onNew={this.newAssignFalse}
+          isPopupSubtext="true"
+          popupSubtext={
+            <>
+              Are you sure you don't want to enable all cookies to{" "}
+              <span className="strike-through-text">
+                let us profit off your data
+              </span>{" "}
+              better our product and your experience?
+            </>
+          }
+        />
+
         <Footer />
       </>
     );

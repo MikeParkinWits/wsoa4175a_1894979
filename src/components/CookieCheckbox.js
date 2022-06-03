@@ -25,7 +25,6 @@ export default class CookieCheckbox extends Component {
             name={cookieName}
             className={cookieClassName}
             disabled={isDisabled}
-            {...(num > 0 ? console.log("1") : console.log("Hello"))}
             onChange={onChangeFunction}
             checked={isChecked}
           ></input>
