@@ -176,27 +176,6 @@ export default class Blog5 extends Component {
                   gives a good direction of where I am heading for my final
                   submission and internet artwork.
                 </p>
-                <p>
-                  With all of this now outlined, I would then say that I am
-                  quite happy with how my prototype turned out. Not only do I
-                  believe that I was able to create a successful piece of
-                  internet art – being an artwork that critiques a problem that
-                  only exists because of the internet, and one which can only be
-                  fixed through the internet (Carrier, 2020: para. 12 - 16) –
-                  but I was also able create a prototype that, while limited,
-                  successfully shows my chosen themes and the direction I am
-                  heading it. However, it is important to note that even though
-                  the cookie banner has been designed to make users question
-                  accepting all cookies without thinking; because this is a
-                  prototype, if the user chooses to accept all cookies in the
-                  beginning, a huge portion of the prototype is missed. As such,
-                  there are still future developments that are planned to not
-                  only combat this but also to enhance my overall goal for the
-                  site. These include making users sign in to unlock more than a
-                  preview for each blog post, adverts that become bigger as you
-                  scroll down pages, and browser notifications that are required
-                  and spam the user endlessly.
-                </p>
               </section>
             </article>
             <BlogButtons type="Blog" />
