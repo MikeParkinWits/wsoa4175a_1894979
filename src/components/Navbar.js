@@ -68,15 +68,7 @@ export default class Navbar extends Component {
                     Design
                   </NavLink>
                 </li>
-                <li>
-                  <NavLink
-                    className="nav-item"
-                    to="/wsoa4175a_1894979/ArtworkSection/"
-                    onClick={this.closeHamburgerMenu}
-                  >
-                    Art
-                  </NavLink>
-                </li>
+                <li></li>
               </ul>
             </section>
 
