@@ -16,8 +16,6 @@ import Typing from "react-typing-animation"; //Used for Hero Typography Animatio
 import FadeIn from "react-fade-in"; //Used for smooth page transition load - Documentation can be found here => https://www.npmjs.com/package/react-fade-in
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
 import { memo } from "react"; //React memo is used to memorize the title typewriter component and prevent it from rerendering when there are state changes - Documentation can be found here => https://www.npmjs.com/package/react-memo
-import CookiePopup from "../components/CookiePopup";
-import Cookies from "js-cookie"; //External Package used to edit cookie information in browser - Documentation can be found here => https://www.npmjs.com/package/js-cookie
 
 class Home extends Component {
   //Scrolls the page to the top on load
@@ -26,8 +24,9 @@ class Home extends Component {
   }
 
   componentWillUnmount() {
-    console.log("NEXT");
-    this.props.new();
+    const { secondPopupSwitcher } = this.props;
+
+    secondPopupSwitcher();
   }
 
   render() {

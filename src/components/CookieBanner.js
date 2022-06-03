@@ -12,16 +12,11 @@ export default class CookieBanner extends Component {
       bannerVisible: false,
     };
 
-    this.switchState = this.switchState.bind(this);
     this.acceptClick = this.acceptClick.bind(this);
     this.onUpdate = this.onUpdate.bind(this);
   }
 
-  switchState() {
-    this.setState({ bannerVisible: false });
-    Cookies.set("CookieConsent", false);
-  }
-
+  //Accept Button Function
   acceptClick() {
     const { onPopupAccept } = this.props;
 
@@ -30,6 +25,7 @@ export default class CookieBanner extends Component {
     this.setState({ bannerVisible: false });
   }
 
+  //Update Button Function
   onUpdate() {
     const { onPreferences } = this.props;
 
@@ -39,6 +35,7 @@ export default class CookieBanner extends Component {
     Cookies.set("CookieConsent", false);
   }
 
+  //Checks to see if cookies have already been accepted
   componentDidMount() {
     const { debug } = this.props;
 
@@ -48,7 +45,7 @@ export default class CookieBanner extends Component {
   }
 
   render() {
-    const { bannerVisible, showCookiePopup } = this.state;
+    const { bannerVisible } = this.state;
 
     if (!bannerVisible) {
       return null;

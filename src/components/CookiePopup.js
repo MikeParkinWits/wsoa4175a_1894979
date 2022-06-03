@@ -16,48 +16,59 @@ export default class CookiePopup extends Component {
 
     this.handleCheckbox = this.handleCheckbox.bind(this);
     this.saveCookies = this.saveCookies.bind(this);
+    this.acceptAll = this.acceptAll.bind(this);
   }
 
+  //Handles checkbox values
   handleCheckbox = (event) => {
     let state = this.state;
     state.cookies[event.target.name] = event.target.checked;
     this.setState(state);
   };
 
+  //Saves cookie popup selection
   saveCookies = () => {
-    this.props.onCookieSwitch();
+    const { onCookieSwitch, disableSecondPopup } = this.props;
+    const { cookies } = this.state;
 
-    const cookieState = this.state.cookies;
+    onCookieSwitch();
 
     Cookies.set("necessaryCookies", true);
-    Cookies.set("functionalCookies", cookieState.functionalCookies);
-    Cookies.set("performanceCookies", cookieState.performanceCookies);
+    Cookies.set("functionalCookies", cookies.functionalCookies);
+    Cookies.set("performanceCookies", cookies.performanceCookies);
 
-    if (cookieState.functionalCookies && cookieState.performanceCookies) {
+    if (cookies.functionalCookies && cookies.performanceCookies) {
       Cookies.set("CookieConsent", true);
-      this.props.onNew();
+      disableSecondPopup();
     } else {
       Cookies.set("CookieConsent", false);
     }
   };
 
+  //Saves all cookies and disables second popup, as all cookies are true
   acceptAll = () => {
-    this.props.onCookieSwitch();
+    const { onCookieSwitch, disableSecondPopup } = this.props;
+
+    onCookieSwitch();
     Cookies.set("necessaryCookies", true);
     Cookies.set("functionalCookies", true);
     Cookies.set("performanceCookies", true);
-    this.props.onNew();
+
+    disableSecondPopup();
   };
+
   static defaultProps = {
     showCookiePopup: false,
+    isPopupSubtext: false,
+    popupSubtext: false,
   };
 
   render() {
-    const { showCookiePopup, onCookieSwitch, isPopupSubtext, popupSubtext } =
-      this.props;
+    const { showCookiePopup, isPopupSubtext, popupSubtext } = this.props;
+
+    const { cookies } = this.state;
 
     if (!showCookiePopup) {
-      console.log(showCookiePopup);
       return null;
     }
     return (
@@ -89,7 +100,7 @@ export default class CookiePopup extends Component {
             cookieName="functionalCookies"
             cookieClassName=""
             isDisabled=""
-            isChecked={this.state.cookies.functionalCookies}
+            isChecked={cookies.functionalCookies}
             onChangeFunction={this.handleCheckbox}
             checkboxText={
               <>
@@ -109,7 +120,7 @@ export default class CookiePopup extends Component {
             cookieName="performanceCookies"
             cookieClassName=""
             isDisabled=""
-            isChecked={this.state.cookies.performanceCookies}
+            isChecked={cookies.performanceCookies}
             onChangeFunction={this.handleCheckbox}
             checkboxText={
               <>

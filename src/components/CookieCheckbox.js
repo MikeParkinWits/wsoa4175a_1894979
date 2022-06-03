@@ -2,7 +2,6 @@ import React, { Component } from "react";
 
 export default class CookieCheckbox extends Component {
   render() {
-    let num = 1;
     const {
       cookieTitle,
       cookieName,

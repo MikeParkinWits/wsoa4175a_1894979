@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "../styles/cookieBlocked.css";
 
-import BlogFiveImage from "../assets/BlockedSymbol.svg";
+import BlockedImage from "../assets/BlockedSymbol.svg";
 
 export default class CookieBlocked extends Component {
   render() {
@@ -12,7 +12,7 @@ export default class CookieBlocked extends Component {
           <header className="cookie-blocked-header">
             <img
               className="blocked-image"
-              src={BlogFiveImage}
+              src={BlockedImage}
               title={"imageTitle"}
               alt={"imageAltText"}
             ></img>
