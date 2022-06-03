@@ -11,6 +11,7 @@ import Blog2 from "./routes/Blogs/Blog2";
 import Blog3 from "./routes/Blogs/Blog3";
 import Blog4 from "./routes/Blogs/Blog4";
 import Blog5 from "./routes/Blogs/Blog5";
+import Blog6 from "./routes/Blogs/Blog6";
 import Design1 from "./routes/Design/Design1";
 import Design2 from "./routes/Design/Design2";
 
@@ -27,11 +28,11 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import CookiePopup from "./components/CookiePopup";
 import CookieBlocked from "./components/CookieBlocked";
+import CookieBanner from "./components/CookieBanner";
 
 //External Packages
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
 import Cookies from "js-cookie"; //External Package used to edit cookie information in browser - Documentation can be found here => https://www.npmjs.com/package/js-cookie
-import CookieBanner from "./components/CookieBanner";
 
 library.add(faBars, faX, faXmark);
 
@@ -134,6 +135,7 @@ class App extends Component {
             <Route path="/wsoa4175a_1894979/Blogs/Blog3/" element={<Blog3 />} />
             <Route path="/wsoa4175a_1894979/Blogs/Blog4/" element={<Blog4 />} />
             <Route path="/wsoa4175a_1894979/Blogs/Blog5/" element={<Blog5 />} />
+            <Route path="/wsoa4175a_1894979/Blogs/Blog6/" element={<Blog6 />} />
 
             {/* Design Routes*/}
             <Route
@@ -148,7 +150,7 @@ class App extends Component {
         </main>
 
         {
-          //Cookie banners & popups in App.js as they are intended to overlap any page of the site
+          //Cookie banners & popups are in App.js as they are intended to overlap any page of the site
         }
 
         {

@@ -3,8 +3,21 @@ import BlogTwoImage from "../assets/PreviewImages/Blog2.svg";
 import BlogThreeImage from "../assets/PreviewImages/Blog3.svg";
 import BlogFourImage from "../assets/PreviewImages/Blog4.svg";
 import BlogFiveImage from "../assets/PreviewImages/Blog5.svg";
+import BlogSixImage from "../assets/PreviewImages/Blog6.svg";
 
 export const BlogList = [
+  {
+    cardTitle: "Internet Artwork Prototype ",
+    cardDate: "12 May 2022",
+    cardSummary:
+      "An outline of the thought process behind my Internet Artwork Prototype, and future plans",
+    image: BlogSixImage,
+    imageTitle: "Words with a cookie symbol in the 'o'",
+    imageAltText:
+      "The words 'Will You Accept?' with a cookie symbol in the 'o'",
+    cardRoute: "/wsoa4175a_1894979/Blogs/Blog6/",
+    blogWords: 1268,
+  },
   {
     cardTitle: "Internet Artwork Preparatory Work",
     cardDate: "28 April 2022",
