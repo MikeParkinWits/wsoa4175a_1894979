@@ -107,74 +107,81 @@ export default class Blog5 extends Component {
                   look back and reflect on it, understanding where your
                   strengths and weakness lay in the work. Thus, in this blog
                   post I aim to do just that – reflecting on my submission for
-                  assignment 2 to understand where I can improve in future. To
-                  do so, I start by looking briefly at where I stood in
-                  assignment 1 and the improvements I made in relation to its
-                  feedback. Thereafter, I look more closely at assignment 2 –
-                  exploring my theoretical, and practical, engagement for this
-                  quarter.
+                  assignment 2 to understand where I can improve for future
+                  assignments. To do so, I start by looking briefly at where I
+                  stood in assignment 1 and the improvements I made in relation
+                  to its feedback. Thereafter, I look more closely at assignment
+                  2 – exploring my theoretical, and practical, engagement for
+                  this quarter.
                 </p>
                 <p>
-                  Firstly, before we can look at assignment 2, we must a full
-                  understand of where I stood in the previous assignment. For
-                  assignment 1, I was pleased with what I had submitted, having
-                  put a large amount of thought, time, and effort into the web
-                  design, blogs, potential internet art themes, and overall user
-                  experience of the website. As a result, there was very little
-                  feedback for me to draw on for assignment 2, mostly relating
-                  to very minor adjustments – such as fixing small typos, and
-                  deconstructing state and prop variables for cleaner code. As
-                  such, this then created a solid grounding to start assignment
-                  2 on, allowing me to dedicate as much time as possible to
-                  conceptualizing, and creating, my internet artwork.
+                  To start, before we can look at assignment 2, we must a full
+                  understand of where I stood with the previous assignment.
+                  Overall, I was pleased with my assignment 1 submission, having
+                  put a large amount of time, thought, and effort into the
+                  websites design, blogs, potential internet art themes, and
+                  overall user experience. As a result, there was very little
+                  feedback for me to draw on for assignment 2, with most
+                  relating to very minor adjustments – such as fixing small
+                  typos, and deconstructing state and prop variables for cleaner
+                  code. As such, this then created a solid grounding for me
+                  start assignment 2 on, allowing me to dedicate as much time as
+                  possible to conceptualizing, and creating, my internet
+                  artwork.
                 </p>
                 <p>
-                  With that, I then began working on assignment 2, which started
-                  with me exploring various websites to understand what I should
-                  create for my internet art prototype. As noted in my previous
-                  blog post, this then led to me creating a cookie consent
-                  system that uses dark UI/UX patterns, and mimicry, in order to
-                  make users more aware of the parts of the web that they
-                  ignore, but should not. Though, while I originally thought
-                  this assignment would rely heavily on technical ability, as it
-                  revolved around creating an internet artwork prototype, I soon
-                  learnt that this was not the case. Whilst the technical skill
-                  needed to create my artworks prototype was substantial
-                  (elaborated on further next), in order to make the prototype
+                  With that, I then began working on my assignment 2 submission,
+                  which started with me exploring various websites to understand
+                  what I should create for my internet art prototype. As noted
+                  in my previous blog post, this then led to me creating a
+                  cookie consent system that uses dark UI/UX patterns, and
+                  mimicry, in order to make users more aware of the parts of the
+                  web that they ignore, but should not. However, while I had
+                  originally thought that this assignment would rely on my
+                  technical skill, I soon learnt that this was not the case.
+                  Whilst the technical skill needed to create my artworks
+                  prototype was substantial (elaborated on further in the next
+                  paragraph), it turned out that in order to make the prototype
                   for my internet artwork as effective as possible I needed to
-                  perform a huge amount of research in order to better
-                  understand how cookie consent banner’s function, where they
-                  are necessary, and how they are abused using dark UI/UX
-                  patterns – which can be seen in both the blog posts relating
-                  to my internet artwork.
+                  perform a huge amount of research to better understand how
+                  cookie consent banner’s function, where they are necessary,
+                  and how they are abused using dark UI/UX patterns – which can
+                  be seen in both my previous two blog posts relating to my
+                  internet artwork.
                 </p>
                 <p>
-                  Furthermore, we can then look at my technical engagement for
-                  this assignment, which revolved around creating my internet
-                  artwork prototype. While I had originally believed that
-                  creating this prototype would be quite straightforward, as
-                  cookie consent banners can be found on almost all websites, it
-                  turned out to be much tricker than expect as there were no
-                  react packages with enough customizability for my needs – as
-                  noted in my Internet Artwork Prototype blogpost. As such, I
-                  found that, even though I am fairly confident in my ReactJS
-                  ability, creating this prototype tested my abilities – pushing
-                  my knowledge of states and callback functions in React, as
-                  well as teaching me how to use browser cookies efficiently.
-                  However, in the end I would say I was able to overcome these
-                  technical difficulties and produce a prototype artwork that I
-                  am proud of.
+                  In addition to the creative engagement for this assignment, we
+                  can then also look at my technical engagement, which revolved
+                  around creating my internet artwork prototype. While I had
+                  originally believed that creating this prototype would be
+                  quite straightforward, as cookie consent banners can be found
+                  on almost all websites, it turned out to be much tricker than
+                  expect, as there were no React cookie banner packages with
+                  enough customizability for my needs – as noted in my{" "}
+                  <Link
+                    to="/wsoa4175a_1894979/Blogs/Blog6/"
+                    className="inline-link"
+                  >
+                    Internet Artwork Prototype blog post
+                  </Link>
+                  . As such, I found that, even though I am fairly confident in
+                  my ReactJS ability, creating this prototype tested my
+                  abilities – pushing my knowledge of states and callback
+                  functions in React, as well as teaching me how to use browser
+                  cookies efficiently. However, in the end I would say I was
+                  able to overcome these technical difficulties and produce a
+                  prototype artwork that I am proud of.
                 </p>
                 <p>
                   So, in conclusion, we can then see that although I started
                   this assignment with a solid foundation, it presented its own
                   series of challenges for me to overcome. However, in the end,
-                  I would say that I am overall extremely satisfied with my
-                  engagement for this assignment, as I was able to create
-                  concise and informed blog posts that defined, and improved, my
-                  prototype artwork – a prototype artwork that, while limited,
-                  gives a good direction of where I am heading for my final
-                  submission and internet artwork.
+                  I was extremely satisfied with my engagement for this
+                  assignment, as I was able to create concise and informed blog
+                  posts that defined, and improved, my prototype artwork – a
+                  prototype artwork that, while limited, gives a good direction
+                  of where I am heading for my final submission and internet
+                  artwork.
                 </p>
               </section>
             </article>

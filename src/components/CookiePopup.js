@@ -107,7 +107,7 @@ export default class CookiePopup extends Component {
                 These are cookies that{" "}
                 <span className="strike-through-text">
                   track your every move on the web and allow advertisements to
-                  to target your personal habits
+                  target your personal habits
                 </span>{" "}
                 help deliver a superior user experience, making the site
                 tailored to your experience.

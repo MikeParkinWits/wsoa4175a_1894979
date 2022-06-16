@@ -143,35 +143,36 @@ export default class Blog5 extends Component {
                   this blog post), one in particular stood out to me the most,
                   as it is an area that has become normalized, but should not be
                   – cookie consent popups. To understand why these should not be
-                  normalized, however, we must first understand what cookies.
-                  According to Kaspersky Antivirus, cookies are a small piece of
-                  identifying information that is saved to your browser,
-                  allowing information to be retained between browsing sessions
-                  (Kaspersky, 2022). Although, while these may be useful, with
-                  first party cookies from the website you are visiting used to
-                  keep you logged in and remember your preferences; they are
-                  often abused through third party cookies, which are used to
-                  track your movement on the web – serving you more accurate,
-                  and creepier, advertisements in addition unwanted spam. As
-                  such, governments around the world have begun implementing
-                  laws to combat this – with one of the most prominent being the
-                  ePrivacy Directive put in by the EU in 2002, which requires
-                  websites to ask for consent before using cookies. Although,
-                  while this may appear to be a good idea on the surface, loose
-                  wording, and very little enforcement, has led to it being
-                  grossly abused and misused. In the law, it states that{" "}
+                  normalized, however, we must first understand what cookies
+                  are. According to Kaspersky Antivirus, cookies are a small
+                  piece of identifying information that is saved to your
+                  browser, allowing information to be retained between browsing
+                  sessions (Kaspersky, 2022). Although, while these may be
+                  useful, with first party cookies from the website you are
+                  visiting used to keep you logged in and remember your
+                  preferences; they are often abused through third party
+                  cookies, which are used to track your movement on the web –
+                  serving you more accurate, and increasingly creepier,
+                  advertisements in addition unwanted spam. As such, governments
+                  around the world have begun implementing laws to combat this –
+                  with one of the most prominent being the ePrivacy Directive
+                  put in place by the EU in 2002, which requires websites to ask
+                  for consent before using cookies. Although, while this may
+                  appear to be a good idea on the surface, loose wording, and
+                  very little enforcement, has led to it being grossly abused
+                  and misused. In the law, it states that{" "}
                   <q>
-                    The methods for giving information, offering a right to
-                    refuse or requesting consent should be made as user-friendly
-                    as possible
+                    the methods for giving information, offering a right to
+                    refuse or requesting consent, should be made as
+                    user-friendly as possible
                   </q>{" "}
                   (ePrivacy Directive, 2002); however, many websites have taken
-                  this liberally, which has then resulted in websites making use
-                  of dark UI/UX patterns – which Arushi Jaiswal, in their
-                  article <cite>Dark patterns</cite> in UX (2018), notes are
-                  deceptive UI/UX interactions that are designed to mislead and
-                  trick users – to make accepting cookie usage easy, but
-                  declining it extremely difficult.
+                  this liberally, which has resulted in websites making use of
+                  dark UI/UX patterns – which Arushi Jaiswal, in their article{" "}
+                  <cite>Dark patterns in UX</cite> (2018), notes are deceptive
+                  UI/UX interactions that are designed to mislead and trick
+                  users – to make accepting cookie usage easy, but declining it
+                  extremely difficult.
                 </p>
                 <p>
                   As such, for my prototype I focused on this idea of using dark
@@ -195,18 +196,19 @@ export default class Blog5 extends Component {
                   a space that seldom has this, it actually stands out more and
                   users are more inclined to engage with it (see figure 1
                   below). Similarly, this same dark UI/UX pattern can also been
-                  seen throughout the site – with the ‘adjust preferences’ popup
-                  making use of the same crossed out text and button colour
-                  schemes. In addition to this, I also take a step further –
-                  using an even more abusive, but still legal, dark UI/UX
-                  pattern – placing a cookie wall at the front of the website
-                  that requires users to disable cookie blockers if enabled (see
-                  figure 2 below); and also encouraging the user to re-evaluate
-                  their cookie choices later if they did not accept them all
-                  when first updating cookie preferences first. These then act
-                  as a physical barrier to the user, putting a major emphasis on
-                  how easily these cookie consent popups can be abused, and why
-                  they should not be normalized.
+                  seen throughout the entire site – with the ‘adjust
+                  preferences’ popup making use of the same crossed out text and
+                  button colour schemes. In addition to this, I also take it a
+                  step further – using an even more abusive, but still legal,
+                  dark UI/UX pattern – placing a cookie wall at the front of the
+                  website that requires users to disable cookie blockers if
+                  enabled (see figure 2 below); as well as encouraging the user
+                  to re-evaluate their cookie choices later if they did not
+                  accept them all when first updating their cookie preferences.
+                  These then act as a physical barrier to the user, putting a
+                  major emphasis on how easily these cookie consent popups can
+                  be abused, while still technically being legal, and why they
+                  should not be normalized.
                 </p>
                 <BlogFigure
                   imageSource={BlogPhoto}
@@ -226,20 +228,20 @@ export default class Blog5 extends Component {
                   creation. While I assumed that creating an abusive cookie
                   consent banner would be quite simple, as it is commonly seen
                   in websites all over the internet, this was actually not the
-                  case. While there were many packages for react that allowed
+                  case. While there were many packages for React that allowed
                   users to implement a cookie consent banner, most of them were
                   quite limiting and made creating an abusive popup extremely
-                  challenging – showing how how developers must be purposefully
-                  going out of their way to create abusive cookie consent
-                  banners to deceive users. As such, I had to create my own from
-                  scratch, learning how to work with cookies and persistent
-                  banners in the process, which proved to be a bigger
-                  undertaking than expect. Thus, I had to abandon an intended
-                  feature for this prototype – a toggle in the footer to enable,
-                  reset, and disable, my internet artwork. Although, as this is
-                  the prototype, I found that dropping this feature for this
-                  version of the internet artwork was not detrimental, and as of
-                  right now the internet artwork can be reset by{" "}
+                  challenging – showing how developers are purposefully going
+                  out of their way to create abusive cookie consent banners to
+                  deceive users. As such, I had to create my own from scratch,
+                  learning how to work with cookies and persistent banners in
+                  the process, which proved to be a bigger undertaking than
+                  expect. Thus, I had to abandon an intended feature for this
+                  prototype – a toggle in the footer to enable, reset, and
+                  disable, my internet artwork. Although, as this was a
+                  prototype, I found that dropping this feature for this version
+                  of the internet artwork was not detrimental, and as of right
+                  now the internet artwork can be reset by{" "}
                   <Link
                     to="/wsoa4175a_1894979/"
                     className="inline-link"

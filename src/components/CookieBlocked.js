@@ -23,7 +23,7 @@ export default class CookieBlocked extends Component {
             settings, and then refresh the page, to enable cookies{" "}
             <span className="strike-through-text">
               and let us track and monitor your online presence to sell to
-              advertizers
+              advertizers for our own gain
             </span>{" "}
             for the best experience
           </p>

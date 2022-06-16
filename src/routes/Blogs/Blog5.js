@@ -177,13 +177,13 @@ export default class Blog5 extends Component {
                   is known for prioritizing functionality over visuals –
                   utilizing thick lines, harsh shadows, and very little visual
                   ‘fluff’ – as this would help to portray how my artwork is
-                  trying to show the inner workings and crux of the internet.
+                  trying to show the inner workings, and crux, of the internet.
                   However, I found this to be quite harsh and take away from the
                   overall experience of the site, potentially deterring users
                   from using the site altogether. As such, I settled on using
                   the aesthetic of neubrutalism – which makes use of brutalistic
                   elements, while still being visually appealing and colourful.
-                  This can then be seen more in depth in my{" "}
+                  This is elaborated on further in my{" "}
                   <Link
                     to="/wsoa4175a_1894979/Design/Design2/"
                     className="inline-link"
