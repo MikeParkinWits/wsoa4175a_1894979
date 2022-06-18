@@ -43,53 +43,38 @@ class App extends Component {
     this.state = {
       showCookiePopup: false,
       showSecondPopup: false,
-      secondCookiePopupCheck: true,
     };
 
-    this.switchCookieState = this.switchCookieState.bind(this);
+    this.switchFirstCookiePopupState =
+      this.switchFirstCookiePopupState.bind(this);
+
+    this.switchSecondPopupCookiesState =
+      this.switchSecondPopupCookiesState.bind(this);
+
     this.acceptClick = this.acceptClick.bind(this);
-    this.showSecondPopupCheck = this.showSecondPopupCheck.bind(this);
-    this.switchSecondPopupCookies = this.switchSecondPopupCookies.bind(this);
-    this.disableSecondPopup = this.disableSecondPopup.bind(this);
   }
 
-  //Displays cookie settings window when clicking 'update preferences' buton
-  switchCookieState() {
-    this.setState({ showCookiePopup: !this.state.showCookiePopup });
-  }
-
-  //Sets all cookies to true on clicking accept button, and disables second cookie window
+  //Sets all cookies to true on clicking accept button, and disables second cookie window (where necessary), across Popup & banner components
   acceptClick() {
     Cookies.set("functionalCookies", true);
     Cookies.set("performanceCookies", true);
     Cookies.set("necessaryCookies", true);
 
     Cookies.set("CookieConsent", true);
-    this.setState({
-      secondCookiePopupCheck: !this.state.secondCookiePopupCheck,
-    });
   }
 
-  //Used to display second, more annoying, cookie settings window that appears
-  switchSecondPopupCookies() {
+  //Callback that displays cookie settings window when clicking 'update preferences' button
+  switchFirstCookiePopupState() {
+    this.setState({ showCookiePopup: !this.state.showCookiePopup });
+  }
+
+  //Callback function that displays the second, more annoying, cookie settings window that appears later in the website
+  switchSecondPopupCookiesState() {
     this.setState({ showSecondPopup: !this.state.showSecondPopup });
-    this.setState({ secondCookiePopupCheck: false });
-  }
-
-  //Callback for Home.js to see if second cookie popup should display
-  showSecondPopupCheck() {
-    if (this.state.secondCookiePopupCheck) {
-      this.setState({ showSecondPopup: !this.state.showSecondPopup });
-    }
-  }
-
-  //Callback used to disable second popup when accepting all cookies on first popup
-  disableSecondPopup() {
-    this.setState({ secondCookiePopupCheck: false });
   }
 
   render() {
-    const { showCookiePopup } = this.state;
+    const { showCookiePopup, showSecondPopup } = this.state;
     return (
       <>
         {/* React Helmet is used to dynamically adjust the head of the document and add meta data */}
@@ -115,7 +100,11 @@ class App extends Component {
           <Routes>
             <Route
               path="/wsoa4175a_1894979/"
-              element={<Home secondPopupSwitcher={this.showSecondPopupCheck} />}
+              element={
+                <Home
+                  secondPopupSwitcher={this.switchSecondPopupCookiesState}
+                />
+              }
             />
             <Route
               path="/wsoa4175a_1894979/BlogSection/"
@@ -161,7 +150,7 @@ class App extends Component {
             <CookieBlocked />
           ) : (
             <CookieBanner
-              onPreferences={this.switchCookieState}
+              onPreferences={this.switchFirstCookiePopupState}
               onPopupAccept={this.acceptClick}
             />
           )
@@ -169,16 +158,16 @@ class App extends Component {
 
         <CookiePopup
           showCookiePopup={showCookiePopup}
-          onCookieSwitch={this.switchCookieState}
+          onCookieSwitch={this.switchFirstCookiePopupState}
           isPopupSubtext="false"
-          disableSecondPopup={this.disableSecondPopup}
+          onAcceptButton={this.acceptClick}
         />
 
         <CookiePopup
-          showCookiePopup={this.state.showSecondPopup}
-          onCookieSwitch={this.switchSecondPopupCookies}
+          showCookiePopup={showSecondPopup}
+          onCookieSwitch={this.switchSecondPopupCookiesState}
           isPopupSubtext="true"
-          disableSecondPopup={this.disableSecondPopup}
+          onAcceptButton={this.acceptClick}
           popupSubtext={
             <>
               Are you sure you don't want to enable all cookies to{" "}

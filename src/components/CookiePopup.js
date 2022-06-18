@@ -28,7 +28,7 @@ export default class CookiePopup extends Component {
 
   //Saves cookie popup selection
   saveCookies = () => {
-    const { onCookieSwitch, disableSecondPopup } = this.props;
+    const { onCookieSwitch } = this.props;
     const { cookies } = this.state;
 
     onCookieSwitch();
@@ -39,22 +39,17 @@ export default class CookiePopup extends Component {
 
     if (cookies.functionalCookies && cookies.performanceCookies) {
       Cookies.set("CookieConsent", true);
-      disableSecondPopup();
-    } else {
+    } else if (Cookies.get("CookieConsent") !== "true") {
       Cookies.set("CookieConsent", false);
     }
   };
 
   //Saves all cookies and disables second popup, as all cookies are true
   acceptAll = () => {
-    const { onCookieSwitch, disableSecondPopup } = this.props;
+    const { onCookieSwitch, onAcceptButton } = this.props;
 
     onCookieSwitch();
-    Cookies.set("necessaryCookies", true);
-    Cookies.set("functionalCookies", true);
-    Cookies.set("performanceCookies", true);
-
-    disableSecondPopup();
+    onAcceptButton();
   };
 
   static defaultProps = {
@@ -71,6 +66,7 @@ export default class CookiePopup extends Component {
     if (!showCookiePopup) {
       return null;
     }
+
     return (
       <article className="modal-overlay">
         <section className="modal">
