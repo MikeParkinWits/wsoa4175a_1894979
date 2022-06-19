@@ -19,6 +19,7 @@
   .main-button:hover{
     transform: translate(-0.25rem, -0.25rem);
     box-shadow: 0.3rem 0.3rem #fc85f0, 0.3rem 0.3rem 0rem 0.1rem black;
+    cursor: pointer;
   }
 
   .main-button{

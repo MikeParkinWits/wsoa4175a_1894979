@@ -10,6 +10,7 @@ import { BlogList } from "../helpers/BlogList.js";
 //Import External Packages
 import FadeIn from "react-fade-in"; //Used for smooth page transition load - Documentation can be found here => https://www.npmjs.com/package/react-fade-in
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
+import ActionButton from "../components/ActionButton";
 
 export default class BlogSection extends Component {
   //Scrolls the page to the top on load
@@ -17,7 +18,22 @@ export default class BlogSection extends Component {
     window.scrollTo(0, 0);
   }
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      cardsVisible: 6,
+    };
+
+    this.showMoreCards = this.showMoreCards.bind(this);
+  }
+
+  //Function to load more cards
+  showMoreCards() {
+    this.setState({ cardsVisible: this.state.cardsVisible + 3 });
+  }
+
   render() {
+    const { cardsVisible } = this.state;
     return (
       <>
         {/* React Helmet is used to dynamically adjust the head of the document and add meta data */}
@@ -40,7 +56,7 @@ export default class BlogSection extends Component {
           <article className="page-container h-feed">
             <Titles mainTitle={true} title="Blog" />
             <section className="card-grid">
-              {BlogList.map((blogItem, value) => {
+              {BlogList.slice(0, cardsVisible).map((blogItem, value) => {
                 return (
                   <BlogCard
                     key={BlogList.length - value}
@@ -55,6 +71,12 @@ export default class BlogSection extends Component {
                 );
               })}
             </section>
+            {cardsVisible < BlogList.length && (
+              <ActionButton
+                buttonText="Load More Posts"
+                onClickAction={this.showMoreCards}
+              />
+            )}
           </article>
         </FadeIn>
       </>

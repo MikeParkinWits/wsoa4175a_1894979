@@ -16,7 +16,23 @@ export default class BlogSection extends Component {
     window.scrollTo(0, 0);
   }
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      cardsVisible: 6,
+    };
+
+    this.showMoreCards = this.showMoreCards.bind(this);
+  }
+
+  //Function to load more cards
+  showMoreCards() {
+    this.setState({ cardsVisible: this.state.cardsVisible + 3 });
+  }
+
   render() {
+    const { cardsVisible } = this.state;
+
     return (
       <>
         {/* React Helmet is used to dynamically adjust the head of the document and add meta data */}
