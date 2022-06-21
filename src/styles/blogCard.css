@@ -6,7 +6,7 @@
 
 
     border: 0.2rem solid black;
-    border-radius: 2%;
+    border-radius: 0.4rem;
     background-color: rgb(243, 243, 243);
 
     padding: 1rem;
@@ -33,7 +33,7 @@
 
 
     border:  0.1875rem solid black;
-    border-radius: 2%;
+    border-radius: 0.4rem;
     
     padding: 0rem;
 }

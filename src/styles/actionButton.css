@@ -11,7 +11,7 @@
   font-size: 1rem;
   font-weight: normal;
 
-  border-radius: 5%;
+  border-radius: 0.3rem;
   border: 0.125rem solid rgba(0, 0, 0, 0.78);
   transition: all 0.2s ease-out;
 }  
@@ -30,7 +30,7 @@
   .cookie-banner-accept-button:hover,
   .cookie-banner-decline-button:hover{
     transform: translate(-0.25rem, -0.25rem);
-    box-shadow: 0.1rem 0.1rem #000000, 0.3rem 0.3rem 0rem 0.05rem black;
+    box-shadow: 0.2rem 0.2rem #000000, 0.3rem 0.3rem 0rem 0.05rem black;
   }
 
     /* Response View */
