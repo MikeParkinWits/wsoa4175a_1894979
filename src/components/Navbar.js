@@ -96,12 +96,10 @@ export default class Navbar extends Component {
                           buttonText={
                             <>
                               {" "}
-                              <img
-                                src={login}
-                                width="25"
-                                alt="The Internet We Know Logo"
+                              <FontAwesomeIcon
+                                icon="fa-user"
                                 className="login-icon"
-                              ></img>{" "}
+                              />
                               Login
                             </>
                           }
@@ -123,12 +121,10 @@ export default class Navbar extends Component {
                           buttonText={
                             <>
                               {" "}
-                              <img
-                                src={login}
-                                width="25"
-                                alt="The Internet We Know Logo"
+                              <FontAwesomeIcon
+                                icon="fa-user"
                                 className="login-icon"
-                              ></img>{" "}
+                              />
                               Logout
                             </>
                           }

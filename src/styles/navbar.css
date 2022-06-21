@@ -30,6 +30,9 @@
   list-style-type: none;
   margin-left: auto;
 
+  align-items: center;
+
+  text-align: -webkit-center;
 }
 
 .nav-item {
@@ -94,6 +97,8 @@
 
     padding: 0rem;
     opacity: 1;
+
+    align-items:stretch;
   }
   
   .navigation{

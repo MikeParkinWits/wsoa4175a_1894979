@@ -18,7 +18,12 @@ import Design2 from "./routes/Design/Design2";
 
 //Font Awesome Imports
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faBars, faX, faXmark } from "@fortawesome/free-solid-svg-icons";
+import {
+  faBars,
+  faX,
+  faXmark,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 
 //Style Imports
 import "./styles/main.css";
@@ -36,7 +41,7 @@ import Helmet from "react-helmet"; //External Package used to dynamically update
 import Cookies from "js-cookie"; //External Package used to edit cookie information in browser - Documentation can be found here => https://www.npmjs.com/package/js-cookie
 import { gapi } from "gapi-script"; //External package used for google login
 
-library.add(faBars, faX, faXmark);
+library.add(faBars, faX, faXmark, faUser);
 
 class App extends Component {
   constructor(props) {
