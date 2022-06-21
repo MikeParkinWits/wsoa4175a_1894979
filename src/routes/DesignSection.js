@@ -75,7 +75,7 @@ export default class DesignSection extends Component {
 
             {cardsVisible < DesignList.length && (
               <ActionButton
-                buttonText="Load More Posts"
+                buttonText="Load Older Posts"
                 onClickAction={this.showMoreCards}
               />
             )}

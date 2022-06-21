@@ -73,7 +73,7 @@ export default class BlogSection extends Component {
             </section>
             {cardsVisible < BlogList.length && (
               <ActionButton
-                buttonText="Load More Posts"
+                buttonText="Load Older Posts"
                 onClickAction={this.showMoreCards}
               />
             )}
