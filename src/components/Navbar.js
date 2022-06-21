@@ -5,12 +5,15 @@ import { Route, Routes, Link, NavLink } from "react-router-dom";
 
 //Image Imports
 import logo from "../assets/Logo.svg";
+import login from "../assets/Login.svg";
 
 //Style Imports
 import "../styles/navbar.css";
 
 //Font Awesome Imports
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import GoogleLogin, { GoogleLogout } from "react-google-login";
+import ActionButton from "./ActionButton";
 
 export default class Navbar extends Component {
   constructor(props) {
@@ -34,6 +37,16 @@ export default class Navbar extends Component {
   render() {
     const { click } = this.state;
 
+    const responseGoogle = (response) => {
+      console.log(response);
+      console.log(response.profileObj);
+      this.props.signedIn();
+    };
+
+    const failedResponse = (response) => {
+      console.log(response);
+    };
+
     return (
       <>
         <header className="header-nav">
@@ -44,7 +57,11 @@ export default class Navbar extends Component {
                 to="/wsoa4175a_1894979/"
                 onClick={this.closeHamburgerMenu}
               >
-                <img src={logo} width="130" alt="Alt Text"></img>
+                <img
+                  src={logo}
+                  width="130"
+                  alt="The Internet We Know Logo"
+                ></img>
               </NavLink>
             </section>
             <section className="navigation">
@@ -68,7 +85,63 @@ export default class Navbar extends Component {
                     Design
                   </NavLink>
                 </li>
-                <li></li>
+                <li>
+                  {!this.props.signedInValue ? (
+                    <GoogleLogin
+                      clientId="438147070218-ntafm247ii9dm17lgo110daid1rbb4kv.apps.googleusercontent.com"
+                      render={(renderProps) => (
+                        <ActionButton
+                          onClickAction={renderProps.onClick}
+                          disabled={renderProps.disabled}
+                          buttonText={
+                            <>
+                              {" "}
+                              <img
+                                src={login}
+                                width="25"
+                                alt="The Internet We Know Logo"
+                                className="login-icon"
+                              ></img>{" "}
+                              Login
+                            </>
+                          }
+                          buttonClass="google-login-button-nav"
+                        ></ActionButton>
+                      )}
+                      buttonText="Login"
+                      onSuccess={responseGoogle}
+                      onFailure={failedResponse}
+                      cookiePolicy={"single_host_origin"}
+                    />
+                  ) : (
+                    <GoogleLogout
+                      clientId="438147070218-ntafm247ii9dm17lgo110daid1rbb4kv.apps.googleusercontent.com"
+                      render={(renderProps) => (
+                        <ActionButton
+                          onClickAction={renderProps.onClick}
+                          disabled={renderProps.disabled}
+                          buttonText={
+                            <>
+                              {" "}
+                              <img
+                                src={login}
+                                width="25"
+                                alt="The Internet We Know Logo"
+                                className="login-icon"
+                              ></img>{" "}
+                              Logout
+                            </>
+                          }
+                          buttonClass="google-login-button-nav"
+                        ></ActionButton>
+                      )}
+                      buttonText="Login"
+                      onLogoutSuccess={this.props.signedIn}
+                      onFailure={responseGoogle}
+                      cookiePolicy={"single_host_origin"}
+                    />
+                  )}
+                </li>
               </ul>
             </section>
 

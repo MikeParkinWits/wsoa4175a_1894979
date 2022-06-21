@@ -100,7 +100,7 @@ class App extends Component {
     const { showCookiePopup, showSecondPopup } = this.state;
 
     gapi.load("client:auth2", () => {
-      gapi.client.init({
+      gapi.auth2.init({
         clientId:
           "438147070218-ntafm247ii9dm17lgo110daid1rbb4kv.apps.googleusercontent.com",
         plugin_name: "chat",
@@ -127,7 +127,10 @@ class App extends Component {
             content="The Internet We Know is a website about the internet that critiques the internet we know today"
           />
         </Helmet>
-        <Navbar />
+        <Navbar
+          signedIn={this.signInFunction}
+          signedInValue={this.state.signedIn}
+        />
         <main>
           <Routes>
             <Route

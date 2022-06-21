@@ -5,6 +5,7 @@ import "../styles/cookieBlocked.css";
 import BlockedImage from "../assets/BlockedSymbol.svg";
 import ActionButton from "./ActionButton";
 import GoogleLogin from "react-google-login";
+import GoogleLogo from "../assets/GLogo.svg";
 
 export default class FreeArticleLimitModal extends Component {
   render() {
@@ -12,6 +13,10 @@ export default class FreeArticleLimitModal extends Component {
       console.log(response);
       console.log(response.profileObj);
       this.props.signedIn();
+    };
+
+    const failedResponse = (response) => {
+      console.log(response);
     };
 
     if (this.props.freeArticlesLeft > 0 && !this.props.signedInValue) {
@@ -42,14 +47,25 @@ export default class FreeArticleLimitModal extends Component {
                     <ActionButton
                       onClickAction={renderProps.onClick}
                       disabled={renderProps.disabled}
-                      buttonText="Continue with Google"
+                      buttonText={
+                        <>
+                          {" "}
+                          <img
+                            src={GoogleLogo}
+                            width="15"
+                            alt="The Internet We Know Logo"
+                            className="google-icon"
+                          ></img>{" "}
+                          Login with Google
+                        </>
+                      }
                       buttonClass="google-login-button"
                     ></ActionButton>
                   )
                 )}
                 buttonText="Login"
                 onSuccess={responseGoogle}
-                onFailure={responseGoogle}
+                onFailure={failedResponse}
                 cookiePolicy={"single_host_origin"}
               />
             </section>

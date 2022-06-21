@@ -26,7 +26,9 @@ export default class Blog1 extends Component {
     window.scrollTo(0, 0);
 
     console.log("test " + this.props.freeArticlesLeft);
-    this.props.decreaseFreeArticles();
+    if (!this.props.signedInValue) {
+      this.props.decreaseFreeArticles();
+    }
   }
 
   render() {
