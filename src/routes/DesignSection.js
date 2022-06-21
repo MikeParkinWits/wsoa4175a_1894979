@@ -13,7 +13,7 @@ import Helmet from "react-helmet"; //External Package used to dynamically update
 import ActionButton from "../components/ActionButton";
 
 export default class DesignSection extends Component {
-  //Scrolls the page to the top on load
+  //Lifecycle method that scrolls the page to the top on load
   componentDidMount() {
     window.scrollTo(0, 0);
   }

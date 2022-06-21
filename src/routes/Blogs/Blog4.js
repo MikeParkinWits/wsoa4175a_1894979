@@ -20,7 +20,7 @@ import Helmet from "react-helmet"; //External Package used to dynamically update
 import { Link } from "react-router-dom";
 
 export default class Blog4 extends Component {
-  //Scrolls the page to the top on load
+  //Lifecycle method that scrolls the page to the top on load
   componentDidMount() {
     window.scrollTo(0, 0);
   }

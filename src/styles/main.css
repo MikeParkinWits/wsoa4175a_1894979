@@ -4,6 +4,112 @@ main{
   min-height: calc(100vh - 259px);
 }
 
+.free-articles-modal{
+
+  background-color: rgb(246, 243, 243);
+
+  top: 1rem;
+  right: 1rem;
+
+  border: 0.2rem solid black;
+  align-items: center;
+  
+  justify-content: center;
+  display: flex;
+
+  padding: 1rem;
+
+  margin: 3.5rem 6rem -2rem 6rem;
+}
+
+.free-article-limit-reached-banner{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 999;
+
+  text-align: left;
+  padding: 2rem;
+
+  border-radius: 1rem;
+  border: 0.15rem solid black;
+
+  width: 80%;
+  max-width: 40rem;
+  max-height: 80%;
+
+  overflow-y: scroll;
+
+  box-shadow: 0.2rem 0.2rem #000000, 0.5rem 0.5rem 0rem 0.05rem black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.free-article-limit-reached-header{
+
+}
+
+
+.free-article-limit-reached-header h2{
+  margin: 2rem 1rem 1rem 1rem;
+  font-size: 3rem;
+
+  line-height: 3.5rem;
+}
+
+.free-article-limit-banner-contents{
+  margin: 0rem 0rem 0.8rem 0rem;
+
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.free-article-limit-banner-subtext{
+  font-size: 0.9rem;
+  margin-top: 0rem;
+  max-width: 30rem;
+  font-weight: 300;
+}
+
+.google-login-button{
+  margin: 1.3rem 0rem 1rem 0rem;
+  padding: 0.7rem 2rem;
+
+  width: 100%;
+  box-shadow: none;
+  cursor: pointer;
+  flex: 0 0 auto;
+
+  font-size: 1rem;
+  font-weight: normal;
+
+  border-radius: 0.3rem;
+  border: 0.125rem solid rgb(0, 0, 0);
+  transition: all 0.2s ease-out;
+
+  background: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+
+}
+
+.limit-reached-button-container{
+  width: 100%;
+
+  max-width: 30rem;
+
+}
+
+.google-login-button:hover{
+  transform: translate(-0.25rem, -0.25rem);
+  box-shadow: 0.2rem 0.2rem #000000, 0.3rem 0.3rem 0rem 0.05rem black;
+}
+
 .strike-through-text{
   display: inline;
   white-space: normal;
@@ -82,6 +188,10 @@ h3{
   .art-coming-soon-text{
     margin: 5rem;
   }
+
+  .free-articles-modal{
+    margin: 2.5rem 4rem -2rem 4rem;
+  }
 }
 
 @media only screen and (max-width: 47.9rem){
@@ -102,5 +212,42 @@ h3{
 
   .art-coming-soon-text{
     margin: 3rem;
+  }
+
+  .free-articles-modal{
+    margin: 2rem 2rem -1rem 2rem;
+  }
+
+  .free-article-limit-banner-contents{
+          margin: 1rem 0.5rem 0rem 0.5rem;
+    text-align: center;
+    white-space: normal;
+  }
+
+  .free-article-limit-reached-banner{
+    width: 75%;
+    padding: 1.5rem;
+  }
+
+  .free-article-limit-reached-header h2{
+    font-size: 1.8rem;
+    line-height: 2.3rem;
+    margin: 1rem 1rem 0.5rem 1rem;
+  }
+
+  .free-article-limit-banner-contents{
+    font-size: 1.3rem;
+    margin: 0rem 0rem 1rem 0rem;
+  }
+
+  .google-login-button{
+    margin: 1rem 0rem 0.5rem 0rem;
+    width: 90%;    
+  }
+
+  .free-article-limit-banner-subtext{
+    margin: 0rem 0rem 0.3rem 0rem;
+    font-size: 0.7rem;
+    width: 90%;    
   }
 }

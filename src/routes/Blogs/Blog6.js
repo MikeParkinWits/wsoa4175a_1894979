@@ -23,7 +23,7 @@ import { Link } from "react-router-dom";
 import Cookies from "js-cookie"; //External Package used to edit cookie information in browser - Documentation can be found here => https://www.npmjs.com/package/js-cookie
 
 export default class Blog5 extends Component {
-  //Scrolls the page to the top on load
+  //Lifecycle method that scrolls the page to the top on load
   componentDidMount() {
     window.scrollTo(0, 0);
   }

@@ -19,7 +19,7 @@ import { memo } from "react"; //React memo is used to memorize the title typewri
 import Cookies from "js-cookie"; //External Package used to edit cookie information in browser - Documentation can be found here => https://www.npmjs.com/package/js-cookie
 
 class Home extends Component {
-  //Scrolls the page to the top on load
+  //Lifecycle method that scrolls the page to the top on load
   componentDidMount() {
     window.scrollTo(0, 0);
   }

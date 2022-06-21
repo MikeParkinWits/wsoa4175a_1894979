@@ -34,6 +34,7 @@ import CookieBanner from "./components/CookieBanner";
 //External Packages
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
 import Cookies from "js-cookie"; //External Package used to edit cookie information in browser - Documentation can be found here => https://www.npmjs.com/package/js-cookie
+import { gapi } from "gapi-script"; //External package used for google login
 
 library.add(faBars, faX, faXmark);
 
@@ -43,6 +44,8 @@ class App extends Component {
     this.state = {
       showCookiePopup: false,
       showSecondPopup: false,
+      freeArticlesLeft: 2,
+      signedIn: false,
     };
 
     this.switchFirstCookiePopupState =
@@ -52,9 +55,12 @@ class App extends Component {
       this.switchSecondPopupCookiesState.bind(this);
 
     this.acceptClick = this.acceptClick.bind(this);
+    this.decreaseNumFreeArticles = this.decreaseNumFreeArticles.bind(this);
+
+    this.signInFunction = this.signInFunction.bind(this);
   }
 
-  //Sets all cookies to true on clicking accept button, and disables second cookie window (where necessary), across Popup & banner components
+  //Sets all cookies to true on clicking accept button, and disables second cookie window (where necessary), across popup & banner components
   acceptClick() {
     Cookies.set("functionalCookies", true);
     Cookies.set("performanceCookies", true);
@@ -73,8 +79,34 @@ class App extends Component {
     this.setState({ showSecondPopup: !this.state.showSecondPopup });
   }
 
+  //Callback function that displays the second, more annoying, cookie settings window that appears later in the website
+  switchSecondPopupCookiesState() {
+    this.setState({ showSecondPopup: !this.state.showSecondPopup });
+  }
+
+  //Callback function that decreases number of free articles
+  decreaseNumFreeArticles() {
+    if (this.state.freeArticlesLeft > 0) {
+      this.setState({ freeArticlesLeft: this.state.freeArticlesLeft - 1 });
+    }
+  }
+
+  //Callback function that decreases number of free articles
+  signInFunction() {
+    this.setState({ signedIn: !this.state.signedIn });
+  }
+
   render() {
     const { showCookiePopup, showSecondPopup } = this.state;
+
+    gapi.load("client:auth2", () => {
+      gapi.client.init({
+        clientId:
+          "438147070218-ntafm247ii9dm17lgo110daid1rbb4kv.apps.googleusercontent.com",
+        plugin_name: "chat",
+      });
+    });
+
     return (
       <>
         {/* React Helmet is used to dynamically adjust the head of the document and add meta data */}
@@ -120,7 +152,17 @@ class App extends Component {
             />
 
             {/* Blog Routes*/}
-            <Route path="/wsoa4175a_1894979/Blogs/Blog1/" element={<Blog1 />} />
+            <Route
+              path="/wsoa4175a_1894979/Blogs/Blog1/"
+              element={
+                <Blog1
+                  freeArticlesLeft={this.state.freeArticlesLeft}
+                  decreaseFreeArticles={this.decreaseNumFreeArticles}
+                  signedIn={this.signInFunction}
+                  signedInValue={this.state.signedIn}
+                />
+              }
+            />
             <Route path="/wsoa4175a_1894979/Blogs/Blog2/" element={<Blog2 />} />
             <Route path="/wsoa4175a_1894979/Blogs/Blog3/" element={<Blog3 />} />
             <Route path="/wsoa4175a_1894979/Blogs/Blog4/" element={<Blog4 />} />
@@ -142,42 +184,49 @@ class App extends Component {
 
         {
           //Cookie banners & popups are in App.js as they are intended to overlap any page of the site
-        }
 
-        {
-          //Checking if cookies are blocked
-          !navigator.cookieEnabled ? (
-            <CookieBlocked />
+          //Checking if the net art is enabled through cookies (not state, as it performs whole website reload when enabled/disabled)
+          Cookies.get("test") === "true" ? (
+            <>
+              {
+                //Checking if cookies are blocked
+                !navigator.cookieEnabled ? (
+                  <CookieBlocked />
+                ) : (
+                  <CookieBanner
+                    onPreferences={this.switchFirstCookiePopupState}
+                    onPopupAccept={this.acceptClick}
+                  />
+                )
+              }
+
+              <CookiePopup
+                showCookiePopup={showCookiePopup}
+                onCookieSwitch={this.switchFirstCookiePopupState}
+                isPopupSubtext="false"
+                onAcceptButton={this.acceptClick}
+              />
+
+              <CookiePopup
+                showCookiePopup={showSecondPopup}
+                onCookieSwitch={this.switchSecondPopupCookiesState}
+                isPopupSubtext="true"
+                onAcceptButton={this.acceptClick}
+                popupSubtext={
+                  <>
+                    Are you sure you don't want to enable all cookies to{" "}
+                    <span className="strike-through-text">
+                      let us profit off your data
+                    </span>{" "}
+                    better our product and your experience?
+                  </>
+                }
+              />
+            </>
           ) : (
-            <CookieBanner
-              onPreferences={this.switchFirstCookiePopupState}
-              onPopupAccept={this.acceptClick}
-            />
+            <></>
           )
         }
-
-        <CookiePopup
-          showCookiePopup={showCookiePopup}
-          onCookieSwitch={this.switchFirstCookiePopupState}
-          isPopupSubtext="false"
-          onAcceptButton={this.acceptClick}
-        />
-
-        <CookiePopup
-          showCookiePopup={showSecondPopup}
-          onCookieSwitch={this.switchSecondPopupCookiesState}
-          isPopupSubtext="true"
-          onAcceptButton={this.acceptClick}
-          popupSubtext={
-            <>
-              Are you sure you don't want to enable all cookies to{" "}
-              <span className="strike-through-text">
-                let us profit off your data
-              </span>{" "}
-              better our product and your experience?
-            </>
-          }
-        />
 
         <Footer />
       </>

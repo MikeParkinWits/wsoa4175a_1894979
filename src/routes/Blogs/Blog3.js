@@ -19,7 +19,7 @@ import FadeIn from "react-fade-in"; //Used for smooth page transition load - Doc
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
 
 export default class Blog3 extends Component {
-  //Scrolls the page to the top on load
+  //Lifecycle method that scrolls the page to the top on load
   componentDidMount() {
     window.scrollTo(0, 0);
   }
