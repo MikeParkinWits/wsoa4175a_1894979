@@ -9,7 +9,7 @@
     text-align: left;
     padding: 2rem;
 
-    border-radius: 5%;
+    border-radius: 1rem;
     border: 0.15rem solid black;
 
     width: 80%;
@@ -17,6 +17,8 @@
     max-height: 80%;
 
     overflow-y: scroll;
+
+    box-shadow: 0.2rem 0.2rem #000000, 0.5rem 0.5rem 0rem 0.05rem black;
 }
 
 .modal-overlay{
@@ -96,7 +98,7 @@
     }
 
     .modal{
-        width: 80%;
+        width: 75%;
         padding: 1.5rem;
     }
 

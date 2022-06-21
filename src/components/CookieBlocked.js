@@ -13,8 +13,8 @@ export default class CookieBlocked extends Component {
             <img
               className="blocked-image"
               src={BlockedImage}
-              title={"imageTitle"}
-              alt={"imageAltText"}
+              title={"Blocked Image"}
+              alt={"Blocked Symbol"}
             ></img>
             <h2>Cookies Blocked</h2>
           </header>
