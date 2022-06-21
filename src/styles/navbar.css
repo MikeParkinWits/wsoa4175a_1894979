@@ -124,8 +124,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 10vw;
-    padding: 1.3rem 0rem;
+    /* height: 10vw; */
+    padding: 1.7rem 0rem;
 
     border-bottom: 0.12rem solid black;
     color: black;
