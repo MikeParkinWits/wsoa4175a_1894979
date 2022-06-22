@@ -15,6 +15,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import GoogleLogin, { GoogleLogout } from "react-google-login";
 import ActionButton from "./ActionButton";
 import GlobalContext from "../context/GlobalContext";
+import ProfileModal from "./login/LogoutConfirmModal";
 
 export default class Navbar extends Component {
   constructor(props) {
@@ -43,6 +44,8 @@ export default class Navbar extends Component {
       signedIn,
       decreaseNumFreeArticles,
       signInFunction,
+      showProfilePage,
+      showProfilePageFunction,
     } = this.context;
 
     const responseGoogle = (response) => {
@@ -120,30 +123,20 @@ export default class Navbar extends Component {
                       cookiePolicy={"single_host_origin"}
                     />
                   ) : (
-                    <GoogleLogout
-                      clientId="438147070218-ntafm247ii9dm17lgo110daid1rbb4kv.apps.googleusercontent.com"
-                      render={(renderProps) => (
-                        <ActionButton
-                          onClickAction={renderProps.onClick}
-                          disabled={renderProps.disabled}
-                          buttonText={
-                            <>
-                              {" "}
-                              <FontAwesomeIcon
-                                icon="fa-user"
-                                className="login-icon"
-                              />
-                              Logout
-                            </>
-                          }
-                          buttonClass="google-login-button-nav"
-                        ></ActionButton>
-                      )}
-                      buttonText="Login"
-                      onLogoutSuccess={signInFunction}
-                      onFailure={responseGoogle}
-                      cookiePolicy={"single_host_origin"}
-                    />
+                    <ActionButton
+                      onClickAction={showProfilePageFunction}
+                      buttonText={
+                        <>
+                          {" "}
+                          <FontAwesomeIcon
+                            icon="fa-user"
+                            className="login-icon"
+                          />
+                          Logout
+                        </>
+                      }
+                      buttonClass="google-login-button-nav"
+                    ></ActionButton>
                   )}
                 </li>
               </ul>

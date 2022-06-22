@@ -10,6 +10,10 @@ import GoogleLogo from "../../assets/GLogo.svg";
 import GlobalContext from "../../context/GlobalContext";
 
 export default class FreeArticleLimitModal extends Component {
+  componentWillUnmount() {
+    document.body.style.overflow = "scroll";
+  }
+
   render() {
     const {
       freeArticlesLeft,

@@ -262,6 +262,124 @@ h3{
   margin-right: auto;
 }
 
+
+
+
+
+
+.profile-modal{
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  z-index: 999;
+
+  text-align: left;
+  padding: 2rem;
+
+  border-radius: 1rem;
+  border: 0.15rem solid black;
+
+  width: 80%;
+  max-width:30rem;
+  max-height: 80%;
+
+  overflow-y: scroll;
+
+  box-shadow: 0.2rem 0.2rem #000000, 0.5rem 0.5rem 0rem 0.05rem black;
+  text-align: center;
+}
+
+.profile-modal-header{
+}
+
+.profile-modal-title{
+  font-size: 3rem;
+  margin: 0rem;
+}
+
+.profile-modal-subtext{
+  font-size: 1rem;
+  font-weight: 400;
+  margin: 0rem 1rem 0.75rem 1rem;
+}
+
+.profile-modal-picture{
+  border: 0.2rem solid black;
+
+  border-radius: 0.3rem;
+  width: 6rem;
+  height: 6rem;
+}
+
+.profile-page-modal-contents{
+  display: flex;
+  margin: 1rem;
+  justify-content: center;
+}
+
+.profile-page-modal-info{
+  display: flex;
+  text-align: left;
+  margin-left: 1rem;
+  flex-direction: column;
+}
+
+.profile-page-modal-info p{
+  margin: auto 0;
+}
+
+.modal-button-container{
+
+}
+
+.modal-accept-button{
+
+}
+
+.modal-decline-button{
+
+}
+
+.modal-accept-button,
+.modal-decline-button{
+  margin: 1.3rem 1rem 1rem 1rem;
+  padding: 0.4rem 0.6rem;
+
+  width: fit-content;
+  box-shadow: none;
+  cursor: pointer;
+  flex: 0 0 auto;
+
+  font-size: 1rem;
+  font-weight: normal;
+
+  border-radius: 0.3rem;
+  border: 0.125rem solid rgba(0, 0, 0, 0.78);
+  transition: all 0.2s ease-out;
+
+  min-width: 10rem;
+}  
+  
+.modal-decline-button{
+    background: rgb(255, 255, 255);
+    color: rgba(0, 0, 0, 0.78);
+  
+  }
+  
+  .modal-accept-button{
+    background: rgb(13, 207, 131);
+    color: rgb(48, 48, 48);
+  }
+  
+  .modal-accept-button:hover,
+  .modal-decline-button:hover{
+    transform: translate(-0.25rem, -0.25rem);
+    box-shadow: 0.2rem 0.2rem #000000, 0.3rem 0.3rem 0rem 0.05rem black;
+  }
+
+
 /* Response View */
 
 @media only screen and (max-width: 64rem){
@@ -368,4 +486,29 @@ h3{
     box-shadow: none;
     cursor: pointer;
   }
+
+
+
+
+
+  .profile-modal-subtext{
+    font-size: 0.9rem;
+    margin: 1rem 0rem 1rem 0rem;
+}
+
+.profile-modal-title{
+    font-size: 2rem;
+    line-height: 2.3rem;
+}
+
+.profile-modal{
+    width: 75%;
+    padding: 1.5rem;
+}
+
+.modal-decline-button,
+.modal-accept-button{
+  margin: 0.8rem 1rem;
+}
+
 }

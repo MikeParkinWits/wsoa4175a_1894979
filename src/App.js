@@ -42,6 +42,7 @@ import CookieBanner from "./components/cookies/CookieBanner";
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
 import Cookies from "js-cookie"; //External Package used to edit cookie information in browser - Documentation can be found here => https://www.npmjs.com/package/js-cookie
 import { gapi } from "gapi-script"; //External package used for Google Login
+import ProfileModal from "./components/login/LogoutConfirmModal";
 
 library.add(faBars, faX, faXmark, faUser);
 
@@ -231,6 +232,8 @@ class App extends Component {
               <></>
             )
           }
+
+          <ProfileModal />
 
           <Footer />
         </GlobalContextProvider>
