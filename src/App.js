@@ -41,7 +41,7 @@ import CookieBanner from "./components/cookies/CookieBanner";
 //External Packages
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
 import Cookies from "js-cookie"; //External Package used to edit cookie information in browser - Documentation can be found here => https://www.npmjs.com/package/js-cookie
-import { gapi } from "gapi-script"; //External package used for google login
+import { gapi } from "gapi-script"; //External package used for Google Login
 
 library.add(faBars, faX, faXmark, faUser);
 
@@ -89,6 +89,7 @@ class App extends Component {
   render() {
     const { showCookiePopup, showSecondPopup } = this.state;
 
+    //Used for Google oAuth2 Login Package
     gapi.load("client:auth2", () => {
       gapi.auth2.init({
         clientId:

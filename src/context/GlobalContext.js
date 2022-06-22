@@ -11,7 +11,6 @@ export class GlobalContextProvider extends Component {
     };
 
     this.decreaseNumFreeArticles = this.decreaseNumFreeArticles.bind(this);
-
     this.signInFunction = this.signInFunction.bind(this);
   }
 

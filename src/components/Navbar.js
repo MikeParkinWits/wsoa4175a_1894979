@@ -166,4 +166,5 @@ export default class Navbar extends Component {
   }
 }
 
+//Used to access global variables using React Context
 Navbar.contextType = GlobalContext;

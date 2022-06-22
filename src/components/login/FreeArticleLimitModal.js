@@ -91,4 +91,5 @@ export default class FreeArticleLimitModal extends Component {
   }
 }
 
+//Used to access global variables using React Context
 FreeArticleLimitModal.contextType = GlobalContext;

@@ -43,4 +43,5 @@ export default class FreeArticlesModal extends Component {
   }
 }
 
+//Used to access global variables using React Context
 FreeArticlesModal.contextType = GlobalContext;
