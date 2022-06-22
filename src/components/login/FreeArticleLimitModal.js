@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 
-import "../styles/cookieBlocked.css";
+import "../../styles/cookieBlocked.css";
 
-import BlockedImage from "../assets/BlockedSymbol.svg";
-import ActionButton from "./ActionButton";
+import ActionButton from "../ActionButton";
 import GoogleLogin from "react-google-login";
-import GoogleLogo from "../assets/GLogo.svg";
+import GoogleLogo from "../../assets/GLogo.svg";
 
 export default class FreeArticleLimitModal extends Component {
   render() {
@@ -42,26 +41,23 @@ export default class FreeArticleLimitModal extends Component {
               <GoogleLogin
                 clientId="438147070218-ntafm247ii9dm17lgo110daid1rbb4kv.apps.googleusercontent.com"
                 render={(renderProps) => (
-                  console.log("h"),
-                  (
-                    <ActionButton
-                      onClickAction={renderProps.onClick}
-                      disabled={renderProps.disabled}
-                      buttonText={
-                        <>
-                          {" "}
-                          <img
-                            src={GoogleLogo}
-                            width="15"
-                            alt="The Internet We Know Logo"
-                            className="google-icon"
-                          ></img>{" "}
-                          Login with Google
-                        </>
-                      }
-                      buttonClass="google-login-button"
-                    ></ActionButton>
-                  )
+                  <ActionButton
+                    onClickAction={renderProps.onClick}
+                    disabled={renderProps.disabled}
+                    buttonText={
+                      <>
+                        {" "}
+                        <img
+                          src={GoogleLogo}
+                          width="15"
+                          alt="The Internet We Know Logo"
+                          className="google-icon"
+                        ></img>{" "}
+                        Login with Google
+                      </>
+                    }
+                    buttonClass="google-login-button"
+                  ></ActionButton>
                 )}
                 buttonText="Login"
                 onSuccess={responseGoogle}
@@ -73,7 +69,8 @@ export default class FreeArticleLimitModal extends Component {
               {" "}
               By continuing you agree that we can{" "}
               <span className="strike-through-text">
-                gain access to your email and send you unsolicited spam
+                gain access to your email and other personal information to do
+                what we please with
               </span>{" "}
               keep you informed on all new relevant posts in future
             </p>

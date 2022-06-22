@@ -13,19 +13,18 @@ import BlogPhoto from "../../assets/HeroImage.jpg";
 import Titles from "../../components/Titles";
 import BlogReferences from "../../components/BlogReferences";
 import BlogButtons from "../../components/BlogButtons";
-import FreeArticlesModal from "../../components/FreeArticlesModal";
+import FreeArticlesModal from "../../components/login/FreeArticlesModal";
 
 //Import External Packages
 import FadeIn from "react-fade-in"; //Used for smooth page transition load - Documentation can be found here => https://www.npmjs.com/package/react-fade-in
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
-import FreeArticleLimitModal from "../../components/FreeArticleLimitModal";
+import FreeArticleLimitModal from "../../components/login/FreeArticleLimitModal";
 
 export default class Blog1 extends Component {
   //Lifecycle method which scrolls the page to the top on load
   componentDidMount() {
     window.scrollTo(0, 0);
 
-    console.log("test " + this.props.freeArticlesLeft);
     if (!this.props.signedInValue) {
       this.props.decreaseFreeArticles();
     }
@@ -37,8 +36,6 @@ export default class Blog1 extends Component {
       parseInt(
         window.location.pathname.charAt(window.location.pathname.length - 2)
       );
-
-    console.log("test " + this.props.freeArticlesLeft);
 
     return (
       <>
@@ -221,14 +218,13 @@ export default class Blog1 extends Component {
               ]}
             />
             <BlogButtons type="Blog" />
-
-            <FreeArticleLimitModal
-              freeArticlesLeft={this.props.freeArticlesLeft}
-              signedIn={this.props.signedIn}
-              signedInValue={this.props.signedInValue}
-            />
           </article>
         </FadeIn>
+        <FreeArticleLimitModal
+          freeArticlesLeft={this.props.freeArticlesLeft}
+          signedIn={this.props.signedIn}
+          signedInValue={this.props.signedInValue}
+        />
       </>
     );
   }

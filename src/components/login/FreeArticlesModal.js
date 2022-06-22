@@ -8,11 +8,12 @@ export default class FreeArticlesModal extends Component {
     const { freeArticlesLeft } = this.props;
     return (
       <>
-        {freeArticlesLeft > 0 && Cookies.get("test") === "true" && (
+        {freeArticlesLeft > 0 && (
+          // && Cookies.get("test") === "true"
           <article className="free-articles-modal">
             Only
             {" " + freeArticlesLeft + " "}
-            Free Articles Remaining
+            Free Article Remaining
           </article>
         )}
       </>

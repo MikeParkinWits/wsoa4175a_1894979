@@ -32,9 +32,9 @@ import "./styles/cookieBanner.css";
 //Component Imports
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import CookiePopup from "./components/CookiePopup";
-import CookieBlocked from "./components/CookieBlocked";
-import CookieBanner from "./components/CookieBanner";
+import CookiePopup from "./components/cookies/CookiePopup";
+import CookieBlocked from "./components/cookies/CookieBlocked";
+import CookieBanner from "./components/cookies/CookieBanner";
 
 //External Packages
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet

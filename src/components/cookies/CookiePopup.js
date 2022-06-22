@@ -3,9 +3,9 @@ import React, { Component } from "react";
 import Cookies from "js-cookie"; //External Package used to edit cookie information in browser - Documentation can be found here => https://www.npmjs.com/package/js-cookie
 
 //Style Imports
-import "../styles/cookiePopup.css";
+import "../../styles/cookiePopup.css";
 import CookieCheckbox from "./CookieCheckbox";
-import ActionButton from "./ActionButton";
+import ActionButton from "../ActionButton";
 
 export default class CookiePopup extends Component {
   constructor(props) {

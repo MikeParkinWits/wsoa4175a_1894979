@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import "../styles/cookieBlocked.css";
+import "../../styles/cookieBlocked.css";
 
-import BlockedImage from "../assets/BlockedSymbol.svg";
+import BlockedImage from "../../assets/BlockedSymbol.svg";
 
 export default class CookieBlocked extends Component {
   render() {

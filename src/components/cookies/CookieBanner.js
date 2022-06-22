@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import Cookies from "js-cookie"; //External Package used to edit cookie information in browser - Documentation can be found here => https://www.npmjs.com/package/js-cookie
-import ActionButton from "./ActionButton";
+import ActionButton from "../ActionButton";
 import CookiePopup from "./CookiePopup";
 
 export default class CookieBanner extends Component {
