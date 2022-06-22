@@ -14,6 +14,7 @@ import "../styles/navbar.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import GoogleLogin, { GoogleLogout } from "react-google-login";
 import ActionButton from "./ActionButton";
+import GlobalContext from "../context/GlobalContext";
 
 export default class Navbar extends Component {
   constructor(props) {
@@ -37,10 +38,17 @@ export default class Navbar extends Component {
   render() {
     const { click } = this.state;
 
+    const {
+      freeArticlesLeft,
+      signedIn,
+      decreaseNumFreeArticles,
+      signInFunction,
+    } = this.context;
+
     const responseGoogle = (response) => {
       console.log(response);
       console.log(response.profileObj);
-      this.props.signedIn();
+      signInFunction();
     };
 
     const failedResponse = (response) => {
@@ -86,7 +94,7 @@ export default class Navbar extends Component {
                   </NavLink>
                 </li>
                 <li>
-                  {!this.props.signedInValue ? (
+                  {!signedIn ? (
                     <GoogleLogin
                       clientId="438147070218-ntafm247ii9dm17lgo110daid1rbb4kv.apps.googleusercontent.com"
                       render={(renderProps) => (
@@ -132,7 +140,7 @@ export default class Navbar extends Component {
                         ></ActionButton>
                       )}
                       buttonText="Login"
-                      onLogoutSuccess={this.props.signedIn}
+                      onLogoutSuccess={signInFunction}
                       onFailure={responseGoogle}
                       cookiePolicy={"single_host_origin"}
                     />
@@ -157,3 +165,5 @@ export default class Navbar extends Component {
     );
   }
 }
+
+Navbar.contextType = GlobalContext;

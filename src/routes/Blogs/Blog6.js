@@ -15,6 +15,8 @@ import BlogFigure from "../../components/BlogFigure";
 import Titles from "../../components/Titles";
 import BlogReferences from "../../components/BlogReferences";
 import BlogButtons from "../../components/BlogButtons";
+import FreeArticlesModal from "../../components/login/FreeArticlesModal";
+import FreeArticleLimitModal from "../../components/login/FreeArticleLimitModal";
 
 //Import External Packages
 import FadeIn from "react-fade-in"; //Used for smooth page transition load - Documentation can be found here => https://www.npmjs.com/package/react-fade-in
@@ -94,6 +96,7 @@ export default class Blog5 extends Component {
         <FadeIn transitionDuration={1000}>
           <article className="page-container h-entry">
             <article>
+              <FreeArticlesModal />
               <Titles
                 mainTitle={true}
                 title={BlogList[blogInfoToLoad].cardTitle}
@@ -321,6 +324,7 @@ export default class Blog5 extends Component {
             <BlogButtons type="Blog" />
           </article>
         </FadeIn>
+        <FreeArticleLimitModal />
       </>
     );
   }

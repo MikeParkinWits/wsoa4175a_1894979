@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 
+import GlobalContext, { GlobalContextProvider } from "./context/GlobalContext";
+
 //Routing Imports
 import { Route, Routes, Link, NavLink } from "react-router-dom";
 import Home from "./routes/Home";
@@ -49,8 +51,6 @@ class App extends Component {
     this.state = {
       showCookiePopup: false,
       showSecondPopup: false,
-      freeArticlesLeft: 2,
-      signedIn: false,
     };
 
     this.switchFirstCookiePopupState =
@@ -60,9 +60,6 @@ class App extends Component {
       this.switchSecondPopupCookiesState.bind(this);
 
     this.acceptClick = this.acceptClick.bind(this);
-    this.decreaseNumFreeArticles = this.decreaseNumFreeArticles.bind(this);
-
-    this.signInFunction = this.signInFunction.bind(this);
   }
 
   //Sets all cookies to true on clicking accept button, and disables second cookie window (where necessary), across popup & banner components
@@ -87,18 +84,6 @@ class App extends Component {
   //Callback function that displays the second, more annoying, cookie settings window that appears later in the website
   switchSecondPopupCookiesState() {
     this.setState({ showSecondPopup: !this.state.showSecondPopup });
-  }
-
-  //Callback function that decreases number of free articles
-  decreaseNumFreeArticles() {
-    if (this.state.freeArticlesLeft > 0) {
-      this.setState({ freeArticlesLeft: this.state.freeArticlesLeft - 1 });
-    }
-  }
-
-  //Callback function that decreases number of free articles
-  signInFunction() {
-    this.setState({ signedIn: !this.state.signedIn });
   }
 
   render() {
@@ -132,111 +117,122 @@ class App extends Component {
             content="The Internet We Know is a website about the internet that critiques the internet we know today"
           />
         </Helmet>
-        <Navbar
-          signedIn={this.signInFunction}
-          signedInValue={this.state.signedIn}
-        />
-        <main>
-          <Routes>
-            <Route
-              path="/wsoa4175a_1894979/"
-              element={
-                <Home
-                  secondPopupSwitcher={this.switchSecondPopupCookiesState}
-                />
-              }
-            />
-            <Route
-              path="/wsoa4175a_1894979/BlogSection/"
-              element={<BlogSection />}
-            />
-            <Route
-              path="/wsoa4175a_1894979/DesignSection/"
-              element={<DesignSection />}
-            />
-            <Route
-              path="/wsoa4175a_1894979/ArtworkSection/"
-              element={<ArtworkSection />}
-            />
+        <GlobalContextProvider>
+          <Navbar />
 
-            {/* Blog Routes*/}
-            <Route
-              path="/wsoa4175a_1894979/Blogs/Blog1/"
-              element={
-                <Blog1
-                  freeArticlesLeft={this.state.freeArticlesLeft}
-                  decreaseFreeArticles={this.decreaseNumFreeArticles}
-                  signedIn={this.signInFunction}
-                  signedInValue={this.state.signedIn}
-                />
-              }
-            />
-            <Route path="/wsoa4175a_1894979/Blogs/Blog2/" element={<Blog2 />} />
-            <Route path="/wsoa4175a_1894979/Blogs/Blog3/" element={<Blog3 />} />
-            <Route path="/wsoa4175a_1894979/Blogs/Blog4/" element={<Blog4 />} />
-            <Route path="/wsoa4175a_1894979/Blogs/Blog5/" element={<Blog5 />} />
-            <Route path="/wsoa4175a_1894979/Blogs/Blog6/" element={<Blog6 />} />
-            <Route path="/wsoa4175a_1894979/Blogs/Blog7/" element={<Blog7 />} />
-
-            {/* Design Routes*/}
-            <Route
-              path="/wsoa4175a_1894979/Design/Design1/"
-              element={<Design1 />}
-            />
-            <Route
-              path="/wsoa4175a_1894979/Design/Design2/"
-              element={<Design2 />}
-            />
-          </Routes>
-        </main>
-
-        {
-          //Cookie banners & popups are in App.js as they are intended to overlap any page of the site
-
-          //Checking if the net art is enabled through cookies (not state, as it performs whole website reload when enabled/disabled)
-          Cookies.get("test") === "true" ? (
-            <>
-              {
-                //Checking if cookies are blocked
-                !navigator.cookieEnabled ? (
-                  <CookieBlocked />
-                ) : (
-                  <CookieBanner
-                    onPreferences={this.switchFirstCookiePopupState}
-                    onPopupAccept={this.acceptClick}
+          <main>
+            <Routes>
+              <Route
+                path="/wsoa4175a_1894979/"
+                element={
+                  <Home
+                    secondPopupSwitcher={this.switchSecondPopupCookiesState}
                   />
-                )
-              }
-
-              <CookiePopup
-                showCookiePopup={showCookiePopup}
-                onCookieSwitch={this.switchFirstCookiePopupState}
-                isPopupSubtext="false"
-                onAcceptButton={this.acceptClick}
-              />
-
-              <CookiePopup
-                showCookiePopup={showSecondPopup}
-                onCookieSwitch={this.switchSecondPopupCookiesState}
-                isPopupSubtext="true"
-                onAcceptButton={this.acceptClick}
-                popupSubtext={
-                  <>
-                    Are you sure you don't want to enable all cookies to{" "}
-                    <span className="strike-through-text">
-                      let us profit off your data
-                    </span>{" "}
-                    better our product and your experience?
-                  </>
                 }
               />
-            </>
-          ) : (
-            <></>
-          )
-        }
+              <Route
+                path="/wsoa4175a_1894979/BlogSection/"
+                element={<BlogSection />}
+              />
+              <Route
+                path="/wsoa4175a_1894979/DesignSection/"
+                element={<DesignSection />}
+              />
+              <Route
+                path="/wsoa4175a_1894979/ArtworkSection/"
+                element={<ArtworkSection />}
+              />
 
-        <Footer />
+              {/* Blog Routes*/}
+              <Route
+                path="/wsoa4175a_1894979/Blogs/Blog1/"
+                element={<Blog1 />}
+              />
+              <Route
+                path="/wsoa4175a_1894979/Blogs/Blog2/"
+                element={<Blog2 />}
+              />
+              <Route
+                path="/wsoa4175a_1894979/Blogs/Blog3/"
+                element={<Blog3 />}
+              />
+              <Route
+                path="/wsoa4175a_1894979/Blogs/Blog4/"
+                element={<Blog4 />}
+              />
+              <Route
+                path="/wsoa4175a_1894979/Blogs/Blog5/"
+                element={<Blog5 />}
+              />
+              <Route
+                path="/wsoa4175a_1894979/Blogs/Blog6/"
+                element={<Blog6 />}
+              />
+              <Route
+                path="/wsoa4175a_1894979/Blogs/Blog7/"
+                element={<Blog7 />}
+              />
+
+              {/* Design Routes*/}
+              <Route
+                path="/wsoa4175a_1894979/Design/Design1/"
+                element={<Design1 />}
+              />
+              <Route
+                path="/wsoa4175a_1894979/Design/Design2/"
+                element={<Design2 />}
+              />
+            </Routes>
+          </main>
+
+          {
+            //Cookie banners & popups are in App.js as they are intended to overlap any page of the site
+
+            //Checking if the net art is enabled through cookies (not state, as it performs whole website reload when enabled/disabled)
+            Cookies.get("test") === "true" ? (
+              <>
+                {
+                  //Checking if cookies are blocked
+                  !navigator.cookieEnabled ? (
+                    <CookieBlocked />
+                  ) : (
+                    <CookieBanner
+                      onPreferences={this.switchFirstCookiePopupState}
+                      onPopupAccept={this.acceptClick}
+                    />
+                  )
+                }
+
+                <CookiePopup
+                  showCookiePopup={showCookiePopup}
+                  onCookieSwitch={this.switchFirstCookiePopupState}
+                  isPopupSubtext="false"
+                  onAcceptButton={this.acceptClick}
+                />
+
+                <CookiePopup
+                  showCookiePopup={showSecondPopup}
+                  onCookieSwitch={this.switchSecondPopupCookiesState}
+                  isPopupSubtext="true"
+                  onAcceptButton={this.acceptClick}
+                  popupSubtext={
+                    <>
+                      Are you sure you don't want to enable all cookies to{" "}
+                      <span className="strike-through-text">
+                        let us profit off your data
+                      </span>{" "}
+                      better our product and your experience?
+                    </>
+                  }
+                />
+              </>
+            ) : (
+              <></>
+            )
+          }
+
+          <Footer />
+        </GlobalContextProvider>
       </>
     );
   }

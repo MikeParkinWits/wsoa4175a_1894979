@@ -6,22 +6,32 @@ import ActionButton from "../ActionButton";
 import GoogleLogin from "react-google-login";
 import GoogleLogo from "../../assets/GLogo.svg";
 
+//Context Import
+import GlobalContext from "../../context/GlobalContext";
+
 export default class FreeArticleLimitModal extends Component {
   render() {
+    const {
+      freeArticlesLeft,
+      signedIn,
+      decreaseNumFreeArticles,
+      signInFunction,
+    } = this.context;
+
     const responseGoogle = (response) => {
       console.log(response);
       console.log(response.profileObj);
-      this.props.signedIn();
+      signInFunction();
     };
 
     const failedResponse = (response) => {
       console.log(response);
     };
 
-    if (this.props.freeArticlesLeft > 0 && !this.props.signedInValue) {
+    if (freeArticlesLeft > 0 && !signedIn) {
       document.body.style.overflow = "scroll";
       return null;
-    } else if (this.props.signedInValue) {
+    } else if (signedIn) {
       document.body.style.overflow = "scroll";
       return null;
     } else {
@@ -80,3 +90,5 @@ export default class FreeArticleLimitModal extends Component {
     }
   }
 }
+
+FreeArticleLimitModal.contextType = GlobalContext;
