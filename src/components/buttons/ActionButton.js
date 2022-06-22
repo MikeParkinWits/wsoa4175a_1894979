@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 
-//React Router Imports
-import { Link } from "react-router-dom";
-
 //Styling
-import "../styles/actionButton.css";
+import "../../styles/actionButton.css";
 
 export default class ActionButton extends Component {
   static defaultProps = {

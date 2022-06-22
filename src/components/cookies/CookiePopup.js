@@ -1,11 +1,14 @@
 import React, { Component } from "react";
 
+//External Packages
 import Cookies from "js-cookie"; //External Package used to edit cookie information in browser - Documentation can be found here => https://www.npmjs.com/package/js-cookie
 
 //Style Imports
-import "../../styles/cookiePopup.css";
+import "../../styles/modals.css";
+
+//External Components Import
 import CookieCheckbox from "./CookieCheckbox";
-import ActionButton from "../ActionButton";
+import ActionButton from "../buttons/ActionButton";
 
 export default class CookiePopup extends Component {
   constructor(props) {
@@ -133,12 +136,12 @@ export default class CookiePopup extends Component {
           <section className="modal-cookie-buttons">
             <ActionButton
               buttonText="Save Preferences"
-              buttonClass="cookie-banner-decline-button"
+              buttonClass="decline-button"
               onClickAction={this.saveCookies}
             />
             <ActionButton
               buttonText="Accept All"
-              buttonClass="cookie-banner-accept-button"
+              buttonClass="accept-button"
               onClickAction={this.acceptAll}
             />
           </section>

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 
+//External Packages
 import Cookies from "js-cookie"; //External Package used to edit cookie information in browser - Documentation can be found here => https://www.npmjs.com/package/js-cookie
-import ActionButton from "../ActionButton";
-import CookiePopup from "./CookiePopup";
+
+//Component Imports
+import ActionButton from "../buttons/ActionButton";
 
 export default class CookieBanner extends Component {
   constructor(props) {
@@ -64,12 +66,12 @@ export default class CookieBanner extends Component {
             <section className="cookie-banner-button-container">
               <ActionButton
                 buttonText="Update Preferences"
-                buttonClass="cookie-banner-decline-button"
+                buttonClass="decline-button"
                 onClickAction={this.onUpdate}
               />{" "}
               <ActionButton
                 buttonText="Accept All Cookies"
-                buttonClass="cookie-banner-accept-button"
+                buttonClass="accept-button"
                 onClickAction={this.acceptClick}
               />
             </section>

@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
 //Importing Helpers
-import { BlogList } from "../helpers/BlogList.js";
-import { DesignList } from "../helpers/DesignList.js";
+import { BlogList } from "../../helpers/BlogList.js";
+import { DesignList } from "../../helpers/DesignList.js";
 
 //Importing Components
 import LinkButton from "./LinkButton.js";

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 //Component Imports
-import LinkButton from "./LinkButton";
+import LinkButton from "./buttons/LinkButton";
 
 //Image Imports
 import MissingImage from "../assets/HeroImage.jpg";

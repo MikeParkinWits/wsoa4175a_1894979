@@ -1,15 +1,16 @@
 import React, { Component } from "react";
 
-import "../../styles/cookieBlocked.css";
+//External Components Import
+import ActionButton from "../buttons/ActionButton";
 
-import ActionButton from "../ActionButton";
+//Google Login Imports
 import GoogleLogin from "react-google-login";
 import GoogleLogo from "../../assets/GLogo.svg";
 
 //Context Import
 import GlobalContext from "../../context/GlobalContext";
 
-export default class FreeArticleLimitModal extends Component {
+export default class FreeBlogLimitReachedModal extends Component {
   componentWillUnmount() {
     document.body.style.overflow = "scroll";
   }
@@ -43,11 +44,11 @@ export default class FreeArticleLimitModal extends Component {
       document.body.style.overflow = "hidden";
       return (
         <article className="cookie-banner-overlay">
-          <section className="free-article-limit-reached-banner">
-            <header className="free-article-limit-reached-header">
+          <section className="free-blog-limit-reached-modal modal">
+            <header className="free-blog-limit-reached-modal-header">
               <h2>Thanks for reading our posts!</h2>
             </header>
-            <p className="free-article-limit-banner-contents">
+            <p className="free-blog-limit-reached-modal-text">
               To continue reading more posts, for free, please login/signup
               below:
             </p>
@@ -79,7 +80,7 @@ export default class FreeArticleLimitModal extends Component {
                 cookiePolicy={"single_host_origin"}
               />
             </section>
-            <p className="free-article-limit-banner-subtext">
+            <p className="google-button-subtext">
               {" "}
               By continuing you agree that we can{" "}
               <span className="strike-through-text">
@@ -96,4 +97,4 @@ export default class FreeArticleLimitModal extends Component {
 }
 
 //Used to access global variables using React Context
-FreeArticleLimitModal.contextType = GlobalContext;
+FreeBlogLimitReachedModal.contextType = GlobalContext;

@@ -60,6 +60,18 @@
     color: blue;
 }
 
+.free-blogs-remaining-indicator{
+
+    background-color: rgb(246, 243, 243);
+  
+    border: 0.2rem solid black;
+    
+    justify-content: center;
+  
+    padding: 1rem;
+    margin: 3.5rem 6rem -2rem 6rem;
+  }
+
 /* Response View */
 
 @media only screen and (max-width: 64rem) {
@@ -76,6 +88,10 @@
     .blog-figure figcaption{
         margin-left: 5%;
     }
+
+    .free-blogs-remaining-indicator{
+        margin: 2.5rem 4rem -2rem 4rem;
+      }
 }
 
 @media only screen and (max-width: 47.8rem) {
@@ -105,4 +121,8 @@
     .blog-figure{
         margin: 1rem;
     }
+
+    .free-blogs-remaining-indicator{
+        margin: 2rem 2rem -1rem 2rem;
+      }
 }

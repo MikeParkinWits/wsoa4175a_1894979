@@ -68,6 +68,40 @@
   padding: 1rem;
 }
 
+.google-login-button-nav{
+  width: 90%;
+  font-size: 1.2rem;
+  
+  padding: 0.3rem 0.8rem;
+
+  border-radius: 0.4rem;
+  border: 0.125rem solid black;
+
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  transition: all 0.2s ease-out;
+
+  align-items: center;
+  justify-content: center;
+
+  display: flex;
+}
+
+.google-login-button-nav:hover {
+  cursor: pointer;
+  
+    transform: translate(-0.25rem, -0.25rem);
+    box-shadow: 0.2rem 0.2rem #fc85f0, 0.2rem 0.2rem 0rem 0.1rem black;
+    cursor: pointer;
+}
+
+.login-icon{
+  margin-right: 0.5rem;
+
+  width: 0.9rem;
+  height: 0.9rem;
+}
+
 /* Response View */
 
 @media (max-width: 47.9rem) {
@@ -140,5 +174,32 @@
 
   .hamburger-menu {
     display: block;
+  }
+
+  .google-login-button-nav {
+    padding: 1.9rem 0rem;
+
+    color: black;
+    background-color: white;
+
+    width: 100%;
+
+  border: 0rem;
+
+  font-weight: bold;
+
+  border-bottom: 0.12rem solid black;
+
+  border-radius: 0rem;
+  }
+
+  .google-login-button-nav:hover{
+    transform: translate(0rem, 0rem);
+    box-shadow: none;
+    cursor: pointer;
+  }
+
+  .login-icon  {
+    filter: invert(0);
   }
 }

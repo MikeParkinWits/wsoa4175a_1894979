@@ -3,6 +3,7 @@ import React, { Component } from "react";
 //Component Imports
 import BlogCard from "../components/Card";
 import Titles from "../components/Titles";
+import ActionButton from "../components/buttons/ActionButton";
 
 //Importing Helper
 import { DesignList } from "../helpers/DesignList.js";
@@ -10,7 +11,6 @@ import { DesignList } from "../helpers/DesignList.js";
 //Import External Packages
 import FadeIn from "react-fade-in"; //Used for smooth page transition load - Documentation can be found here => https://www.npmjs.com/package/react-fade-in
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
-import ActionButton from "../components/ActionButton";
 
 export default class DesignSection extends Component {
   //Lifecycle method that scrolls the page to the top on load

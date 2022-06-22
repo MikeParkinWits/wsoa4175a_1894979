@@ -1,5 +1,5 @@
-.cookie-banner-accept-button,
-.cookie-banner-decline-button{
+.accept-button,
+.decline-button{
   margin: 1.3rem 1rem 1rem 1rem;
   padding: 0.4rem 0.6rem;
 
@@ -14,31 +14,83 @@
   border-radius: 0.3rem;
   border: 0.125rem solid rgba(0, 0, 0, 0.78);
   transition: all 0.2s ease-out;
+
+  min-width: 10rem;
+
 }  
   
-  .cookie-banner-decline-button{
+  .decline-button{
     background: rgb(255, 255, 255);
     color: rgba(0, 0, 0, 0.78);
   
   }
   
-  .cookie-banner-accept-button{
+  .accept-button{
     background: rgb(13, 207, 131);
     color: rgb(48, 48, 48);
   }
   
-  .cookie-banner-accept-button:hover,
-  .cookie-banner-decline-button:hover{
+  .accept-button:hover,
+  .decline-button:hover{
     transform: translate(-0.25rem, -0.25rem);
     box-shadow: 0.2rem 0.2rem #000000, 0.3rem 0.3rem 0rem 0.05rem black;
   }
 
+  .google-login-button{
+    margin: 1.3rem 0rem 1rem 0rem;
+    padding: 0.7rem 2rem;
+  
+    width: 100%;
+    box-shadow: none;
+    cursor: pointer;
+  
+    font-size: 1rem;
+    font-weight: normal;
+  
+    border-radius: 0.3rem;
+    border: 0.125rem solid rgb(0, 0, 0);
+    transition: all 0.2s ease-out;
+  
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+  
+    align-items: center;
+    justify-content: center;
+  
+    display: flex;
+  
+  }
+
+.google-login-button:hover{
+  transform: translate(-0.25rem, -0.25rem);
+  box-shadow: 0.2rem 0.2rem #000000, 0.3rem 0.3rem 0rem 0.05rem black;
+}
+
+  .google-button-subtext{
+    font-size: 0.9rem;
+    margin-top: 0rem;
+    max-width: 30rem;
+    font-weight: 300;
+  }
+
+  .google-icon{
+    margin-right: 0.5rem;
+  }
+  
     /* Response View */
   
     @media only screen and (max-width: 47.9rem){
-        .cookie-banner-accept-button,
-        .cookie-banner-decline-button{
+        .accept-button,
+        .decline-button{
           margin: 0.8rem 0.7rem 0rem 0.7rem;
           width: fit-content;    
+        }
+
+
+        
+        .google-button-subtext{
+          margin: 0rem 0rem 0.3rem 0rem;
+          font-size: 0.7rem;
+          width: 90%;    
         }
       }

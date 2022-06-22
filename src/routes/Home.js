@@ -24,6 +24,7 @@ class Home extends Component {
     window.scrollTo(0, 0);
   }
 
+  //Method that checks if second cookie consent modal needed and loads if true
   componentWillUnmount() {
     const { secondPopupSwitcher } = this.props;
 
@@ -124,8 +125,8 @@ class Home extends Component {
   }
 }
 
-export default memo(Home);
-
 {
   /* React Memo is used to memorize component to prevent re-rendering when there are state changes, allowing react-typing-animation package not to reload*/
 }
+
+export default memo(Home);

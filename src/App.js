@@ -7,7 +7,6 @@ import { Route, Routes, Link, NavLink } from "react-router-dom";
 import Home from "./routes/Home";
 import BlogSection from "./routes/BlogSection";
 import DesignSection from "./routes/DesignSection";
-import ArtworkSection from "./routes/ArtworkSection";
 import Blog1 from "./routes/Blogs/Blog1";
 import Blog2 from "./routes/Blogs/Blog2";
 import Blog3 from "./routes/Blogs/Blog3";
@@ -29,7 +28,7 @@ import {
 
 //Style Imports
 import "./styles/main.css";
-import "./styles/cookieBanner.css";
+import "./styles/cookies/cookieBanner.css";
 
 //Component Imports
 import Navbar from "./components/Navbar";
@@ -37,12 +36,12 @@ import Footer from "./components/Footer";
 import CookiePopup from "./components/cookies/CookiePopup";
 import CookieBlocked from "./components/cookies/CookieBlocked";
 import CookieBanner from "./components/cookies/CookieBanner";
+import ConfirmationModal from "./components/login/ConfirmationModal";
 
 //External Packages
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
 import Cookies from "js-cookie"; //External Package used to edit cookie information in browser - Documentation can be found here => https://www.npmjs.com/package/js-cookie
 import { gapi } from "gapi-script"; //External package used for Google Login
-import ProfileModal from "./components/login/LogoutConfirmModal";
 
 library.add(faBars, faX, faXmark, faUser);
 
@@ -82,11 +81,6 @@ class App extends Component {
     this.setState({ showSecondPopup: !this.state.showSecondPopup });
   }
 
-  //Callback function that displays the second, more annoying, cookie settings window that appears later in the website
-  switchSecondPopupCookiesState() {
-    this.setState({ showSecondPopup: !this.state.showSecondPopup });
-  }
-
   render() {
     const { showCookiePopup, showSecondPopup } = this.state;
 
@@ -119,6 +113,8 @@ class App extends Component {
             content="The Internet We Know is a website about the internet that critiques the internet we know today"
           />
         </Helmet>
+
+        {/* Wrapping entire website in GlobalContextProvider to allow access to global state variables in any component without excessive prop drilling */}
         <GlobalContextProvider>
           <Navbar />
 
@@ -139,10 +135,6 @@ class App extends Component {
               <Route
                 path="/wsoa4175a_1894979/DesignSection/"
                 element={<DesignSection />}
-              />
-              <Route
-                path="/wsoa4175a_1894979/ArtworkSection/"
-                element={<ArtworkSection />}
               />
 
               {/* Blog Routes*/}
@@ -189,51 +181,44 @@ class App extends Component {
 
           {
             //Cookie banners & popups are in App.js as they are intended to overlap any page of the site
+          }
 
-            //Checking if the net art is enabled through cookies (not state, as it performs whole website reload when enabled/disabled)
-            Cookies.get("test") === "true" ? (
-              <>
-                {
-                  //Checking if cookies are blocked
-                  !navigator.cookieEnabled ? (
-                    <CookieBlocked />
-                  ) : (
-                    <CookieBanner
-                      onPreferences={this.switchFirstCookiePopupState}
-                      onPopupAccept={this.acceptClick}
-                    />
-                  )
-                }
-
-                <CookiePopup
-                  showCookiePopup={showCookiePopup}
-                  onCookieSwitch={this.switchFirstCookiePopupState}
-                  isPopupSubtext="false"
-                  onAcceptButton={this.acceptClick}
-                />
-
-                <CookiePopup
-                  showCookiePopup={showSecondPopup}
-                  onCookieSwitch={this.switchSecondPopupCookiesState}
-                  isPopupSubtext="true"
-                  onAcceptButton={this.acceptClick}
-                  popupSubtext={
-                    <>
-                      Are you sure you don't want to enable all cookies to{" "}
-                      <span className="strike-through-text">
-                        let us profit off your data
-                      </span>{" "}
-                      better our product and your experience?
-                    </>
-                  }
-                />
-              </>
+          {
+            //Checking if cookies are blocked
+            !navigator.cookieEnabled ? (
+              <CookieBlocked />
             ) : (
-              <></>
+              <CookieBanner
+                onPreferences={this.switchFirstCookiePopupState}
+                onPopupAccept={this.acceptClick}
+              />
             )
           }
 
-          <ProfileModal />
+          <CookiePopup
+            showCookiePopup={showCookiePopup}
+            onCookieSwitch={this.switchFirstCookiePopupState}
+            isPopupSubtext="false"
+            onAcceptButton={this.acceptClick}
+          />
+
+          <CookiePopup
+            showCookiePopup={showSecondPopup}
+            onCookieSwitch={this.switchSecondPopupCookiesState}
+            isPopupSubtext="true"
+            onAcceptButton={this.acceptClick}
+            popupSubtext={
+              <>
+                Are you sure you don't want to enable all cookies to{" "}
+                <span className="strike-through-text">
+                  let us profit off your data
+                </span>{" "}
+                better our product and your experience?
+              </>
+            }
+          />
+
+          <ConfirmationModal />
 
           <Footer />
         </GlobalContextProvider>

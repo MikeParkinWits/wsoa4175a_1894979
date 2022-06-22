@@ -1,21 +1,23 @@
-import React, { Component, useState } from "react";
+import React, { Component } from "react";
 
 //External Package Imports
 import { Route, Routes, Link, NavLink } from "react-router-dom";
 
 //Image Imports
 import logo from "../assets/Logo.svg";
-import login from "../assets/Login.svg";
 
 //Style Imports
 import "../styles/navbar.css";
 
 //Font Awesome Imports
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
+//Google Login Imports
 import GoogleLogin, { GoogleLogout } from "react-google-login";
-import ActionButton from "./ActionButton";
 import GlobalContext from "../context/GlobalContext";
-import ProfileModal from "./login/LogoutConfirmModal";
+
+//External Components Import
+import ActionButton from "./buttons/ActionButton";
 
 export default class Navbar extends Component {
   constructor(props) {
@@ -38,19 +40,10 @@ export default class Navbar extends Component {
 
   render() {
     const { click } = this.state;
-
-    const {
-      freeArticlesLeft,
-      signedIn,
-      decreaseNumFreeArticles,
-      signInFunction,
-      showProfilePage,
-      showProfilePageFunction,
-    } = this.context;
+    const { signedIn, signInFunction, showConfirmationModalFunction } =
+      this.context;
 
     const responseGoogle = (response) => {
-      console.log(response);
-      console.log(response.profileObj);
       signInFunction();
     };
 
@@ -124,7 +117,7 @@ export default class Navbar extends Component {
                     />
                   ) : (
                     <ActionButton
-                      onClickAction={showProfilePageFunction}
+                      onClickAction={showConfirmationModalFunction}
                       buttonText={
                         <>
                           {" "}

@@ -1,50 +1,35 @@
 import React, { Component } from "react";
 
-import Cookies from "js-cookie"; //External Package used to edit cookie information in browser - Documentation can be found here => https://www.npmjs.com/package/js-cookie
+//External Components Import
+import ActionButton from "../buttons/ActionButton";
 
-//Style Imports
-import "../../styles/cookiePopup.css";
-import ActionButton from "../ActionButton";
+//Context Import
 import GlobalContext from "../../context/GlobalContext";
+
+//Google Login Imports
 import GoogleLogin, { GoogleLogout } from "react-google-login";
 
-import GoogleLogo from "../../assets/GLogo.svg";
-
-export default class ProfileModal extends Component {
+export default class ConfirmationModal extends Component {
   render() {
-    const responseGoogle = (response) => {
-      console.log(response);
-      console.log(response.profileObj);
-      signInFunction();
-      updateUserInfo(
-        response.profileObj.imageUrl,
-        response.profileObj.name,
-        response.profileObj.email
-      );
-    };
-
     const failedResponse = (response) => {
       console.log(response);
     };
 
     const {
-      showProfilePage,
-      signedIn,
+      showConfirmationModal,
       signInFunction,
-      showProfilePageFunction,
-      updateUserInfo,
-      userInfo,
+      showConfirmationModalFunction,
     } = this.context;
 
-    if (!showProfilePage) {
+    if (!showConfirmationModal) {
       return null;
     } else {
       return (
         <article className="modal-overlay">
-          <section className="profile-modal">
-            <header className="profile-modal-header">
-              <h2 className="profile-modal-title">Are You Sure?</h2>
-              <p className="profile-modal-subtext">
+          <section className="confirmation-modal modal">
+            <header className="confirmation-modal-header">
+              <h2 className="confirmation-modal-title">Are You Sure?</h2>
+              <p className="confirmation-modal-subtext">
                 Are you sure that you want to logout and{" "}
                 <span className="strike-through-text">
                   stop providing us with your personal information which we sell
@@ -63,18 +48,18 @@ export default class ProfileModal extends Component {
                     onClickAction={renderProps.onClick}
                     disabled={renderProps.disabled}
                     buttonText={"Yes"}
-                    buttonClass="modal-decline-button"
+                    buttonClass="decline-button"
                   ></ActionButton>
                 )}
                 buttonText="Login"
                 onLogoutSuccess={signInFunction}
-                onFailure={responseGoogle}
+                onFailure={failedResponse}
                 cookiePolicy={"single_host_origin"}
               />
               <ActionButton
                 buttonText="No"
-                buttonClass="modal-accept-button"
-                onClickAction={showProfilePageFunction}
+                buttonClass="accept-button"
+                onClickAction={showConfirmationModalFunction}
               />
             </section>
           </section>
@@ -84,4 +69,4 @@ export default class ProfileModal extends Component {
   }
 }
 
-ProfileModal.contextType = GlobalContext;
+ConfirmationModal.contextType = GlobalContext;

@@ -10,18 +10,17 @@ import { DesignList } from "../../helpers/DesignList";
 import Design1Photo from "../../assets/Design1/Homepage-Desktop.png";
 import Design2Photo from "../../assets/Design1/Post-Selector-Desktop.png";
 import Design3Photo from "../../assets/Design1/Post-Desktop.png";
+import BlogFigure from "../../components/BlogFigure";
 
 //Component Imports
 import Titles from "../../components/Titles";
-import BlogReferences from "../../components/BlogReferences";
-import BlogButtons from "../../components/BlogButtons";
-import FreeArticlesModal from "../../components/login/FreeArticlesModal";
-import FreeArticleLimitModal from "../../components/login/FreeArticleLimitModal";
+import BlogButtons from "../../components/buttons/BlogButtons";
+import FreeArticlesLeftUI from "../../components/login/FreeArticlesLeftUI";
+import FreeBlogLimitReachedModal from "../../components/login/FreeBlogLimitReachedModal";
 
 //Import External Packages
 import FadeIn from "react-fade-in"; //Used for smooth page transition load - Documentation can be found here => https://www.npmjs.com/package/react-fade-in
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
-import BlogFigure from "../../components/BlogFigure";
 
 export default class Design1 extends Component {
   //Lifecycle method that scrolls the page to the top on load
@@ -95,7 +94,7 @@ export default class Design1 extends Component {
         <FadeIn transitionDuration={1000}>
           <article className="page-container h-entry">
             <article>
-              <FreeArticlesModal />
+              <FreeArticlesLeftUI />
               <Titles
                 mainTitle={true}
                 title={DesignList[designInfoToLoad].cardTitle}
@@ -182,7 +181,7 @@ export default class Design1 extends Component {
             <BlogButtons type="Design" />
           </article>
         </FadeIn>
-        <FreeArticleLimitModal />
+        <FreeBlogLimitReachedModal />
       </>
     );
   }

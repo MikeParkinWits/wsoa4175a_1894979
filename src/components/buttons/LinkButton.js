@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
 //Styling
-import "../styles/linkButton.css";
+import "../../styles/linkButton.css";
 
 export default class LinkButton extends Component {
   static defaultProps = {
