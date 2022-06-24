@@ -15,6 +15,7 @@ import BlogReferences from "../../components/BlogReferences";
 import BlogButtons from "../../components/buttons/BlogButtons";
 import FreeArticlesLeftUI from "../../components/login/FreeArticlesLeftUI";
 import FreeBlogLimitReachedModal from "../../components/login/FreeBlogLimitReachedModal";
+import Notifications from "../../components/Notifications";
 
 //Import External Packages
 import FadeIn from "react-fade-in"; //Used for smooth page transition load - Documentation can be found here => https://www.npmjs.com/package/react-fade-in
@@ -24,9 +25,13 @@ export default class Blog1 extends Component {
   //Lifecycle method which scrolls the page to the top on load
   componentDidMount() {
     window.scrollTo(0, 0);
+
+    window.addEventListener("scroll", this.handleScrollToElement);
   }
 
   render() {
+    const name = "true";
+
     let blogInfoToLoad =
       BlogList.length -
       parseInt(
@@ -213,6 +218,7 @@ export default class Blog1 extends Component {
           </article>
         </FadeIn>
         <FreeBlogLimitReachedModal />
+        <Notifications />
       </>
     );
   }

@@ -42,6 +42,7 @@ import ConfirmationModal from "./components/login/ConfirmationModal";
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
 import Cookies from "js-cookie"; //External Package used to edit cookie information in browser - Documentation can be found here => https://www.npmjs.com/package/js-cookie
 import { gapi } from "gapi-script"; //External package used for Google Login
+import { Notifications } from "react-push-notification";
 
 library.add(faBars, faX, faXmark, faUser);
 
@@ -116,6 +117,8 @@ class App extends Component {
 
         {/* Wrapping entire website in GlobalContextProvider to allow access to global state variables in any component without excessive prop drilling */}
         <GlobalContextProvider>
+          <Notifications position="top-right" />
+
           <Navbar />
 
           <main>

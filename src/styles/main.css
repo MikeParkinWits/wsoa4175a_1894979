@@ -26,6 +26,8 @@ body {
 
   box-sizing: border-box;
   padding-top: 4rem;
+
+  height: 100%;
 }
 
 a {

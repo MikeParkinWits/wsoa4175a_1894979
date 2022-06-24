@@ -12,6 +12,7 @@ import BlogReferences from "../../components/BlogReferences";
 import BlogButtons from "../../components/buttons/BlogButtons";
 import FreeArticlesLeftUI from "../../components/login/FreeArticlesLeftUI";
 import FreeBlogLimitReachedModal from "../../components/login/FreeBlogLimitReachedModal";
+import Notifications from "../../components/Notifications";
 
 //Import External Packages
 import FadeIn from "react-fade-in"; //Used for smooth page transition load - Documentation can be found here => https://www.npmjs.com/package/react-fade-in
@@ -242,6 +243,7 @@ export default class Blog3 extends Component {
           </article>
         </FadeIn>
         <FreeBlogLimitReachedModal />
+        <Notifications />
       </>
     );
   }
