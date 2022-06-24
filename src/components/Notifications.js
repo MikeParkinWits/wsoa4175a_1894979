@@ -18,7 +18,7 @@ export default class Notifications extends Component {
 
     const num = [];
 
-    let intervalDelay = Math.floor(Math.random() * (20000 - 10000 + 1) + 10000);
+    let intervalDelay = Math.floor(Math.random() * (90000 - 50000 + 1) + 50000);
 
     NotificationList.map((notificationItem) => {
       num.push(notificationItem);
