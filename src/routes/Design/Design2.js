@@ -3,6 +3,11 @@ import React, { Component } from "react";
 //Style Imports
 import "../../styles/blog.css";
 
+//Importing Context
+import GlobalContext, {
+  GlobalContextProvider,
+} from "../../context/GlobalContext";
+
 //Importing Helper
 import { DesignList } from "../../helpers/DesignList";
 
@@ -24,7 +29,7 @@ import Notifications from "../../components/Notifications";
 import FadeIn from "react-fade-in"; //Used for smooth page transition load - Documentation can be found here => https://www.npmjs.com/package/react-fade-in
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
 
-export default class Design1 extends Component {
+export default class Design2 extends Component {
   //Lifecycle method that scrolls the page to the top on load
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -36,6 +41,8 @@ export default class Design1 extends Component {
       parseInt(
         window.location.pathname.charAt(window.location.pathname.length - 2)
       );
+
+    const { showNetArt, toggleNetArt } = this.context;
     return (
       <>
         {/* React Helmet is used to dynamically adjust the head of the document and add meta data */}
@@ -96,7 +103,14 @@ export default class Design1 extends Component {
         <FadeIn transitionDuration={1000}>
           <article className="page-container h-entry">
             <article>
-              <FreeArticlesLeftUI />
+              {showNetArt && (
+                <>
+                  {" "}
+                  <FreeArticlesLeftUI />
+                  <FreeBlogLimitReachedModal />
+                  <Notifications />
+                </>
+              )}
               <Titles
                 mainTitle={true}
                 title={DesignList[designInfoToLoad].cardTitle}
@@ -261,9 +275,9 @@ export default class Design1 extends Component {
             <BlogButtons type="Design" />
           </article>
         </FadeIn>
-        <FreeBlogLimitReachedModal />
-        <Notifications />
       </>
     );
   }
 }
+
+Design2.contextType = GlobalContext;

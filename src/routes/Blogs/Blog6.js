@@ -4,6 +4,11 @@ import { Link } from "react-router-dom";
 //Style Imports
 import "../../styles/blog.css";
 
+//Importing Context
+import GlobalContext, {
+  GlobalContextProvider,
+} from "../../context/GlobalContext";
+
 //Importing Helper
 import { BlogList } from "../../helpers/BlogList";
 
@@ -25,7 +30,7 @@ import FadeIn from "react-fade-in"; //Used for smooth page transition load - Doc
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
 import Cookies from "js-cookie"; //External Package used to edit cookie information in browser - Documentation can be found here => https://www.npmjs.com/package/js-cookie
 
-export default class Blog5 extends Component {
+export default class Blog6 extends Component {
   //Lifecycle method that scrolls the page to the top on load
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -37,6 +42,9 @@ export default class Blog5 extends Component {
       parseInt(
         window.location.pathname.charAt(window.location.pathname.length - 2)
       );
+
+    const { showNetArt, toggleNetArt } = this.context;
+
     return (
       <>
         {/* React Helmet is used to dynamically adjust the head of the document and add meta data */}
@@ -97,7 +105,14 @@ export default class Blog5 extends Component {
         <FadeIn transitionDuration={1000}>
           <article className="page-container h-entry">
             <article>
-              <FreeArticlesLeftUI />
+              {showNetArt && (
+                <>
+                  {" "}
+                  <FreeArticlesLeftUI />
+                  <FreeBlogLimitReachedModal />
+                  <Notifications />
+                </>
+              )}
               <Titles
                 mainTitle={true}
                 title={BlogList[blogInfoToLoad].cardTitle}
@@ -254,7 +269,8 @@ export default class Blog5 extends Component {
                       Cookies.remove("necessaryCookies");
                       Cookies.remove("functionalCookies");
                       Cookies.remove("performanceCookies");
-                      window.url("/wsoa4175a_1894979/");
+                      // window.url("/wsoa4175a_1894979/");
+                      toggleNetArt();
                     }}
                   >
                     clicking here.{" "}
@@ -325,9 +341,9 @@ export default class Blog5 extends Component {
             <BlogButtons type="Blog" />
           </article>
         </FadeIn>
-        <FreeBlogLimitReachedModal />
-        <Notifications />
       </>
     );
   }
 }
+
+Blog6.contextType = GlobalContext;

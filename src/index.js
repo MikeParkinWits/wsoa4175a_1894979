@@ -4,6 +4,8 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 
+import GlobalContext, { GlobalContextProvider } from "./context/GlobalContext";
+
 //Adding React Routing
 import { BrowserRouter } from "react-router-dom";
 
@@ -22,7 +24,9 @@ if (rootElement.hasChildNodes()) {
 } else {
   render(
     <BrowserRouter>
-      <App />
+      <GlobalContextProvider>
+        <App />
+      </GlobalContextProvider>
     </BrowserRouter>,
     rootElement
   );

@@ -3,6 +3,11 @@ import React, { Component } from "react";
 //Style Imports
 import "../../styles/blog.css";
 
+//Importing Context
+import GlobalContext, {
+  GlobalContextProvider,
+} from "../../context/GlobalContext";
+
 //Importing Helper
 import { BlogList } from "../../helpers/BlogList";
 
@@ -34,6 +39,8 @@ export default class Blog2 extends Component {
       parseInt(
         window.location.pathname.charAt(window.location.pathname.length - 2)
       );
+
+    const { showNetArt, toggleNetArt } = this.context;
     return (
       <>
         {/* React Helmet is used to dynamically adjust the head of the document and add meta data */}
@@ -94,7 +101,14 @@ export default class Blog2 extends Component {
         <FadeIn transitionDuration={1000}>
           <article className="page-container h-entry">
             <article>
-              <FreeArticlesLeftUI />
+              {showNetArt && (
+                <>
+                  {" "}
+                  <FreeArticlesLeftUI />
+                  <FreeBlogLimitReachedModal />
+                  <Notifications />
+                </>
+              )}
               <Titles
                 mainTitle={true}
                 title={BlogList[blogInfoToLoad].cardTitle}
@@ -244,9 +258,9 @@ export default class Blog2 extends Component {
             <BlogButtons type="Blog" />
           </article>
         </FadeIn>
-        <FreeBlogLimitReachedModal />
-        <Notifications />
       </>
     );
   }
 }
+
+Blog2.contextType = GlobalContext;

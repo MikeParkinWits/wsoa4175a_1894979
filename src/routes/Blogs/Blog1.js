@@ -3,6 +3,11 @@ import React, { Component } from "react";
 //Style Imports
 import "../../styles/blog.css";
 
+//Importing Context
+import GlobalContext, {
+  GlobalContextProvider,
+} from "../../context/GlobalContext";
+
 //Importing Helper
 import { BlogList } from "../../helpers/BlogList";
 
@@ -37,6 +42,8 @@ export default class Blog1 extends Component {
       parseInt(
         window.location.pathname.charAt(window.location.pathname.length - 2)
       );
+
+    const { showNetArt, toggleNetArt } = this.context;
 
     return (
       <>
@@ -98,7 +105,14 @@ export default class Blog1 extends Component {
         <FadeIn transitionDuration={1000}>
           <article className="page-container h-entry">
             <article>
-              <FreeArticlesLeftUI />
+              {showNetArt && (
+                <>
+                  {" "}
+                  <FreeArticlesLeftUI />
+                  <FreeBlogLimitReachedModal />
+                  <Notifications />
+                </>
+              )}
 
               <Titles
                 mainTitle={true}
@@ -217,9 +231,9 @@ export default class Blog1 extends Component {
             <BlogButtons type="Blog" />
           </article>
         </FadeIn>
-        <FreeBlogLimitReachedModal />
-        <Notifications />
       </>
     );
   }
 }
+
+Blog1.contextType = GlobalContext;

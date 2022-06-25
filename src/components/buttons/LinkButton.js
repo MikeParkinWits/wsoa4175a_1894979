@@ -8,16 +8,18 @@ import "../../styles/linkButton.css";
 
 export default class LinkButton extends Component {
   static defaultProps = {
+    linkClassName: "main-button",
     buttonLink: "",
+    onClickAction: "",
     buttonText: "Button",
   };
 
   render() {
-    const { buttonLink, buttonText } = this.props;
+    const { linkClassName, buttonLink, onClickAction, buttonText } = this.props;
 
     return (
       <>
-        <Link className="main-button" to={buttonLink}>
+        <Link className={linkClassName} to={buttonLink} onClick={onClickAction}>
           {buttonText}
         </Link>
       </>
