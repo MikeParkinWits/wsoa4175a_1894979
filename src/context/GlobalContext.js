@@ -11,9 +11,10 @@ export class GlobalContextProvider extends Component {
       freeArticlesLeft: 2,
       signedIn: false,
       showConfirmationModal: false,
-      showNetArt: true,
-      showRoachModal: true,
-      blogsBeforeRoachModal: 5,
+      showNetArt: false,
+      showConfirmShameModal: true,
+      blogsBeforeConfirmShameModal: 5,
+      notificationsBeforeDefault: 3,
     };
 
     this.decreaseNumFreeArticles = this.decreaseNumFreeArticles.bind(this);
@@ -22,9 +23,12 @@ export class GlobalContextProvider extends Component {
       this.showConfirmationModalFunction.bind(this);
 
     this.toggleNetArt = this.toggleNetArt.bind(this);
-    this.showRoachModalToggle = this.showRoachModalToggle.bind(this);
-    this.decreaseBlogsBeforeRoachModal =
-      this.decreaseBlogsBeforeRoachModal.bind(this);
+    this.showConfirmShameModalToggle =
+      this.showConfirmShameModalToggle.bind(this);
+    this.decreaseblogsBeforeConfirmShameModal =
+      this.decreaseblogsBeforeConfirmShameModal.bind(this);
+    this.decreaseNotificationsbeforeDefault =
+      this.decreaseNotificationsbeforeDefault.bind(this);
   }
 
   //Function that decreases number of free articles
@@ -51,10 +55,14 @@ export class GlobalContextProvider extends Component {
   toggleNetArt() {
     const { showNetArt } = this.state;
 
-    if (!showNetArt || Cookies.remove("CookieConsent") === "true") {
-      if (Cookies.remove("CookieConsent") === "true") {
+    if (!showNetArt && Cookies.get("CookieConsent") === "true") {
+      if (Cookies.get("CookieConsent") === "true") {
         alert(
           "Notification preferences are controlled through the browser and must be reset manually"
+        );
+      } else {
+        alert(
+          "Net Art Enabled - for the best experience please make sure that your computer notifications are enabled"
         );
       }
       Cookies.remove("CookieConsent");
@@ -65,18 +73,26 @@ export class GlobalContextProvider extends Component {
 
     this.setState({ showNetArt: !this.state.showNetArt });
     this.setState({ freeArticlesLeft: 2 });
-    this.setState({ showRoachModal: true });
-    this.setState({ blogsBeforeRoachModal: 5 });
+    this.setState({ showConfirmShameModal: true });
+    this.setState({ blogsBeforeConfirmShameModal: 5 });
   }
 
-  showRoachModalToggle() {
-    this.setState({ showRoachModal: !this.state.showRoachModal });
+  showConfirmShameModalToggle() {
+    this.setState({ showConfirmShameModal: !this.state.showConfirmShameModal });
   }
 
-  decreaseBlogsBeforeRoachModal() {
+  decreaseblogsBeforeConfirmShameModal() {
     this.setState({
-      blogsBeforeRoachModal: this.state.blogsBeforeRoachModal - 1,
+      blogsBeforeConfirmShameModal: this.state.blogsBeforeConfirmShameModal - 1,
     });
+  }
+
+  decreaseNotificationsbeforeDefault() {
+    if (this.state.notificationsBeforeDefault > 0) {
+      this.setState({
+        notificationsBeforeDefault: this.state.notificationsBeforeDefault - 1,
+      });
+    }
   }
 
   render() {
@@ -85,16 +101,18 @@ export class GlobalContextProvider extends Component {
       signedIn,
       showConfirmationModal,
       showNetArt,
-      showRoachModal,
-      blogsBeforeRoachModal,
+      showConfirmShameModal,
+      blogsBeforeConfirmShameModal,
+      notificationsBeforeDefault,
     } = this.state;
     const {
       decreaseNumFreeArticles,
       signInFunction,
       showConfirmationModalFunction,
       toggleNetArt,
-      showRoachModalToggle,
-      decreaseBlogsBeforeRoachModal,
+      showConfirmShameModalToggle,
+      decreaseblogsBeforeConfirmShameModal,
+      decreaseNotificationsbeforeDefault,
     } = this;
 
     return (
@@ -104,14 +122,16 @@ export class GlobalContextProvider extends Component {
           signedIn,
           showConfirmationModal,
           showNetArt,
-          showRoachModal,
-          blogsBeforeRoachModal,
+          showConfirmShameModal,
+          blogsBeforeConfirmShameModal,
+          notificationsBeforeDefault,
           decreaseNumFreeArticles,
           signInFunction,
           showConfirmationModalFunction,
           toggleNetArt,
-          showRoachModalToggle,
-          decreaseBlogsBeforeRoachModal,
+          showConfirmShameModalToggle,
+          decreaseblogsBeforeConfirmShameModal,
+          decreaseNotificationsbeforeDefault,
         }}
       >
         {this.props.children}

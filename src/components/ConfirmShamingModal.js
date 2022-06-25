@@ -12,20 +12,24 @@ import GlobalContext from "../context/GlobalContext";
 
 export default class RoachModal extends Component {
   componentDidMount() {
-    const { blogsBeforeRoachModal, decreaseBlogsBeforeRoachModal } =
-      this.context;
+    const {
+      blogsBeforeConfirmShameModal,
+      decreaseblogsBeforeConfirmShameModal,
+    } = this.context;
 
-    if (blogsBeforeRoachModal !== 0) {
-      decreaseBlogsBeforeRoachModal();
+    if (blogsBeforeConfirmShameModal !== 0) {
+      decreaseblogsBeforeConfirmShameModal();
     }
   }
 
   render() {
     const {
-      showRoachModal,
-      showRoachModalToggle,
-      blogsBeforeRoachModal,
-      decreaseBlogsBeforeRoachModal,
+      showConfirmShameModal,
+      showConfirmShameModalToggle,
+      blogsBeforeConfirmShameModal,
+      decreaseblogsBeforeConfirmShameModal,
+      freeArticlesLeft,
+      signedIn,
     } = this.context;
 
     //Function code required to send email to simulate the mailing list subscription
@@ -42,7 +46,7 @@ export default class RoachModal extends Component {
         .then(
           (result) => {
             console.log(result.text);
-            showRoachModalToggle();
+            showConfirmShameModalToggle();
           },
           (error) => {
             console.log(error.text);
@@ -50,7 +54,12 @@ export default class RoachModal extends Component {
         );
     };
 
-    if (showRoachModal && blogsBeforeRoachModal === 0) {
+    if (
+      showConfirmShameModal &&
+      blogsBeforeConfirmShameModal === 0 &&
+      freeArticlesLeft === 0 &&
+      signedIn
+    ) {
       {
         console.log("H12");
       }
@@ -96,7 +105,7 @@ export default class RoachModal extends Component {
                 <ActionButton
                   buttonText="No thanks, I don't want to be a front runner in web development"
                   buttonClass="confirm-shame-button"
-                  onClickAction={showRoachModalToggle}
+                  onClickAction={showConfirmShameModalToggle}
                 />{" "}
               </section>
             </section>
