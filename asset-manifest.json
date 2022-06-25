@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/wsoa4175a_1894979/static/css/main.4571e98f.css",
-    "main.js": "/wsoa4175a_1894979/static/js/main.75b1667c.js",
+    "main.css": "/wsoa4175a_1894979/static/css/main.847cc939.css",
+    "main.js": "/wsoa4175a_1894979/static/js/main.77e85d76.js",
     "static/js/787.92a65116.chunk.js": "/wsoa4175a_1894979/static/js/787.92a65116.chunk.js",
     "static/media/Homepage-Desktop.png": "/wsoa4175a_1894979/static/media/Homepage-Desktop.e8b7e2726407e83df36f.png",
     "static/media/BlogPicture.png": "/wsoa4175a_1894979/static/media/BlogPicture.29160ced7603baa47923.png",
@@ -18,6 +18,7 @@
     "static/media/Blog2.svg": "/wsoa4175a_1894979/static/media/Blog2.81e3f5e27ecb6059d5ccf70ac5723b5f.svg",
     "static/media/Design2.svg": "/wsoa4175a_1894979/static/media/Design2.f31d3b873fbc8009da253709fde9af54.svg",
     "static/media/Blog3.svg": "/wsoa4175a_1894979/static/media/Blog3.07f70713d48c03a2a00b997e20c1226a.svg",
+    "static/media/MailIcon.svg": "/wsoa4175a_1894979/static/media/MailIcon.954431e2154cb0007c34dc401f606e19.svg",
     "static/media/Design1.svg": "/wsoa4175a_1894979/static/media/Design1.005a86bbc24807188a2d13cdef0f6a73.svg",
     "static/media/Blog1.svg": "/wsoa4175a_1894979/static/media/Blog1.ba8be4cc4998a1a89a7c41c06afe55ea.svg",
     "static/media/NotificationCog.png": "/wsoa4175a_1894979/static/media/NotificationCog.562bce6e2109f94d6350.png",
@@ -31,12 +32,12 @@
     "static/media/NotificationWarning.png": "/wsoa4175a_1894979/static/media/NotificationWarning.c8466570b0d3d30a3066.png",
     "static/media/GLogo.svg": "/wsoa4175a_1894979/static/media/GLogo.66ae25beb1eb0655ac594978ee31ddb2.svg",
     "index.html": "/wsoa4175a_1894979/index.html",
-    "main.4571e98f.css.map": "/wsoa4175a_1894979/static/css/main.4571e98f.css.map",
-    "main.75b1667c.js.map": "/wsoa4175a_1894979/static/js/main.75b1667c.js.map",
+    "main.847cc939.css.map": "/wsoa4175a_1894979/static/css/main.847cc939.css.map",
+    "main.77e85d76.js.map": "/wsoa4175a_1894979/static/js/main.77e85d76.js.map",
     "787.92a65116.chunk.js.map": "/wsoa4175a_1894979/static/js/787.92a65116.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4571e98f.css",
-    "static/js/main.75b1667c.js"
+    "static/css/main.847cc939.css",
+    "static/js/main.77e85d76.js"
   ]
 }
