@@ -85,8 +85,6 @@ class App extends Component {
   render() {
     const { showCookiePopup, showSecondPopup } = this.state;
 
-    const { showNetArt } = this.context;
-
     //Used for Google oAuth2 Login Package
     gapi.load("client:auth2", () => {
       gapi.auth2.init({
@@ -95,6 +93,8 @@ class App extends Component {
         plugin_name: "chat",
       });
     });
+
+    const { showNetArt } = this.context;
 
     return (
       <>
