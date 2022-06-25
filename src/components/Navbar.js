@@ -40,8 +40,12 @@ export default class Navbar extends Component {
 
   render() {
     const { click } = this.state;
-    const { signedIn, signInFunction, showConfirmationModalFunction } =
-      this.context;
+    const {
+      signedIn,
+      signInFunction,
+      showConfirmationModalFunction,
+      showNetArt,
+    } = this.context;
 
     const responseGoogle = (response) => {
       signInFunction();
@@ -89,49 +93,51 @@ export default class Navbar extends Component {
                     Design
                   </NavLink>
                 </li>
-                <li>
-                  {!signedIn ? (
-                    <GoogleLogin
-                      clientId="438147070218-ntafm247ii9dm17lgo110daid1rbb4kv.apps.googleusercontent.com"
-                      render={(renderProps) => (
-                        <ActionButton
-                          onClickAction={renderProps.onClick}
-                          disabled={renderProps.disabled}
-                          buttonText={
-                            <>
-                              {" "}
-                              <FontAwesomeIcon
-                                icon="fa-user"
-                                className="login-icon"
-                              />
-                              Login
-                            </>
-                          }
-                          buttonClass="google-login-button-nav"
-                        ></ActionButton>
-                      )}
-                      buttonText="Login"
-                      onSuccess={responseGoogle}
-                      onFailure={failedResponse}
-                      cookiePolicy={"single_host_origin"}
-                    />
-                  ) : (
-                    <ActionButton
-                      onClickAction={showConfirmationModalFunction}
-                      buttonText={
-                        <>
-                          {" "}
-                          <FontAwesomeIcon
-                            icon="fa-user"
-                            className="login-icon"
-                          />
-                          Logout
-                        </>
-                      }
-                      buttonClass="google-login-button-nav"
-                    ></ActionButton>
-                  )}
-                </li>
+                {showNetArt && (
+                  <li>
+                    {!signedIn ? (
+                      <GoogleLogin
+                        clientId="438147070218-ntafm247ii9dm17lgo110daid1rbb4kv.apps.googleusercontent.com"
+                        render={(renderProps) => (
+                          <ActionButton
+                            onClickAction={renderProps.onClick}
+                            disabled={renderProps.disabled}
+                            buttonText={
+                              <>
+                                {" "}
+                                <FontAwesomeIcon
+                                  icon="fa-user"
+                                  className="login-icon"
+                                />
+                                Login
+                              </>
+                            }
+                            buttonClass="google-login-button-nav"
+                          ></ActionButton>
+                        )}
+                        buttonText="Login"
+                        onSuccess={responseGoogle}
+                        onFailure={failedResponse}
+                        cookiePolicy={"single_host_origin"}
+                      />
+                    ) : (
+                      <ActionButton
+                        onClickAction={showConfirmationModalFunction}
+                        buttonText={
+                          <>
+                            {" "}
+                            <FontAwesomeIcon
+                              icon="fa-user"
+                              className="login-icon"
+                            />
+                            Logout
+                          </>
+                        }
+                        buttonClass="google-login-button-nav"
+                      ></ActionButton>
+                    )}
+                  </li>
+                )}
               </ul>
             </section>
 

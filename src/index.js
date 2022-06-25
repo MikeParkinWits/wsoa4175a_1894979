@@ -9,20 +9,25 @@ import { BrowserRouter } from "react-router-dom";
 
 //Adding React-snap
 import { hydrate, render } from "react-dom";
+import { GlobalContextProvider } from "./context/GlobalContext";
 
 //Using React-Snap package to allow meta tags dynamically generated with React-Helmet package to be rendered client side --> https://www.npmjs.com/package/react-snap
 const rootElement = document.getElementById("root");
 if (rootElement.hasChildNodes()) {
   hydrate(
     <BrowserRouter>
-      <App />
+      <GlobalContextProvider>
+        <App />
+      </GlobalContextProvider>
     </BrowserRouter>,
     rootElement
   );
 } else {
   render(
     <BrowserRouter>
-      <App />
+      <GlobalContextProvider>
+        <App />
+      </GlobalContextProvider>
     </BrowserRouter>,
     rootElement
   );

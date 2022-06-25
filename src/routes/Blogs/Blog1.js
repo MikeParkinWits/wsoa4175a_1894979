@@ -20,6 +20,7 @@ import Notifications from "../../components/Notifications";
 //Import External Packages
 import FadeIn from "react-fade-in"; //Used for smooth page transition load - Documentation can be found here => https://www.npmjs.com/package/react-fade-in
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
+import GlobalContext from "../../context/GlobalContext";
 
 export default class Blog1 extends Component {
   //Lifecycle method which scrolls the page to the top on load
@@ -37,6 +38,8 @@ export default class Blog1 extends Component {
       parseInt(
         window.location.pathname.charAt(window.location.pathname.length - 2)
       );
+
+    const { showNetArt } = this.context;
 
     return (
       <>
@@ -98,7 +101,7 @@ export default class Blog1 extends Component {
         <FadeIn transitionDuration={1000}>
           <article className="page-container h-entry">
             <article>
-              <FreeArticlesLeftUI />
+              {showNetArt && <FreeArticlesLeftUI />}
 
               <Titles
                 mainTitle={true}
@@ -217,9 +220,21 @@ export default class Blog1 extends Component {
             <BlogButtons type="Blog" />
           </article>
         </FadeIn>
-        <FreeBlogLimitReachedModal />
-        <Notifications />
+
+        {
+          //Outside the FadeIn Function to make smoother loading of modal
+
+          showNetArt && (
+            <>
+              {" "}
+              <FreeBlogLimitReachedModal />
+              <Notifications />
+            </>
+          )
+        }
       </>
     );
   }
 }
+
+Blog1.contextType = GlobalContext;

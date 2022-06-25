@@ -85,6 +85,8 @@ class App extends Component {
   render() {
     const { showCookiePopup, showSecondPopup } = this.state;
 
+    const { showNetArt } = this.context;
+
     //Used for Google oAuth2 Login Package
     gapi.load("client:auth2", () => {
       gapi.auth2.init({
@@ -116,115 +118,96 @@ class App extends Component {
         </Helmet>
 
         {/* Wrapping entire website in GlobalContextProvider to allow access to global state variables in any component without excessive prop drilling */}
-        <GlobalContextProvider>
-          <Notifications position="top-right" />
+        <Notifications position="top-right" />
 
-          <Navbar />
+        <Navbar />
 
-          <main>
-            <Routes>
-              <Route
-                path="/wsoa4175a_1894979/"
-                element={
-                  <Home
-                    secondPopupSwitcher={this.switchSecondPopupCookiesState}
+        <main>
+          <Routes>
+            <Route
+              path="/wsoa4175a_1894979/"
+              element={
+                <Home
+                  secondPopupSwitcher={this.switchSecondPopupCookiesState}
+                />
+              }
+            />
+            <Route
+              path="/wsoa4175a_1894979/BlogSection/"
+              element={<BlogSection />}
+            />
+            <Route
+              path="/wsoa4175a_1894979/DesignSection/"
+              element={<DesignSection />}
+            />
+
+            {/* Blog Routes*/}
+            <Route path="/wsoa4175a_1894979/Blogs/Blog1/" element={<Blog1 />} />
+            <Route path="/wsoa4175a_1894979/Blogs/Blog2/" element={<Blog2 />} />
+            <Route path="/wsoa4175a_1894979/Blogs/Blog3/" element={<Blog3 />} />
+            <Route path="/wsoa4175a_1894979/Blogs/Blog4/" element={<Blog4 />} />
+            <Route path="/wsoa4175a_1894979/Blogs/Blog5/" element={<Blog5 />} />
+            <Route path="/wsoa4175a_1894979/Blogs/Blog6/" element={<Blog6 />} />
+            <Route path="/wsoa4175a_1894979/Blogs/Blog7/" element={<Blog7 />} />
+
+            {/* Design Routes*/}
+            <Route
+              path="/wsoa4175a_1894979/Design/Design1/"
+              element={<Design1 />}
+            />
+            <Route
+              path="/wsoa4175a_1894979/Design/Design2/"
+              element={<Design2 />}
+            />
+          </Routes>
+        </main>
+
+        {
+          //Cookie banners & popups are in App.js as they are intended to overlap any page of the site
+
+          showNetArt && (
+            <>
+              {
+                //Checking if cookies are blocked
+                !navigator.cookieEnabled ? (
+                  <CookieBlocked />
+                ) : (
+                  <CookieBanner
+                    onPreferences={this.switchFirstCookiePopupState}
+                    onPopupAccept={this.acceptClick}
                   />
+                )
+              }
+
+              <CookiePopup
+                showCookiePopup={showCookiePopup}
+                onCookieSwitch={this.switchFirstCookiePopupState}
+                isPopupSubtext="false"
+                onAcceptButton={this.acceptClick}
+              />
+
+              <CookiePopup
+                showCookiePopup={showSecondPopup}
+                onCookieSwitch={this.switchSecondPopupCookiesState}
+                isPopupSubtext="true"
+                onAcceptButton={this.acceptClick}
+                popupSubtext={
+                  <>
+                    Are you sure you don't want to enable all cookies to{" "}
+                    <span className="strike-through-text">
+                      let us profit off your data
+                    </span>{" "}
+                    better our product and your experience?
+                  </>
                 }
               />
-              <Route
-                path="/wsoa4175a_1894979/BlogSection/"
-                element={<BlogSection />}
-              />
-              <Route
-                path="/wsoa4175a_1894979/DesignSection/"
-                element={<DesignSection />}
-              />
 
-              {/* Blog Routes*/}
-              <Route
-                path="/wsoa4175a_1894979/Blogs/Blog1/"
-                element={<Blog1 />}
-              />
-              <Route
-                path="/wsoa4175a_1894979/Blogs/Blog2/"
-                element={<Blog2 />}
-              />
-              <Route
-                path="/wsoa4175a_1894979/Blogs/Blog3/"
-                element={<Blog3 />}
-              />
-              <Route
-                path="/wsoa4175a_1894979/Blogs/Blog4/"
-                element={<Blog4 />}
-              />
-              <Route
-                path="/wsoa4175a_1894979/Blogs/Blog5/"
-                element={<Blog5 />}
-              />
-              <Route
-                path="/wsoa4175a_1894979/Blogs/Blog6/"
-                element={<Blog6 />}
-              />
-              <Route
-                path="/wsoa4175a_1894979/Blogs/Blog7/"
-                element={<Blog7 />}
-              />
+              <ConfirmationModal />
+            </>
+          )
+        }
 
-              {/* Design Routes*/}
-              <Route
-                path="/wsoa4175a_1894979/Design/Design1/"
-                element={<Design1 />}
-              />
-              <Route
-                path="/wsoa4175a_1894979/Design/Design2/"
-                element={<Design2 />}
-              />
-            </Routes>
-          </main>
-
-          {
-            //Cookie banners & popups are in App.js as they are intended to overlap any page of the site
-          }
-
-          {
-            //Checking if cookies are blocked
-            !navigator.cookieEnabled ? (
-              <CookieBlocked />
-            ) : (
-              <CookieBanner
-                onPreferences={this.switchFirstCookiePopupState}
-                onPopupAccept={this.acceptClick}
-              />
-            )
-          }
-
-          <CookiePopup
-            showCookiePopup={showCookiePopup}
-            onCookieSwitch={this.switchFirstCookiePopupState}
-            isPopupSubtext="false"
-            onAcceptButton={this.acceptClick}
-          />
-
-          <CookiePopup
-            showCookiePopup={showSecondPopup}
-            onCookieSwitch={this.switchSecondPopupCookiesState}
-            isPopupSubtext="true"
-            onAcceptButton={this.acceptClick}
-            popupSubtext={
-              <>
-                Are you sure you don't want to enable all cookies to{" "}
-                <span className="strike-through-text">
-                  let us profit off your data
-                </span>{" "}
-                better our product and your experience?
-              </>
-            }
-          />
-
-          <ConfirmationModal />
-
-          <Footer />
-        </GlobalContextProvider>
+        <Footer />
       </>
     );
   }

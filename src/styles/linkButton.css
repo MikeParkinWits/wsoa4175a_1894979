@@ -1,25 +1,48 @@
 /* Desktop View */
 
-.main-button{
+.main-button,
+.footer-button{
   
-    margin-top: 1.3rem;
     width: fit-content;
-    font-size: 1.4rem;
     
     padding: 0.4rem 1rem;
   
     border-radius: 0.4rem;
+    transition: all 0.2s ease-out;
+  }
+
+  .main-button{
+    margin-top: 1.3rem;
+    font-size: 1.4rem;
+
     border: 0.125rem solid black;
   
     background-color: rgb(0, 0, 0);
     color: rgb(255, 255, 255);
-    transition: all 0.2s ease-out;
+  }
+
+  .footer-button{
+      font-size: 1rem;
+          
+      border: 0.125rem solid rgb(255, 255, 255);
+    
+      background-color: rgb(0, 0, 0);
+      color: rgb(255, 255, 255);
+      margin-left: auto;
+  }
+
+  .main-button:hover,
+  .footer-button:hover{
+    transform: translate(-0.25rem, -0.25rem);
+    cursor: pointer;
   }
 
   .main-button:hover{
-    transform: translate(-0.25rem, -0.25rem);
     box-shadow: 0.35rem 0.3rem #fc85f0, 0.35rem 0.3rem 0rem 0.1rem black;
-    cursor: pointer;
+  }
+  
+  .footer-button:hover{
+    box-shadow: 0.35rem 0.3rem #ffffff, 0.35rem 0.3rem 0rem 0.1rem rgb(0, 0, 0);
   }
 
   .main-button{
@@ -32,9 +55,14 @@
 /* Response View */
   
   @media only screen and (max-width: 47.8rem) {
-      .main-button{
-          text-align: center;
+  .main-button{
+    text-align: center;
 
-          margin: 1rem auto 1.5rem auto;
-      }
+    margin: 1rem auto 1.5rem auto;
+  }
+
+  .footer-button{
+    font-size: 1.1rem;
+    padding: 0.3rem 0.75rem;
+  }
   }

@@ -15,7 +15,7 @@
   flex-direction: row;
   align-items: center;
 
-  padding-left: 1rem;
+  padding: 0rem 1rem;
   color: white;
 }
 
@@ -29,11 +29,28 @@ time {
 @media only screen and (max-width: 64rem) {
   .main-footer {    
     margin-top: 1rem;
+    font-size: 1.1rem;
   }
+
+  .main-footer-contents{
+    padding: 0rem 0.8rem;
+}
 }
 
 @media only screen and (max-width: 47.9rem) {
   .main-footer {    
     margin-top: 0.5rem;
   }
+
+
+  .main-footer-contents{
+    padding:  0rem 0.5rem;
+  }
+
+  .main-footer-contents p,
+  time{
+    padding: 0.2rem;
+  }
+  
+  
 }
