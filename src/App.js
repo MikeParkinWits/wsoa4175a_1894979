@@ -167,6 +167,7 @@ class App extends Component {
 
           showNetArt && (
             <>
+              {console.log("HELL")}
               {
                 //Checking if cookies are blocked
                 !navigator.cookieEnabled ? (
@@ -212,5 +213,7 @@ class App extends Component {
     );
   }
 }
+
+App.contextType = GlobalContext;
 
 export default App;

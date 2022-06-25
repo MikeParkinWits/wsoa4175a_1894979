@@ -47,14 +47,18 @@ export class GlobalContextProvider extends Component {
     const { showNetArt } = this.state;
 
     if (!showNetArt) {
+      if (
+        Notification.permission === "denied" ||
+        Notification.permission === "default"
+      ) {
+        alert(
+          "Notification preferences are controlled through the browser and must be reset manually"
+        );
+      }
       Cookies.remove("CookieConsent");
       Cookies.remove("necessaryCookies");
       Cookies.remove("functionalCookies");
       Cookies.remove("performanceCookies");
-
-      alert(
-        "Notification preferences are controlled through the browser and must be reset manually"
-      );
     }
 
     this.setState({ showNetArt: !this.state.showNetArt });

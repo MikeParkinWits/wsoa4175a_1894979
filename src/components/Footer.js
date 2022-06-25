@@ -42,7 +42,7 @@ export default class Footer extends Component {
                 ></LinkButton>
               )}
               buttonText="Login"
-              onLogoutSuccess={signInFunction}
+              onLogoutSuccess={toggleNetArt}
               onFailure={failedResponse}
               cookiePolicy={"single_host_origin"}
             />
