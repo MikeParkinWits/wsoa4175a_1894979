@@ -17,6 +17,7 @@ import BlogButtons from "../../components/buttons/BlogButtons";
 import FreeArticlesLeftUI from "../../components/login/FreeArticlesLeftUI";
 import FreeBlogLimitReachedModal from "../../components/login/FreeBlogLimitReachedModal";
 import Notifications from "../../components/Notifications";
+import ConfirmShamingModal from "../../components/ConfirmShamingModal";
 
 //Import External Packages
 import FadeIn from "react-fade-in"; //Used for smooth page transition load - Documentation can be found here => https://www.npmjs.com/package/react-fade-in
@@ -255,6 +256,7 @@ export default class Blog2 extends Component {
               {" "}
               <FreeBlogLimitReachedModal />
               <Notifications />
+              <ConfirmShamingModal />
             </>
           )
         }

@@ -18,7 +18,7 @@ export default class Notifications extends Component {
 
     const num = [];
 
-    let intervalDelay = Math.floor(Math.random() * (90000 - 50000 + 1) + 50000);
+    let intervalDelay = Math.floor(Math.random() * (60000 - 40000 + 1) + 40000);
 
     NotificationList.map((notificationItem) => {
       num.push(notificationItem);
@@ -37,7 +37,7 @@ export default class Notifications extends Component {
           Math.floor(Math.random() * notificanInformation.length)
         ];
 
-      intervalDelay = Math.floor(Math.random() * (90000 - 50000 + 1) + 50000);
+      intervalDelay = Math.floor(Math.random() * (60000 - 40000 + 1) + 40000);
 
       addNotification({
         title: notificationContents.cardTitle,

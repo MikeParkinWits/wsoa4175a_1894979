@@ -11,7 +11,9 @@ export class GlobalContextProvider extends Component {
       freeArticlesLeft: 2,
       signedIn: false,
       showConfirmationModal: false,
-      showNetArt: false,
+      showNetArt: true,
+      showRoachModal: true,
+      blogsBeforeRoachModal: 5,
     };
 
     this.decreaseNumFreeArticles = this.decreaseNumFreeArticles.bind(this);
@@ -20,6 +22,9 @@ export class GlobalContextProvider extends Component {
       this.showConfirmationModalFunction.bind(this);
 
     this.toggleNetArt = this.toggleNetArt.bind(this);
+    this.showRoachModalToggle = this.showRoachModalToggle.bind(this);
+    this.decreaseBlogsBeforeRoachModal =
+      this.decreaseBlogsBeforeRoachModal.bind(this);
   }
 
   //Function that decreases number of free articles
@@ -46,11 +51,8 @@ export class GlobalContextProvider extends Component {
   toggleNetArt() {
     const { showNetArt } = this.state;
 
-    if (!showNetArt) {
-      if (
-        Notification.permission === "denied" ||
-        Notification.permission === "default"
-      ) {
+    if (!showNetArt || Cookies.remove("CookieConsent") === "true") {
+      if (Cookies.remove("CookieConsent") === "true") {
         alert(
           "Notification preferences are controlled through the browser and must be reset manually"
         );
@@ -63,16 +65,36 @@ export class GlobalContextProvider extends Component {
 
     this.setState({ showNetArt: !this.state.showNetArt });
     this.setState({ freeArticlesLeft: 2 });
+    this.setState({ showRoachModal: true });
+    this.setState({ blogsBeforeRoachModal: 5 });
+  }
+
+  showRoachModalToggle() {
+    this.setState({ showRoachModal: !this.state.showRoachModal });
+  }
+
+  decreaseBlogsBeforeRoachModal() {
+    this.setState({
+      blogsBeforeRoachModal: this.state.blogsBeforeRoachModal - 1,
+    });
   }
 
   render() {
-    const { freeArticlesLeft, signedIn, showConfirmationModal, showNetArt } =
-      this.state;
+    const {
+      freeArticlesLeft,
+      signedIn,
+      showConfirmationModal,
+      showNetArt,
+      showRoachModal,
+      blogsBeforeRoachModal,
+    } = this.state;
     const {
       decreaseNumFreeArticles,
       signInFunction,
       showConfirmationModalFunction,
       toggleNetArt,
+      showRoachModalToggle,
+      decreaseBlogsBeforeRoachModal,
     } = this;
 
     return (
@@ -82,10 +104,14 @@ export class GlobalContextProvider extends Component {
           signedIn,
           showConfirmationModal,
           showNetArt,
+          showRoachModal,
+          blogsBeforeRoachModal,
           decreaseNumFreeArticles,
           signInFunction,
           showConfirmationModalFunction,
           toggleNetArt,
+          showRoachModalToggle,
+          decreaseBlogsBeforeRoachModal,
         }}
       >
         {this.props.children}

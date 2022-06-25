@@ -20,8 +20,14 @@
 
     overflow-y: scroll;
 
+    scrollbar-width: none;
+
     box-shadow: 0.2rem 0.2rem #000000, 0.5rem 0.5rem 0rem 0.05rem black;
 }
+
+.modal::-webkit-scrollbar {
+    display: none;
+  }
 
 .modal-overlay{
     position: fixed;
@@ -130,13 +136,80 @@
     margin: 0rem 1rem 0.75rem 1rem;
   }
 
+  /* Confirm Shame Dark UI/UX Modal */
+
+
+  .confirm-shame-modal{
+    display: flex;
+    align-items: center;
+  }
+
+  .confirm-shame-modal-side-image{
+    height: 13rem;
+
+    margin: 1rem;
+  }
+
+  .confirm-shame-modal-form-input{
+    width: 100%;
+
+    border: 0.1rem solid black;
+    font-size: 1rem;
+    padding: 0.5rem;
+
+    border-radius: 0.2rem;
+
+    box-sizing: border-box;
+
+    text-align: center;
+  }
+
+  .confirm-shame-modal-form-input::placeholder {
+    text-align: center;
+  }
+
+  .confirm-shame-modal-form{
+    margin: 0.5rem;
+}
+
+.confirm-shame-modal-header h2{
+    margin: 0.2rem 0rem 0.8rem 0rem;
+}
+
+.confirm-shame-modal-header{
+    display: flex;
+    flex-direction: column;
+
+    margin: 0.5rem;
+}
+
+.confirm-shame-modal-subtext{
+    font-weight: 400;
+    font-size: 1.15rem;
+    margin: 0rem 0rem 1rem 0rem;
+}
+
+.confirm-shame-button{
+    border: 0rem;
+    background-color: white;
+    text-decoration: underline;
+    color: #00000081;
+}
+
+.button-container{
+    display: flex;
+    justify-content: center;
+    margin-top: 0.8rem;
+}
+
   /* Response View */
   
 @media only screen and (max-width: 47.9rem){
 
 .modal,
 .free-blog-limit-reached-modal,
-.confirmation-modal{
+.confirmation-modal,
+.confirm-shame-modal{
     width: 75%;
     padding: 1.5rem;
 }
@@ -185,5 +258,32 @@
 .confirmation-modal-subtext{
     font-size: 0.9rem;
     margin: 1rem 0rem 1rem 0rem;
+}
+
+.confirm-shame-modal{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .confirm-shame-modal-side-image{
+    height: 10rem;
+  }
+
+  .confirm-shame-modal-header h2{
+    margin: 0.2rem 0rem 0.8rem 0rem;
+    font-size: 1.3rem;
+}
+
+.confirm-shame-modal-header{
+    margin: 0.3rem;
+    text-align: center;
+}
+
+.confirm-shame-modal-subtext{
+    font-size: 1rem;
+}
+
+.confirm-shame-button{
+    font-size: 0.8rem;
 }
 }
