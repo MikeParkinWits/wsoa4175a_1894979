@@ -14,7 +14,8 @@ import GlobalContext from "../../context/GlobalContext";
 
 export default class FreeBlogLimitReachedModal extends Component {
   componentWillUnmount() {
-    document.body.style.overflow = "scroll";
+    //Allowing scrolling on body when banner is active
+    document.body.style.overflowY = "scroll";
   }
 
   //Function called on Google Login/Logout fail for errors
@@ -35,14 +36,15 @@ export default class FreeBlogLimitReachedModal extends Component {
     };
 
     if (freeArticlesLeft > 0 && !signedIn) {
-      //Allowing scrolling when banner is active
+      //Allowing scrolling on body when banner is active
       document.body.style.overflowY = "scroll";
       return null;
     } else if (signedIn) {
+      //Allowing scrolling on body when banner is active
       document.body.style.overflowY = "scroll";
       return null;
     } else {
-      //Stopping scrolling when banner is active
+      //Stopping scrolling on body when banner is active
       document.body.style.overflowY = "hidden";
       return (
         <article className="cookie-banner-overlay">
