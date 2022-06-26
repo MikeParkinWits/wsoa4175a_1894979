@@ -34,20 +34,21 @@ export default class CookieBanner extends Component {
     onPreferences();
 
     this.setState({ bannerVisible: false });
-    Cookies.set("CookieConsent", false);
+    Cookies.set("CookiesConsent", false);
   }
 
   //Checks to see if cookies have already been accepted
   componentDidMount() {
     const { debug } = this.props;
 
-    if (Cookies.get("CookieConsent") === undefined || debug) {
+    if (Cookies.get("CookiesConsent") === undefined || debug) {
       this.setState({ bannerVisible: true });
     }
   }
 
   render() {
     const { bannerVisible } = this.state;
+    const { acceptClick, onUpdate } = this;
 
     if (!bannerVisible) {
       return null;
@@ -67,12 +68,12 @@ export default class CookieBanner extends Component {
               <ActionButton
                 buttonText="Update Preferences"
                 buttonClass="decline-button"
-                onClickAction={this.onUpdate}
+                onClickAction={onUpdate}
               />{" "}
               <ActionButton
                 buttonText="Accept All Cookies"
                 buttonClass="accept-button"
-                onClickAction={this.acceptClick}
+                onClickAction={acceptClick}
               />
             </section>
           </section>

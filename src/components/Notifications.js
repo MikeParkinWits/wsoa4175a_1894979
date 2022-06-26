@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 
-import addNotification from "react-push-notification";
+//External Component Imports
+import addNotification from "react-push-notification"; //External package used for native, and in-broswer, notification - Documentation can be found here => https://www.npmjs.com/package/react-push-notification
+
+//Context Imports
 import GlobalContext from "../context/GlobalContext.js";
 
 //Importing Helpers
@@ -12,22 +15,39 @@ export default class Notifications extends Component {
     this.state = {
       notificanInformation: NotificationList,
     };
+
+    this.displayNotifications = this.displayNotifications.bind(this);
+
+    this.loadNotificationInformation =
+      this.loadNotificationInformation.bind(this);
   }
 
   componentDidMount() {
+    this.displayNotifications();
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  //Function that loads, and stores, notification data from NotificationList.js json
+  loadNotificationInformation() {
+    let notificationInfo = [];
+
+    NotificationList.map((notificationItem) => {
+      notificationInfo.push(notificationItem);
+    });
+
+    this.setState({ notificanInformation: notificationInfo });
+  }
+
+  //Function that recursively loads notifications, at an interval, while on blog pages on component load
+  displayNotifications() {
     const { notificanInformation } = this.state;
     const { notificationsbeforeDefault, decreaseNotificationsbeforeDefault } =
       this.context;
 
-    const num = [];
-
     let intervalDelay = Math.floor(Math.random() * (60000 - 40000 + 1) + 40000);
-
-    NotificationList.map((notificationItem) => {
-      num.push(notificationItem);
-    });
-
-    this.setState({ notificanInformation: num });
 
     let notificationContents =
       notificanInformation[
@@ -59,10 +79,6 @@ export default class Notifications extends Component {
         vibrate: 1,
       });
     }, intervalDelay);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
   }
 
   render() {

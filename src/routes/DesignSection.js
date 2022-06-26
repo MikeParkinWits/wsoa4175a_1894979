@@ -13,11 +13,6 @@ import FadeIn from "react-fade-in"; //Used for smooth page transition load - Doc
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
 
 export default class DesignSection extends Component {
-  //Lifecycle method that scrolls the page to the top on load
-  componentDidMount() {
-    window.scrollTo(0, 0);
-  }
-
   constructor(props) {
     super(props);
     this.state = {
@@ -30,6 +25,11 @@ export default class DesignSection extends Component {
   //Function to load more cards
   showMoreCards() {
     this.setState({ cardsVisible: this.state.cardsVisible + 3 });
+  }
+
+  //Lifecycle method that scrolls the page to the top on load
+  componentDidMount() {
+    window.scrollTo(0, 0);
   }
 
   render() {

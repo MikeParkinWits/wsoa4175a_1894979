@@ -11,15 +11,28 @@ import LinkButton from "./buttons/LinkButton";
 
 //Google Login Imports
 import GoogleLogin, { GoogleLogout } from "react-google-login";
-import ActionButton from "./buttons/ActionButton";
 
 export default class Footer extends Component {
-  render() {
-    const failedResponse = (response) => {
-      console.log(response);
-    };
+  //Function called on Google Login/Logout success
+  successfullyLoggedOut() {
+    const { toggleNetArt, signInFunction, signedIn } = this.context;
 
-    const { showNetArt, toggleNetArt, signInFunction } = this.context;
+    if (signedIn) {
+      signInFunction();
+    }
+
+    toggleNetArt();
+  }
+
+  //Function called on Google Login/Logout fail for errors
+  failedResponse(response) {
+    console.log(response);
+  }
+
+  render() {
+    const { showNetArt } = this.context;
+
+    const { successfullyLoggedOut, failedResponse } = this;
 
     return (
       <>
@@ -42,7 +55,7 @@ export default class Footer extends Component {
                 ></LinkButton>
               )}
               buttonText="Login"
-              onLogoutSuccess={toggleNetArt}
+              onLogoutSuccess={successfullyLoggedOut}
               onFailure={failedResponse}
               cookiePolicy={"single_host_origin"}
             />

@@ -22,6 +22,8 @@ import ConfirmShamingModal from "../../components/ConfirmShamingModal";
 //Import External Packages
 import FadeIn from "react-fade-in"; //Used for smooth page transition load - Documentation can be found here => https://www.npmjs.com/package/react-fade-in
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
+
+//Context Import
 import GlobalContext from "../../context/GlobalContext";
 
 export default class Blog2 extends Component {
@@ -31,13 +33,14 @@ export default class Blog2 extends Component {
   }
 
   render() {
+    const { showNetArt } = this.context;
+
     const blogInfoToLoad =
       BlogList.length -
       parseInt(
         window.location.pathname.charAt(window.location.pathname.length - 2)
       );
 
-    const { showNetArt } = this.context;
     return (
       <>
         {/* React Helmet is used to dynamically adjust the head of the document and add meta data */}
@@ -98,7 +101,11 @@ export default class Blog2 extends Component {
         <FadeIn transitionDuration={1000}>
           <article className="page-container h-entry">
             <article>
-              {showNetArt && <FreeArticlesLeftUI />}
+              {
+                //Checking if Net Ark Mode is enabled, and if true displaying the Articles Left
+                showNetArt && <FreeArticlesLeftUI />
+              }
+
               <Titles
                 mainTitle={true}
                 title={BlogList[blogInfoToLoad].cardTitle}
@@ -248,8 +255,10 @@ export default class Blog2 extends Component {
             <BlogButtons type="Blog" />
           </article>
         </FadeIn>
+
         {
-          //Outside the FadeIn Function to make smoother loading of modal
+          // Outside the FadeIn Function to make smoother loading of modal
+          // Checks if Net Ark Mode is enabled, and if true displays relevant Net Art Components
 
           showNetArt && (
             <>

@@ -5,6 +5,8 @@ import ActionButton from "../buttons/ActionButton";
 
 //Google Login Imports
 import GoogleLogin from "react-google-login";
+
+//Image Imports
 import GoogleLogo from "../../assets/GLogo.svg";
 
 //Context Import
@@ -15,33 +17,33 @@ export default class FreeBlogLimitReachedModal extends Component {
     document.body.style.overflow = "scroll";
   }
 
+  //Function called on Google Login/Logout success to change global state
+  responseGoogle() {
+    const { signInFunction } = this.context;
+
+    signInFunction();
+  }
+
+  //Function called on Google Login/Logout fail for errors
+  failedResponse(response) {
+    console.log(response);
+  }
+
   render() {
-    const {
-      freeArticlesLeft,
-      signedIn,
-      decreaseNumFreeArticles,
-      signInFunction,
-    } = this.context;
+    const { freeArticlesLeft, signedIn } = this.context;
 
-    const responseGoogle = (response) => {
-      console.log(response);
-      console.log(response.profileObj);
-      signInFunction();
-    };
-
-    const failedResponse = (response) => {
-      console.log(response);
-    };
+    const { responseGoogle, failedResponse } = this;
 
     if (freeArticlesLeft > 0 && !signedIn) {
-      document.body.style.overflow = "scroll";
+      //Allowing scrolling when banner is active
+      document.body.style.overflowY = "scroll";
       return null;
     } else if (signedIn) {
-      document.body.style.overflow = "scroll";
+      document.body.style.overflowY = "scroll";
       return null;
     } else {
       //Stopping scrolling when banner is active
-      document.body.style.overflow = "hidden";
+      document.body.style.overflowY = "hidden";
       return (
         <article className="cookie-banner-overlay">
           <section className="free-blog-limit-reached-modal modal">

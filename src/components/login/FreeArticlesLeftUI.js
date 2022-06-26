@@ -18,7 +18,6 @@ export default class FreeArticlesLeftUI extends Component {
     return (
       <>
         {freeArticlesLeft > 0 && !signedIn && (
-          // && Cookies.get("test") === "true"
           <article className="free-blogs-remaining-indicator">
             Only
             {" " + freeArticlesLeft + " "}

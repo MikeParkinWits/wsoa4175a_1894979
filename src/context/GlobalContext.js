@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 
+//External Package Import
 import Cookies from "js-cookie"; //External Package used to edit cookie information in browser - Documentation can be found here => https://www.npmjs.com/package/js-cookie
 
 export const GlobalContext = React.createContext();
 
+//Context Component that holds global net art values instead passing data through several nested children components
 export class GlobalContextProvider extends Component {
   constructor(props) {
     super(props);
@@ -18,15 +20,20 @@ export class GlobalContextProvider extends Component {
     };
 
     this.decreaseNumFreeArticles = this.decreaseNumFreeArticles.bind(this);
+
     this.signInFunction = this.signInFunction.bind(this);
+
     this.showConfirmationModalFunction =
       this.showConfirmationModalFunction.bind(this);
 
     this.toggleNetArt = this.toggleNetArt.bind(this);
+
     this.showConfirmShameModalToggle =
       this.showConfirmShameModalToggle.bind(this);
+
     this.decreaseblogsBeforeConfirmShameModal =
       this.decreaseblogsBeforeConfirmShameModal.bind(this);
+
     this.decreaseNotificationsbeforeDefault =
       this.decreaseNotificationsbeforeDefault.bind(this);
   }
@@ -51,42 +58,43 @@ export class GlobalContextProvider extends Component {
     this.setState({ showConfirmationModal: !this.state.showConfirmationModal });
   }
 
-  //Function to reset the net artwork
+  //Function to toggle/reset the net artwork
   toggleNetArt() {
     const { showNetArt } = this.state;
 
-    if (!showNetArt && Cookies.get("CookieConsent") === "true") {
-      if (Cookies.get("CookieConsent") === "true") {
+    if (!showNetArt && Cookies.get("CookiesConsent") === "true") {
+      if (Notification.permission !== "default") {
         alert(
-          "Notification preferences are controlled through the browser and must be reset manually"
-        );
-      } else {
-        alert(
-          "Net Art Enabled - for the best experience please make sure that your computer notifications are enabled"
+          "For the best experience, notification prefences must be reset - which can only be done manually, as they are controlled by the browser. This can be done on Chrome-based browsers by clicking the lock icon next to the websites URL."
         );
       }
-      Cookies.remove("CookieConsent");
-      Cookies.remove("necessaryCookies");
-      Cookies.remove("functionalCookies");
-      Cookies.remove("performanceCookies");
+
+      Cookies.remove("CookiesConsent");
+      Cookies.remove("necessaryCookie");
+      Cookies.remove("functionalCookie");
+      Cookies.remove("performanceCookie");
     }
 
     this.setState({ showNetArt: !this.state.showNetArt });
     this.setState({ freeArticlesLeft: 2 });
     this.setState({ showConfirmShameModal: true });
     this.setState({ blogsBeforeConfirmShameModal: 5 });
+    this.setState({ notificationsBeforeDefault: 3 });
   }
 
+  //Function to show/hide confirm shaming modal
   showConfirmShameModalToggle() {
     this.setState({ showConfirmShameModal: !this.state.showConfirmShameModal });
   }
 
+  //Function that decreases every time user opens a blog, used to check when to show confirm shaming modal
   decreaseblogsBeforeConfirmShameModal() {
     this.setState({
       blogsBeforeConfirmShameModal: this.state.blogsBeforeConfirmShameModal - 1,
     });
   }
 
+  //Function that decreases every time notification tries to be sent but is blocked by browser, used to check if in-browser notifications should be enabled instead
   decreaseNotificationsbeforeDefault() {
     if (this.state.notificationsBeforeDefault > 0) {
       this.setState({
@@ -105,6 +113,7 @@ export class GlobalContextProvider extends Component {
       blogsBeforeConfirmShameModal,
       notificationsBeforeDefault,
     } = this.state;
+
     const {
       decreaseNumFreeArticles,
       signInFunction,

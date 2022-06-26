@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+//Context Imports
 import GlobalContext, { GlobalContextProvider } from "./context/GlobalContext";
 
 //Routing Imports
@@ -39,10 +40,10 @@ import CookieBanner from "./components/cookies/CookieBanner";
 import ConfirmationModal from "./components/login/ConfirmationModal";
 
 //External Packages
-import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
-import Cookies from "js-cookie"; //External Package used to edit cookie information in browser - Documentation can be found here => https://www.npmjs.com/package/js-cookie
-import { gapi } from "gapi-script"; //External package used for Google Login
-import { Notifications } from "react-push-notification";
+import Helmet from "react-helmet"; //External package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
+import Cookies from "js-cookie"; //External package used to edit cookie information in browser - Documentation can be found here => https://www.npmjs.com/package/js-cookie
+import { gapi } from "gapi-script"; //External package used to link Google Login - Documentation can be found here => https://www.npmjs.com/package/gapi-script
+import { Notifications } from "react-push-notification"; //External package used for native, and in-broswer, notification - Documentation can be found here => https://www.npmjs.com/package/react-push-notification
 
 library.add(faBars, faX, faXmark, faUser);
 
@@ -65,11 +66,11 @@ class App extends Component {
 
   //Sets all cookies to true on clicking accept button, and disables second cookie window (where necessary), across popup & banner components
   acceptClick() {
-    Cookies.set("functionalCookies", true);
-    Cookies.set("performanceCookies", true);
-    Cookies.set("necessaryCookies", true);
+    Cookies.set("functionalCookie", true);
+    Cookies.set("performanceCookie", true);
+    Cookies.set("necessaryCookie", true);
 
-    Cookies.set("CookieConsent", true);
+    Cookies.set("CookiesConsent", true);
   }
 
   //Callback that displays cookie settings window when clicking 'update preferences' button
@@ -82,12 +83,18 @@ class App extends Component {
     this.setState({ showSecondPopup: !this.state.showSecondPopup });
   }
 
+  componentDidMount() {
+    const { toggleNetArt } = this.context;
+
+    toggleNetArt();
+  }
+
   render() {
     const { showCookiePopup, showSecondPopup } = this.state;
 
     const { showNetArt } = this.context;
 
-    //Used for Google oAuth2 Login Package
+    //Used to link project to Google oAuth2 Login
     gapi.load("client:auth2", () => {
       gapi.auth2.init({
         clientId:
@@ -117,11 +124,9 @@ class App extends Component {
           />
         </Helmet>
 
-        {/* Wrapping entire website in GlobalContextProvider to allow access to global state variables in any component without excessive prop drilling */}
         <Notifications position="top-right" />
 
         <Navbar />
-
         <main>
           <Routes>
             <Route
@@ -167,7 +172,6 @@ class App extends Component {
 
           showNetArt && (
             <>
-              {console.log("HELL")}
               {
                 //Checking if cookies are blocked
                 !navigator.cookieEnabled ? (

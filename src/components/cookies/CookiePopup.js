@@ -14,7 +14,7 @@ export default class CookiePopup extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cookies: { functionalCookies: true, performanceCookies: true },
+      cookies: { functionalCookie: true, performanceCookie: true },
     };
 
     this.handleCheckbox = this.handleCheckbox.bind(this);
@@ -23,11 +23,11 @@ export default class CookiePopup extends Component {
   }
 
   //Handles checkbox values
-  handleCheckbox = (event) => {
+  handleCheckbox(event) {
     let state = this.state;
     state.cookies[event.target.name] = event.target.checked;
     this.setState(state);
-  };
+  }
 
   //Saves cookie popup selection
   saveCookies = () => {
@@ -36,14 +36,14 @@ export default class CookiePopup extends Component {
 
     onCookieSwitch();
 
-    Cookies.set("necessaryCookies", true);
-    Cookies.set("functionalCookies", cookies.functionalCookies);
-    Cookies.set("performanceCookies", cookies.performanceCookies);
+    Cookies.set("necessaryCookie", true);
+    Cookies.set("functionalCookie", cookies.functionalCookie);
+    Cookies.set("performanceCookie", cookies.performanceCookie);
 
-    if (cookies.functionalCookies && cookies.performanceCookies) {
-      Cookies.set("CookieConsent", true);
-    } else if (Cookies.get("CookieConsent") !== "true") {
-      Cookies.set("CookieConsent", false);
+    if (cookies.functionalCookie && cookies.performanceCookie) {
+      Cookies.set("CookiesConsent", true);
+    } else if (Cookies.get("CookiesConsent") !== "true") {
+      Cookies.set("CookiesConsent", false);
     }
   };
 
@@ -63,8 +63,8 @@ export default class CookiePopup extends Component {
 
   render() {
     const { showCookiePopup, isPopupSubtext, popupSubtext } = this.props;
-
     const { cookies } = this.state;
+    const { handleCheckbox, saveCookies, acceptAll } = this;
 
     if (!showCookiePopup) {
       return null;
@@ -80,11 +80,11 @@ export default class CookiePopup extends Component {
 
           <CookieCheckbox
             cookieTitle="Required Cookies"
-            cookieName="necessaryCookies"
+            cookieName="necessaryCookie"
             cookieClassName="denied-mouse"
             isDisabled="disabled"
             isChecked={true}
-            onChangeFunction={this.handleCheckbox}
+            onChangeFunction={handleCheckbox}
             checkboxText={
               <>
                 These are cookies that help the website to function and are not
@@ -96,11 +96,11 @@ export default class CookiePopup extends Component {
 
           <CookieCheckbox
             cookieTitle="Functional Cookies"
-            cookieName="functionalCookies"
+            cookieName="functionalCookie"
             cookieClassName=""
             isDisabled=""
-            isChecked={cookies.functionalCookies}
-            onChangeFunction={this.handleCheckbox}
+            isChecked={cookies.functionalCookie}
+            onChangeFunction={handleCheckbox}
             checkboxText={
               <>
                 These are cookies that{" "}
@@ -116,11 +116,11 @@ export default class CookiePopup extends Component {
 
           <CookieCheckbox
             cookieTitle="Performance Cookies"
-            cookieName="performanceCookies"
+            cookieName="performanceCookie"
             cookieClassName=""
             isDisabled=""
-            isChecked={cookies.performanceCookies}
-            onChangeFunction={this.handleCheckbox}
+            isChecked={cookies.performanceCookie}
+            onChangeFunction={handleCheckbox}
             checkboxText={
               <>
                 This site collects cookies to{" "}
@@ -137,12 +137,12 @@ export default class CookiePopup extends Component {
             <ActionButton
               buttonText="Save Preferences"
               buttonClass="decline-button"
-              onClickAction={this.saveCookies}
+              onClickAction={saveCookies}
             />
             <ActionButton
               buttonText="Accept All"
               buttonClass="accept-button"
-              onClickAction={this.acceptAll}
+              onClickAction={acceptAll}
             />
           </section>
         </section>

@@ -10,16 +10,18 @@ import GlobalContext from "../../context/GlobalContext";
 import GoogleLogin, { GoogleLogout } from "react-google-login";
 
 export default class ConfirmationModal extends Component {
-  render() {
-    const failedResponse = (response) => {
-      console.log(response);
-    };
+  failedResponse(response) {
+    console.log(response);
+  }
 
+  render() {
     const {
       showConfirmationModal,
       signInFunction,
       showConfirmationModalFunction,
     } = this.context;
+
+    const { failedResponse } = this;
 
     if (!showConfirmationModal) {
       return null;

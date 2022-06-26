@@ -14,6 +14,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 //Google Login Imports
 import GoogleLogin, { GoogleLogout } from "react-google-login";
+
+//Context Imports
 import GlobalContext from "../context/GlobalContext";
 
 //External Components Import
@@ -38,22 +40,28 @@ export default class Navbar extends Component {
     this.setState({ click: !this.state.click });
   }
 
+  //Function called on Google Login/Logout success to change global state
+  responseGoogle() {
+    const { signInFunction } = this.context;
+
+    signInFunction();
+  }
+
+  //Function called on Google Login/Logout fail for errors
+  failedResponse(response) {
+    console.log(response);
+  }
+
   render() {
     const { click } = this.state;
+    const { signedIn, showConfirmationModalFunction, showNetArt } =
+      this.context;
     const {
-      signedIn,
-      signInFunction,
-      showConfirmationModalFunction,
-      showNetArt,
-    } = this.context;
-
-    const responseGoogle = (response) => {
-      signInFunction();
-    };
-
-    const failedResponse = (response) => {
-      console.log(response);
-    };
+      closeHamburgerMenu,
+      hamburgerMenuClick,
+      responseGoogle,
+      failedResponse,
+    } = this;
 
     return (
       <>
@@ -63,7 +71,7 @@ export default class Navbar extends Component {
               <NavLink
                 className="logo"
                 to="/wsoa4175a_1894979/"
-                onClick={this.closeHamburgerMenu}
+                onClick={closeHamburgerMenu}
               >
                 <img
                   src={logo}
@@ -78,7 +86,7 @@ export default class Navbar extends Component {
                   <NavLink
                     className="nav-item"
                     to="/wsoa4175a_1894979/BlogSection/"
-                    onClick={this.closeHamburgerMenu}
+                    onClick={closeHamburgerMenu}
                   >
                     Blog
                   </NavLink>
@@ -88,63 +96,64 @@ export default class Navbar extends Component {
                   <NavLink
                     className="nav-item"
                     to="/wsoa4175a_1894979/DesignSection/"
-                    onClick={this.closeHamburgerMenu}
+                    onClick={closeHamburgerMenu}
                   >
                     Design
                   </NavLink>
                 </li>
-                {showNetArt && (
-                  <li>
-                    {!signedIn ? (
-                      <GoogleLogin
-                        clientId="438147070218-ntafm247ii9dm17lgo110daid1rbb4kv.apps.googleusercontent.com"
-                        render={(renderProps) => (
-                          <ActionButton
-                            onClickAction={renderProps.onClick}
-                            disabled={renderProps.disabled}
-                            buttonText={
-                              <>
-                                {" "}
-                                <FontAwesomeIcon
-                                  icon="fa-user"
-                                  className="login-icon"
-                                />
-                                Login
-                              </>
-                            }
-                            buttonClass="google-login-button-nav"
-                          ></ActionButton>
-                        )}
-                        buttonText="Login"
-                        onSuccess={responseGoogle}
-                        onFailure={failedResponse}
-                        cookiePolicy={"single_host_origin"}
-                      />
-                    ) : (
-                      <ActionButton
-                        onClickAction={showConfirmationModalFunction}
-                        buttonText={
-                          <>
-                            {" "}
-                            <FontAwesomeIcon
-                              icon="fa-user"
-                              className="login-icon"
-                            />
-                            Logout
-                          </>
-                        }
-                        buttonClass="google-login-button-nav"
-                      ></ActionButton>
-                    )}
-                  </li>
-                )}
+
+                {
+                  //Showing login/logout button if net art mode enabled
+                  showNetArt && (
+                    <li>
+                      {!signedIn ? (
+                        <GoogleLogin
+                          clientId="438147070218-ntafm247ii9dm17lgo110daid1rbb4kv.apps.googleusercontent.com"
+                          render={(renderProps) => (
+                            <ActionButton
+                              onClickAction={renderProps.onClick}
+                              disabled={renderProps.disabled}
+                              buttonText={
+                                <>
+                                  {" "}
+                                  <FontAwesomeIcon
+                                    icon="fa-user"
+                                    className="login-icon"
+                                  />
+                                  Login
+                                </>
+                              }
+                              buttonClass="google-login-button-nav"
+                            ></ActionButton>
+                          )}
+                          buttonText="Login"
+                          onSuccess={responseGoogle}
+                          onFailure={failedResponse}
+                          cookiePolicy={"single_host_origin"}
+                        />
+                      ) : (
+                        <ActionButton
+                          onClickAction={showConfirmationModalFunction}
+                          buttonText={
+                            <>
+                              {" "}
+                              <FontAwesomeIcon
+                                icon="fa-user"
+                                className="login-icon"
+                              />
+                              Logout
+                            </>
+                          }
+                          buttonClass="google-login-button-nav"
+                        ></ActionButton>
+                      )}
+                    </li>
+                  )
+                }
               </ul>
             </section>
 
-            <section
-              className="hamburger-menu"
-              onClick={this.hamburgerMenuClick}
-            >
+            <section className="hamburger-menu" onClick={hamburgerMenuClick}>
               {click ? (
                 <FontAwesomeIcon icon="fa-xmark" className="menu-icon" />
               ) : (

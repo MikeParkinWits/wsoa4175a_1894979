@@ -5,10 +5,15 @@ import "../styles/cookies/cookieBlocked.css";
 
 //Image Imports
 import MailIcon from "../assets/MailIcon.svg";
+
+//External Components
 import ActionButton from "./buttons/ActionButton";
 
-import emailjs from "@emailjs/browser";
+//Context Import
 import GlobalContext from "../context/GlobalContext";
+
+//External Package Imports
+import emailjs from "@emailjs/browser"; //Emailjs package is used to send email, without backend, to emulate subscribing to mailing list - Documentation can be found here => https://www.emailjs.com/docs/
 
 export default class RoachModal extends Component {
   componentDidMount() {
@@ -17,6 +22,7 @@ export default class RoachModal extends Component {
       decreaseblogsBeforeConfirmShameModal,
     } = this.context;
 
+    //Decreases value a certain amount of times before confirm shaming modal is displayed
     if (blogsBeforeConfirmShameModal !== 0) {
       decreaseblogsBeforeConfirmShameModal();
     }
@@ -32,7 +38,7 @@ export default class RoachModal extends Component {
       signedIn,
     } = this.context;
 
-    //Function code required to send email to simulate the mailing list subscription
+    //Function code required to send email to simulate the mailing list subscription, as per docs
     const sendEmail = (e) => {
       e.preventDefault();
 
@@ -54,16 +60,14 @@ export default class RoachModal extends Component {
         );
     };
 
+    //Checks that confirm modal is allowed and that no other modal is displayed
+
     if (
       showConfirmShameModal &&
       blogsBeforeConfirmShameModal === 0 &&
       freeArticlesLeft === 0 &&
       signedIn
     ) {
-      {
-        console.log("H12");
-      }
-
       return (
         <article className="modal-overlay">
           <section className="modal confirm-shame-modal">

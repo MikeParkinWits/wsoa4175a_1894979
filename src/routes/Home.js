@@ -28,9 +28,9 @@ class Home extends Component {
   componentWillUnmount() {
     const { secondPopupSwitcher } = this.props;
 
-    if (Cookies.get("CookieConsent") === "false") {
+    if (Cookies.get("CookiesConsent") === "false") {
       secondPopupSwitcher();
-      Cookies.set("CookieConsent", true);
+      Cookies.set("CookiesConsent", true);
     }
   }
 
