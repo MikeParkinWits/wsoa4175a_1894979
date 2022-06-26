@@ -32,10 +32,7 @@
 .modal-overlay{
     position: fixed;
 
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    inset: 0rem;
 
     background-color: rgba(175, 175, 175, 0.5);
     z-index: 999;
@@ -136,7 +133,7 @@
     margin: 0rem 1rem 0.75rem 1rem;
   }
 
-  /* Confirm Shame Dark UI/UX Modal */
+  /* Confirm Shame Dark UI/UX Modal Specific Styles */
 
 
   .confirm-shame-modal{

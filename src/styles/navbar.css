@@ -120,7 +120,6 @@
     position: absolute;
     top: -20rem;
     left: 0%;
-    /* opacity: 0; */
     pointer-events: none;
     transition: all 0.5s cubic-bezier(0.55, 0, 1, 0.45);
     flex-direction: column;
@@ -154,17 +153,32 @@
     height: 2rem;
   }
 
+  .nav-item,
+  .google-login-button-nav{
+    color: black;
+
+    border-bottom: 0.12rem solid black;
+    background-color: white;
+  }
+
   .nav-item {
     display: flex;
     align-items: center;
     justify-content: center;
-    /* height: 10vw; */
     padding: 1.7rem 0rem;
 
-    border-bottom: 0.12rem solid black;
-    color: black;
-    background-color: white;
     margin: 0rem;
+  }
+
+  .google-login-button-nav {
+    padding: 1.9rem 0rem;
+
+    width: 100%;
+
+    border: 0rem;
+
+    font-weight: bold;
+    border-radius: 0rem;
   }
 
   .nav-item:hover::before {
@@ -174,23 +188,6 @@
 
   .hamburger-menu {
     display: block;
-  }
-
-  .google-login-button-nav {
-    padding: 1.9rem 0rem;
-
-    color: black;
-    background-color: white;
-
-    width: 100%;
-
-  border: 0rem;
-
-  font-weight: bold;
-
-  border-bottom: 0.12rem solid black;
-
-  border-radius: 0rem;
   }
 
   .google-login-button-nav:hover{
