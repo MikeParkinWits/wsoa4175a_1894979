@@ -13,17 +13,6 @@ import LinkButton from "./buttons/LinkButton";
 import GoogleLogin, { GoogleLogout } from "react-google-login";
 
 export default class Footer extends Component {
-  //Function called on Google Login/Logout success
-  successfullyLoggedOut() {
-    const { toggleNetArt, signInFunction, signedIn } = this.context;
-
-    if (signedIn) {
-      signInFunction();
-    }
-
-    toggleNetArt();
-  }
-
   //Function called on Google Login/Logout fail for errors
   failedResponse(response) {
     console.log(response);
@@ -32,7 +21,18 @@ export default class Footer extends Component {
   render() {
     const { showNetArt } = this.context;
 
-    const { successfullyLoggedOut, failedResponse } = this;
+    const { failedResponse } = this;
+
+    //Function called on Google Login/Logout success - inside of render to gian access to context variables
+    const successfullyLoggedOut = () => {
+      const { toggleNetArt, signInFunction, signedIn } = this.context;
+
+      if (signedIn) {
+        signInFunction();
+      }
+
+      toggleNetArt();
+    };
 
     return (
       <>

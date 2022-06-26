@@ -40,13 +40,6 @@ export default class Navbar extends Component {
     this.setState({ click: !this.state.click });
   }
 
-  //Function called on Google Login/Logout success to change global state
-  responseGoogle() {
-    const { signInFunction } = this.context;
-
-    signInFunction();
-  }
-
   //Function called on Google Login/Logout fail for errors
   failedResponse(response) {
     console.log(response);
@@ -56,12 +49,14 @@ export default class Navbar extends Component {
     const { click } = this.state;
     const { signedIn, showConfirmationModalFunction, showNetArt } =
       this.context;
-    const {
-      closeHamburgerMenu,
-      hamburgerMenuClick,
-      responseGoogle,
-      failedResponse,
-    } = this;
+    const { closeHamburgerMenu, hamburgerMenuClick, failedResponse } = this;
+
+    //Function called on Google Login/Logout success to change global state - inside render to access context variables
+    const responseGoogle = () => {
+      const { signInFunction } = this.context;
+
+      signInFunction();
+    };
 
     return (
       <>

@@ -17,13 +17,6 @@ export default class FreeBlogLimitReachedModal extends Component {
     document.body.style.overflow = "scroll";
   }
 
-  //Function called on Google Login/Logout success to change global state
-  responseGoogle() {
-    const { signInFunction } = this.context;
-
-    signInFunction();
-  }
-
   //Function called on Google Login/Logout fail for errors
   failedResponse(response) {
     console.log(response);
@@ -32,7 +25,14 @@ export default class FreeBlogLimitReachedModal extends Component {
   render() {
     const { freeArticlesLeft, signedIn } = this.context;
 
-    const { responseGoogle, failedResponse } = this;
+    const { failedResponse } = this;
+
+    //Function called on Google Login/Logout success to change global state - inside render to access context variables
+    const responseGoogle = () => {
+      const { signInFunction } = this.context;
+
+      signInFunction();
+    };
 
     if (freeArticlesLeft > 0 && !signedIn) {
       //Allowing scrolling when banner is active
