@@ -6,17 +6,29 @@ import BlogFiveImage from "../assets/PreviewImages/Blog5.svg";
 import BlogSixImage from "../assets/PreviewImages/Blog6.svg";
 import BlogSevenImage from "../assets/PreviewImages/Blog7.svg";
 import BlogEightImage from "../assets/PreviewImages/Blog8.svg";
+import BlogNineImage from "../assets/PreviewImages/Blog9.svg";
 
 export const BlogList = [
   {
-    cardTitle: "Final Internet Artwork Rationale and Critical Reflection",
+    cardTitle: "Final Website Technical Reflection",
     cardDate: "27 June 2022",
+    cardSummary:
+      "A look at my technical engagement throughout the semester and the challenges I faced",
+    image: BlogNineImage,
+    imageTitle: "Tools covering each other on a pink diagram",
+    imageAltText: "A diagram of Tools covering each other on a pink diagram",
+    cardRoute: "/wsoa4175a_1894979/Blogs/Blog9/",
+    blogWords: 861,
+  },
+  {
+    cardTitle: "Final Internet Artwork Rationale and Critical Reflection",
+    cardDate: "24 June 2022",
     cardSummary: "A look at my final internet art for the course",
     image: BlogEightImage,
     imageTitle: "Pop up windows overlapping each other",
     imageAltText: "A diagram of pop up windows overlapping each other",
     cardRoute: "/wsoa4175a_1894979/Blogs/Blog8/",
-    blogWords: 1532,
+    blogWords: 1476,
   },
   {
     cardTitle: "Reflections on Assignment 2",

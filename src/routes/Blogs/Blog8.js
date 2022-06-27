@@ -144,11 +144,11 @@ export default class Blog8 extends Component {
                 </p>
                 <p>
                   With that in mind, we can then begin looking at the process
-                  behind my final artwork’s creation and how I tried to achieve
-                  this effect. After researching various deceptive designs, that
-                  have become normalized on the web today, I started by using
-                  one of the most commonly found to create a prototype for my
-                  artwork – a cookie consent popup. As noted in my{" "}
+                  behind my final artwork’s creation. After researching various
+                  deceptive designs, that have become normalized on the web
+                  today, I started by using one of the most commonly found to
+                  create a prototype for my artwork – a cookie consent popup. As
+                  noted in my{" "}
                   <Link
                     to="/wsoa4175a_1894979/Blogs/Blog6/"
                     className="inline-link"
@@ -296,21 +296,15 @@ export default class Blog8 extends Component {
                   decision made while creating this internet artwork extremely
                   deliberate. However, even though I am happy with how the
                   artwork turned out, and see it as a success, there were still
-                  areas where I felt it could have been improved. Firstly, I
-                  found that my implementation of a notification system did not
-                  meet my overall expectations and was not as effective as I
-                  expected – as it turns out companies have been putting
-                  external measures in place to reduce notification spamming.
-                  While unfortunate for my internet artwork, it shows how
-                  companies are slowly becoming more aware of these deceptive
-                  design principles and are trying to stop them, which
-                  ultimately aligns with the goal of my internet artwork.
-                  Secondly, I had also hoped to implement incorporate invasive
-                  advertisements that blocked large portions of the screen, as
-                  is commonly seen on many news sites, but found that I was
-                  unable to add this functionality as Google AdSense cannot
-                  verify websites published on GitHub pages and as such it was
-                  not possible for my internet artwork.{" "}
+                  areas where I felt it could have been improved. I found that
+                  my implementation of a notification system did not meet my
+                  overall expectations and was not as effective as I expected –
+                  as it turns out companies have been putting external measures
+                  in place to reduce notification spamming. While unfortunate
+                  for my internet artwork, it shows how companies are slowly
+                  becoming more aware of these deceptive design principles and
+                  are trying to stop them, which ultimately aligns with the goal
+                  of my internet artwork.
                 </p>
               </section>
             </article>
