@@ -15,6 +15,7 @@ import Blog4 from "./routes/Blogs/Blog4";
 import Blog5 from "./routes/Blogs/Blog5";
 import Blog6 from "./routes/Blogs/Blog6";
 import Blog7 from "./routes/Blogs/Blog7";
+import Blog8 from "./routes/Blogs/Blog8";
 import Design1 from "./routes/Design/Design1";
 import Design2 from "./routes/Design/Design2";
 
@@ -154,6 +155,7 @@ class App extends Component {
             <Route path="/wsoa4175a_1894979/Blogs/Blog5/" element={<Blog5 />} />
             <Route path="/wsoa4175a_1894979/Blogs/Blog6/" element={<Blog6 />} />
             <Route path="/wsoa4175a_1894979/Blogs/Blog7/" element={<Blog7 />} />
+            <Route path="/wsoa4175a_1894979/Blogs/Blog8/" element={<Blog8 />} />
 
             {/* Design Routes*/}
             <Route

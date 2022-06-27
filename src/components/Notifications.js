@@ -47,7 +47,7 @@ export default class Notifications extends Component {
     const { notificationsbeforeDefault, decreaseNotificationsbeforeDefault } =
       this.context;
 
-    let intervalDelay = Math.floor(Math.random() * (60000 - 40000 + 1) + 40000);
+    let intervalDelay = Math.floor(Math.random() * (70000 - 50000 + 1) + 50000);
 
     let notificationContents =
       notificanInformation[
@@ -62,7 +62,7 @@ export default class Notifications extends Component {
 
       decreaseNotificationsbeforeDefault();
 
-      intervalDelay = Math.floor(Math.random() * (60000 - 40000 + 1) + 40000);
+      intervalDelay = Math.floor(Math.random() * (70000 - 50000 + 1) + 50000);
 
       addNotification({
         title: notificationContents.cardTitle,

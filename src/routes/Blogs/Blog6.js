@@ -264,7 +264,7 @@ export default class Blog6 extends Component {
                       Cookies.remove("necessaryCookie");
                       Cookies.remove("functionalCookie");
                       Cookies.remove("performanceCookie");
-                      window.url("/wsoa4175a_1894979/");
+                      // window.url("/wsoa4175a_1894979/");
                     }}
                   >
                     clicking here.{" "}

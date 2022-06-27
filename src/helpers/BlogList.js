@@ -5,8 +5,19 @@ import BlogFourImage from "../assets/PreviewImages/Blog4.svg";
 import BlogFiveImage from "../assets/PreviewImages/Blog5.svg";
 import BlogSixImage from "../assets/PreviewImages/Blog6.svg";
 import BlogSevenImage from "../assets/PreviewImages/Blog7.svg";
+import BlogEightImage from "../assets/PreviewImages/Blog8.svg";
 
 export const BlogList = [
+  {
+    cardTitle: "Final Internet Artwork Rationale and Critical Reflection",
+    cardDate: "27 June 2022",
+    cardSummary: "A look at my final internet art for the course",
+    image: BlogEightImage,
+    imageTitle: "Pop up windows overlapping each other",
+    imageAltText: "A diagram of pop up windows overlapping each other",
+    cardRoute: "/wsoa4175a_1894979/Blogs/Blog8/",
+    blogWords: 1532,
+  },
   {
     cardTitle: "Reflections on Assignment 2",
     cardDate: "03 June 2022",

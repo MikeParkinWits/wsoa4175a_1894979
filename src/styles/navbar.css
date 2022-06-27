@@ -153,6 +153,19 @@
     height: 2rem;
   }
 
+  .google-login-button-nav {
+    padding: 1.75rem 0rem;
+
+    width: 100%;
+
+    border: 0rem;
+
+    font-weight: bold;
+    border-radius: 0rem;
+
+    margin: 0rem;
+  }
+  
   .nav-item,
   .google-login-button-nav{
     color: black;
@@ -168,17 +181,6 @@
     padding: 1.7rem 0rem;
 
     margin: 0rem;
-  }
-
-  .google-login-button-nav {
-    padding: 1.9rem 0rem;
-
-    width: 100%;
-
-    border: 0rem;
-
-    font-weight: bold;
-    border-radius: 0rem;
   }
 
   .nav-item:hover::before {
