@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.css": "/wsoa4175a_1894979/static/css/main.89a84bcf.css",
-    "main.js": "/wsoa4175a_1894979/static/js/main.9ffb09ca.js",
+    "main.css": "/wsoa4175a_1894979/static/css/main.53fb200d.css",
+    "main.js": "/wsoa4175a_1894979/static/js/main.bfab6b54.js",
     "static/js/787.92a65116.chunk.js": "/wsoa4175a_1894979/static/js/787.92a65116.chunk.js",
     "static/media/Homepage-Desktop.png": "/wsoa4175a_1894979/static/media/Homepage-Desktop.e8b7e2726407e83df36f.png",
-    "static/media/BlogPicture.png": "/wsoa4175a_1894979/static/media/BlogPicture.29160ced7603baa47923.png",
+    "static/media/BlogPicture.png": "/wsoa4175a_1894979/static/media/BlogPicture.f6a2e91851dc28368d18.png",
     "static/media/Post-Desktop.png": "/wsoa4175a_1894979/static/media/Post-Desktop.125129cf4d83f87210eb.png",
-    "static/media/BlogPicture2.png": "/wsoa4175a_1894979/static/media/BlogPicture2.222fff79306d9edbedeb.png",
+    "static/media/BlogPicture2.png": "/wsoa4175a_1894979/static/media/BlogPicture2.2dd0db0e726b8fba9978.png",
     "static/media/HeroImage.jpg": "/wsoa4175a_1894979/static/media/HeroImage.88727321916a7546f3e8.jpg",
     "static/media/Blog4.svg": "/wsoa4175a_1894979/static/media/Blog4.6d522c7d83813a41e24f4b337ee33860.svg",
     "static/media/Post-Selector-Desktop.png": "/wsoa4175a_1894979/static/media/Post-Selector-Desktop.b8db5b3da0ba6b57deba.png",
@@ -26,18 +26,19 @@
     "static/media/Blog5.svg": "/wsoa4175a_1894979/static/media/Blog5.137e527d2e81897df33780169d998b07.svg",
     "static/media/HomepageDesignImage.png": "/wsoa4175a_1894979/static/media/HomepageDesignImage.007e3e9b912c8965d7c1.png",
     "static/media/Logo.svg": "/wsoa4175a_1894979/static/media/Logo.263ab30cf64cd00c285b9ea5f8aa550e.svg",
+    "static/media/Blog8.svg": "/wsoa4175a_1894979/static/media/Blog8.ccaf0a5b5da2288c9b645d28943074f2.svg",
     "static/media/HomepageBlogImage.png": "/wsoa4175a_1894979/static/media/HomepageBlogImage.0600344afaf8b53b1096.png",
     "static/media/BlogPicture2.jpg": "/wsoa4175a_1894979/static/media/BlogPicture2.cdb17913f046c6bedc2b.jpg",
     "static/media/NotificationWhatsApp.png": "/wsoa4175a_1894979/static/media/NotificationWhatsApp.4ba01ee1516f9a3736f4.png",
     "static/media/NotificationWarning.png": "/wsoa4175a_1894979/static/media/NotificationWarning.c8466570b0d3d30a3066.png",
     "static/media/GLogo.svg": "/wsoa4175a_1894979/static/media/GLogo.66ae25beb1eb0655ac594978ee31ddb2.svg",
     "index.html": "/wsoa4175a_1894979/index.html",
-    "main.89a84bcf.css.map": "/wsoa4175a_1894979/static/css/main.89a84bcf.css.map",
-    "main.9ffb09ca.js.map": "/wsoa4175a_1894979/static/js/main.9ffb09ca.js.map",
+    "main.53fb200d.css.map": "/wsoa4175a_1894979/static/css/main.53fb200d.css.map",
+    "main.bfab6b54.js.map": "/wsoa4175a_1894979/static/js/main.bfab6b54.js.map",
     "787.92a65116.chunk.js.map": "/wsoa4175a_1894979/static/js/787.92a65116.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.89a84bcf.css",
-    "static/js/main.9ffb09ca.js"
+    "static/css/main.53fb200d.css",
+    "static/js/main.bfab6b54.js"
   ]
 }
