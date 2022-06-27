@@ -1,7 +1,19 @@
 import DesignOneImage from "../assets/PreviewImages/Design1.svg";
 import DesignTwoImage from "../assets/PreviewImages/Design2.svg";
+import DesignThreeImage from "../assets/PreviewImages/Design3.svg";
 
 export const DesignList = [
+  {
+    cardTitle: "Final Website Design Reflection",
+    cardDate: "27 March 2022",
+    cardSummary:
+      "An overview of my design by websites and the choices that were made",
+    image: DesignThreeImage,
+    imageTitle: "An illustration showing a website being designed",
+    imageAltText: "An illustration showing a website being designed",
+    cardRoute: "/wsoa4175a_1894979/Design/Design3/",
+    blogWords: 652,
+  },
   {
     cardTitle: "Website Style Guide",
     cardDate: "27 March 2022",

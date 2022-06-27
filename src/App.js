@@ -19,6 +19,7 @@ import Blog8 from "./routes/Blogs/Blog8";
 import Blog9 from "./routes/Blogs/Blog9";
 import Design1 from "./routes/Design/Design1";
 import Design2 from "./routes/Design/Design2";
+import Design3 from "./routes/Design/Design3";
 
 //Font Awesome Imports
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -167,6 +168,10 @@ class App extends Component {
             <Route
               path="/wsoa4175a_1894979/Design/Design2/"
               element={<Design2 />}
+            />
+            <Route
+              path="/wsoa4175a_1894979/Design/Design3/"
+              element={<Design3 />}
             />
           </Routes>
         </main>
