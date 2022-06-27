@@ -24,6 +24,7 @@ import ConfirmShamingModal from "../../components/ConfirmShamingModal";
 //Import External Packages
 import FadeIn from "react-fade-in"; //Used for smooth page transition load - Documentation can be found here => https://www.npmjs.com/package/react-fade-in
 import Helmet from "react-helmet"; //External Package used to dynamically update the meta tags of the site - Documentation can be found here => https://www.npmjs.com/package/react-helmet
+import { Link } from "react-router-dom";
 
 //Context Import
 import GlobalContext from "../../context/GlobalContext";
@@ -129,8 +130,14 @@ export default class Design3 extends Component {
                 </p>
                 <p>
                   Firstly, we can start by looking at the goal for my websites
-                  design and theme. As noted in my website style guide design
-                  post, I wanted the visual theme for the site to portray my
+                  design and theme. As noted in my{" "}
+                  <Link
+                    to="/wsoa4175a_1894979/Design/Design2/"
+                    className="inline-link"
+                  >
+                    website style guide design post
+                  </Link>
+                  , I wanted the visual theme for the site to portray my
                   internet artworks goals – revealing the inner workings, and
                   normalized aspects, of the internet to users. As such, this
                   then drew me to the visual design aesthetics of brutalism, and
